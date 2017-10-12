@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RssFeedTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
-
+extern NSString *const newsCellIdentifier;
 @end

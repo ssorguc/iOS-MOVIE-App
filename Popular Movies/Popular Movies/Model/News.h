@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//this class represents a model of one single news on the rss feed tab
 @interface News : NSObject
 {
     NSString *title;

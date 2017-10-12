@@ -10,8 +10,8 @@
 
 @implementation News
 
-@synthesize title;
-@synthesize text;
-@synthesize source_link;
+@synthesize title = _title;
+@synthesize text = _text;
+@synthesize source_link = _source_link;
 
 @end
