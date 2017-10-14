@@ -38,6 +38,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="6Ij-Dy-xPT"/>
+                    <connections>
+                        <outlet property="rssFeedTableView" destination="wba-xD-H3j" id="AyD-sI-sFU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g2-4s-jPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
