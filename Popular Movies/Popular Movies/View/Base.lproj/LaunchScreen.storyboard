@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,20 +14,20 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoz-kZ-JTT">
-                                <rect key="frame" x="324" y="214.66666666666666" width="88" height="29"/>
+                                <rect key="frame" x="163" y="375.66666666666669" width="88" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.91621216384003223" green="0.93514038705583757" blue="0.88486949043831298" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jfF-6a-4gp">
-                                <rect key="frame" x="317.66666666666669" y="102" width="101" height="83"/>
+                                <rect key="frame" x="156.66666666666669" y="263" width="101.00000000000006" height="83"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZE-dd-k7h">
-                                <rect key="frame" x="305.66666666666669" y="193" width="125" height="28"/>
+                                <rect key="frame" x="144.66666666666669" y="354" width="125.00000000000006" height="28"/>
                                 <attributedString key="attributedText">
                                     <fragment content="POPULAR">
                                         <attributes>
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.15371219730619243" green="0.1552341002498181" blue="0.1552341002498181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1047747461928934" green="0.1047747461928934" blue="0.1047747461928934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gZE-dd-k7h" firstAttribute="top" secondItem="jfF-6a-4gp" secondAttribute="bottom" constant="8" symbolic="YES" id="fPh-Eh-58Y"/>
                             <constraint firstItem="qoz-kZ-JTT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mSy-9d-xuf"/>
