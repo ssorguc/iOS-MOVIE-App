@@ -68,8 +68,8 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="backgroundBox" destination="xsY-39-stO" id="uN6-t1-AQE"/>
+                <outlet property="descriptionLabel" destination="zd7-oH-qQO" id="qwq-jB-Nj4"/>
                 <outlet property="linkLabel" destination="zXX-uh-qRX" id="jMp-M3-TU3"/>
-                <outlet property="textLabel" destination="zd7-oH-qQO" id="Ijn-3c-W43"/>
                 <outlet property="titleLabel" destination="hWZ-aj-FzR" id="04g-SU-tm1"/>
             </connections>
             <point key="canvasLocation" x="313" y="143"/>

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 //one cell in rss feed table view list
 @interface NewsTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet UILabel *linkLabel;
 @property (weak, nonatomic) IBOutlet UIView *backgroundBox;
 @end

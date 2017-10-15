@@ -44,7 +44,7 @@
     [newsParser setDelegate:self];
     [newsParser parse];
     if (newsArray.count != 0) {
-        [self.rssFeedTableView reloadData];
+        [self.tableView reloadData];
     }
 
 }
@@ -68,7 +68,7 @@
     News * newsSample = (News*)[newsArray objectAtIndex:indexPath.row];
     cell.titleLabel.text = newsSample.title;
     cell.linkLabel.text = newsSample.source_link;
-    cell.textLabel.text = newsSample.text;
+    cell.descriptionLabel.text = newsSample.text;
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -86,7 +86,7 @@
 }
 -(void)parserDidEndDocument:(NSXMLParser *)parser{
     // When the parsing has been finished then simply reload the table view.
-    [self.rssFeedTableView reloadData];
+    [self.tableView reloadData];
 }
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
     //If we read 'item' that means we are at the end of xml element so we can store single news in the array
