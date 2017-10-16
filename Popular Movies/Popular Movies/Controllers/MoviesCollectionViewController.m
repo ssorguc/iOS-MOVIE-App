@@ -7,29 +7,30 @@
 //
 
 #import "MoviesCollectionViewController.h"
-#import "MovieCollectionViewCell.h"
+#import "MovieTvShowCollectionViewCell.h"
 @interface MoviesCollectionViewController ()
 {
     NSMutableArray* moviesArray;
-    NSArray* tempArray;
 }
 @end
 
 @implementation MoviesCollectionViewController
 
-static NSString * const reuseIdentifier = @"MovieCell";
+static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tempArray = [[NSArray alloc]init];
-    tempArray = @[@"movieSample", @"movieSample"];
-    
+    moviesArray = [[NSMutableArray alloc]init];
+    [ moviesArray addObject:@"1"];
+    [ moviesArray addObject:@"2"];
+    [ moviesArray addObject:@"3"];
+    [ moviesArray addObject:@"4"];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[MovieCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTvShowCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     // Do any additional setup after loading the view.
 }
 
@@ -54,13 +55,11 @@ static NSString * const reuseIdentifier = @"MovieCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return tempArray.count;
+    return moviesArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MovieCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    //cell.movieCover.image = [UIImage imageNamed:tempArray[indexPath.row]];
-    cell.movieTitleLabel.text = @"kk";
+    MovieTvShowCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     return cell;
 }
 

@@ -12,7 +12,7 @@
         <scene sceneID="vRj-UV-2qp">
             <objects>
                 <tableViewController id="gse-AQ-eeH" customClass="RssFeedTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wba-xD-H3j">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="9" sectionFooterHeight="9" id="wba-xD-H3j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.25487014651298523" green="0.25492024421691895" blue="0.25486692786216736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -21,7 +21,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.25487014650000001" green="0.25492024419999998" blue="0.25486692789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsC" rowHeight="200" id="tcM-Cf-87j">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="9" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcM-Cf-87j" id="Rjg-jZ-qiz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -40,6 +40,7 @@
                     <navigationItem key="navigationItem" id="6Ij-Dy-xPT"/>
                     <connections>
                         <outlet property="tableView" destination="wba-xD-H3j" id="Ldr-gU-LLl"/>
+                        <outlet property="view" destination="wba-xD-H3j" id="6Xe-ja-lnZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g2-4s-jPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,6 +51,7 @@
         <scene sceneID="QSc-NL-YHa">
             <objects>
                 <tabBarController id="47k-YP-tAa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ezw-ev-htd"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="2LJ-Oy-IoF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,6 +111,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="175" height="254"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <size key="customSize" width="175" height="254"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -117,10 +120,13 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="AIk-UN-nye"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xIK-zx-o7N" id="ocZ-5r-j7m"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NkN-JW-prw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="787"/>
+            <point key="canvasLocation" x="972" y="786.65667166416802"/>
         </scene>
         <!--Rss Feed-->
         <scene sceneID="BCI-Rv-aUO">

@@ -7,7 +7,7 @@
 //
 
 #import "TVShowCollectionViewController.h"
-
+#import "MovieTvShowCollectionViewCell.h"
 @interface TVShowCollectionViewController ()
 {
     NSMutableArray* tvShowArray;
@@ -23,11 +23,17 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+    tvShowArray = [[NSMutableArray alloc]init];
+    [tvShowArray addObject:@"one"];
+    [tvShowArray addObject:@"two"];
+    [tvShowArray addObject:@"three"];
+    [tvShowArray addObject:@"four"];
+
+
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
     // Do any additional setup after loading the view.
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTvShowCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,10 +63,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
+     MovieTvShowCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     return cell;
 }
 
