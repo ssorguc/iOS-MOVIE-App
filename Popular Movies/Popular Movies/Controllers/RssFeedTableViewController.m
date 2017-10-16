@@ -39,7 +39,8 @@
     [newsArray addObject:news1];
     [newsArray addObject:news1];
     [newsArray addObject:news1];
-    
+    [newsArray addObject:news1];
+
     newsParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.boxofficemojo.com/data/rss.php?file=topstories.xml"]];
     [newsParser setDelegate:self];
     [newsParser parse];

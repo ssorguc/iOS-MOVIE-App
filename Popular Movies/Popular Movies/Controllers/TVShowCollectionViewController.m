@@ -20,7 +20,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     tvShowArray = [[NSMutableArray alloc]init];
@@ -28,11 +27,11 @@ static NSString * const reuseIdentifier = @"Cell";
     [tvShowArray addObject:@"two"];
     [tvShowArray addObject:@"three"];
     [tvShowArray addObject:@"four"];
-
+    [tvShowArray addObject:@"four"];
+    [tvShowArray addObject:@"four"];
 
     // Register cell classes
     // Do any additional setup after loading the view.
-    
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTvShowCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 }
 

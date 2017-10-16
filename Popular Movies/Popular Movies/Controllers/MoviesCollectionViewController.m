@@ -25,6 +25,9 @@ static NSString * const reuseIdentifier = @"Cell";
     [ moviesArray addObject:@"2"];
     [ moviesArray addObject:@"3"];
     [ moviesArray addObject:@"4"];
+    [ moviesArray addObject:@"4"];
+    [ moviesArray addObject:@"4"];
+
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
