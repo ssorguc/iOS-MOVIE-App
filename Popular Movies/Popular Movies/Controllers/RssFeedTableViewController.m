@@ -18,7 +18,7 @@
     NSMutableString* newsTitle;
     NSMutableString* newsText;
     NSMutableString* newsSource;
-
+    IBOutlet UITableView *newsTableView;
 }
 @end
 
@@ -26,28 +26,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.userInteractionEnabled = YES;
+    newsTableView.scrollEnabled = YES;
     //Registrating the custom table view with reuse identifier
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([NewsTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([NewsTableViewCell class])];
-    
-    //This part of the code needs to be deleted and replaced with populating the table view with XML data
     newsArray = [[NSMutableArray alloc]init];
-    News * news1 = [[News alloc] init];
-    news1.title = @"Music For Self Improvment";
-    news1.source_link = @"www.source.com";
-    news1.text = @"When I was just starting 6th grade I got my first job. Paperboy! Boy, was I excited. At that time I had spent a lot of time actually playing the video game Paperboy, so I knew I had what it took to get the job done. But, its just not that easy.";
-    [newsArray addObject:news1];
-    [newsArray addObject:news1];
-    [newsArray addObject:news1];
-    [newsArray addObject:news1];
-
     newsParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.boxofficemojo.com/data/rss.php?file=topstories.xml"]];
     [newsParser setDelegate:self];
     [newsParser parse];
     if (newsArray.count != 0) {
         [self.tableView reloadData];
     }
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,6 +63,11 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 200.0f;
+}
+
+-(void)parser:(NSXMLParser *)parser {
+    
+    
 }
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     currentElement = elementName;

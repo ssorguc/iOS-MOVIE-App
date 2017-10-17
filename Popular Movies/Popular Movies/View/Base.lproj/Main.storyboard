@@ -12,7 +12,7 @@
         <scene sceneID="vRj-UV-2qp">
             <objects>
                 <tableViewController id="gse-AQ-eeH" customClass="RssFeedTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" sectionFooterHeight="15" id="wba-xD-H3j">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" sectionFooterHeight="15" id="wba-xD-H3j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.25487014651298523" green="0.25492024421691895" blue="0.25486692786216736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,6 +39,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="6Ij-Dy-xPT"/>
                     <connections>
+                        <outlet property="newsTableView" destination="wba-xD-H3j" id="vZh-hw-7wO"/>
                         <outlet property="tableView" destination="wba-xD-H3j" id="Ldr-gU-LLl"/>
                         <outlet property="view" destination="wba-xD-H3j" id="6Xe-ja-lnZ"/>
                     </connections>
@@ -131,7 +132,7 @@
         <!--Rss Feed-->
         <scene sceneID="BCI-Rv-aUO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CJb-g8-Dv3" sceneMemberID="viewController">
+                <navigationController id="CJb-g8-Dv3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Rss Feed" image="rss-feed-Small" selectedImage="rss-feed-Small" id="SsY-he-jhX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Msi-uN-xSZ">
