@@ -15,6 +15,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    _backgroundBox.layer.cornerRadius=4;
+
     // Initialization code
 }
 

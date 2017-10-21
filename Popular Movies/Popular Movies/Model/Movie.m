@@ -9,5 +9,10 @@
 #import "Movie.h"
 
 @implementation Movie
+@synthesize ratingNumber = _ratingNumber;
 
+-(void)setRatingNumber:(NSInteger)ratingNumber{
+    if(ratingNumber>=10)_ratingNumber = ratingNumber;
+    else ratingNumber = 0; //Could later on change this logic to do something like error handling
+}
 @end
