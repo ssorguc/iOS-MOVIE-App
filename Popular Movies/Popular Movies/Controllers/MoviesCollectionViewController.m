@@ -8,9 +8,11 @@
 
 #import "MoviesCollectionViewController.h"
 #import "MovieTvShowCollectionViewCell.h"
+#import "MovieMapping.h"
 @interface MoviesCollectionViewController ()
 {
     NSMutableArray* moviesArray;
+    MovieMapping* movieMapping;
 }
 @end
 
@@ -46,11 +48,17 @@
 -(void)loadMovies{
     moviesArray = [[NSMutableArray alloc]init];
     //Code under will be replace with code that fetches data from API
+    //call configureRestKit and loadMovieData methods
+    //movieMapping = [[MovieMapping alloc]init];
     [ moviesArray addObject:@"1"];
     [ moviesArray addObject:@"2"];
     [ moviesArray addObject:@"3"];
     [ moviesArray addObject:@"4"];
     [ moviesArray addObject:@"4"];
     [ moviesArray addObject:@"4"];
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.view.frame.size.width/2.0, collectionView.frame.size.height/2.0);
 }
 @end

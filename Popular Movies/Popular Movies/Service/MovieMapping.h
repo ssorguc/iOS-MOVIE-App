@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface MovieMapping : NSObject
-
+-(void)configureRestKit;
+-(void)loadMovieData;
 @end

@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,23 +21,20 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieSample" translatesAutoresizingMaskIntoConstraints="NO" id="z6b-oD-8KZ">
                         <rect key="frame" x="0.0" y="0.0" width="175" height="254"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INTERSTELAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J71-o4-oRr">
-                        <rect key="frame" x="6" y="149" width="149" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTERSTELAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J71-o4-oRr">
+                        <rect key="frame" x="6" y="149" width="149" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30 January 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vpU-WY-FNk">
-                        <rect key="frame" x="8" y="184" width="147" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 January 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vpU-WY-FNk">
+                        <rect key="frame" x="8" y="184" width="147" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sci - Fi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pvk-rx-Oy7">
-                        <rect key="frame" x="7" y="169" width="148" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sci - Fi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pvk-rx-Oy7">
+                        <rect key="frame" x="7" y="169" width="148" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -46,9 +43,18 @@
             </view>
             <color key="backgroundColor" red="0.0082883883248731083" green="0.0018639695859691754" blue="0.0032799100043120698" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Pvk-rx-Oy7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="2cE-El-aOT"/>
                 <constraint firstItem="z6b-oD-8KZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Bq-Jk-2d6"/>
+                <constraint firstItem="vpU-WY-FNk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="4RT-pK-nTb"/>
+                <constraint firstItem="J71-o4-oRr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="149" id="6cI-QQ-PWy"/>
+                <constraint firstItem="Pvk-rx-Oy7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="169" id="AW5-pr-wFc"/>
                 <constraint firstAttribute="bottom" secondItem="z6b-oD-8KZ" secondAttribute="bottom" id="LkY-v0-OmN"/>
+                <constraint firstAttribute="trailing" secondItem="J71-o4-oRr" secondAttribute="trailing" constant="20" id="UCN-qb-KMk"/>
                 <constraint firstAttribute="trailing" secondItem="z6b-oD-8KZ" secondAttribute="trailing" id="dBd-3w-hDE"/>
+                <constraint firstAttribute="trailing" secondItem="Pvk-rx-Oy7" secondAttribute="trailing" constant="20" id="erx-vt-pYQ"/>
+                <constraint firstItem="vpU-WY-FNk" firstAttribute="top" secondItem="Pvk-rx-Oy7" secondAttribute="bottom" constant="0.5" id="jet-6N-hNo"/>
+                <constraint firstItem="J71-o4-oRr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="qwn-Tm-RZ0"/>
+                <constraint firstAttribute="trailing" secondItem="vpU-WY-FNk" secondAttribute="trailing" constant="20" id="s3X-1F-pk2"/>
                 <constraint firstItem="z6b-oD-8KZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sbs-rM-xHs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
