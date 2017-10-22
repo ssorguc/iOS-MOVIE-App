@@ -11,4 +11,10 @@
 //This class is a mdel for a single movie
 @interface Movie : NSObject
 //Add the properties which will be mapped with related JSON from API
+@property int id;
+@property NSNumber* popularity;
+@property NSString* title;
+@property NSDate* releaseDate;
+@property NSArray* generes;
+@property NSNumber* voteAverage;
 @end

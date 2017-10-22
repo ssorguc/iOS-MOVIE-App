@@ -7,10 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106AD408DAE66AEB852F5084 /* libPods-Popular Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35B5D86BAF6CD519441838D /* libPods-Popular Movies.a */; };
 		52188B7C1F83F5C300428F1E /* RssFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52188B7B1F83F5C300428F1E /* RssFeedTableViewController.m */; };
 		526331181F83D402004769AD /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 526331171F83D402004769AD /* Movie.m */; };
 		5263311B1F83D411004769AD /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 5263311A1F83D411004769AD /* News.m */; };
 		5263311E1F83D421004769AD /* TVShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5263311D1F83D421004769AD /* TVShow.m */; };
+		526F1E011F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E061F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a */; };
+		526F1E021F9CD205007D845D /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E071F9CD205007D845D /* libRestKit.a */; };
+		526F1E031F9CD205007D845D /* libRKValueTransformers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E081F9CD205007D845D /* libRKValueTransformers.a */; };
+		526F1E041F9CD205007D845D /* libSOCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E091F9CD205007D845D /* libSOCKit.a */; };
+		526F1E051F9CD205007D845D /* libTransitionKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E0A1F9CD205007D845D /* libTransitionKit.a */; };
+		526F1E0C1F9CD20F007D845D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E0B1F9CD20F007D845D /* SystemConfiguration.framework */; };
+		526F1E0E1F9CD21B007D845D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E0D1F9CD21B007D845D /* CoreData.framework */; };
+		526F1E101F9CD222007D845D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E0F1F9CD222007D845D /* Security.framework */; };
+		526F1E121F9CD22E007D845D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E111F9CD22E007D845D /* CFNetwork.framework */; };
+		526F1E161F9CD274007D845D /* Movie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E141F9CD274007D845D /* Movie.xcdatamodeld */; };
+		526F1E191F9CD2FA007D845D /* TVShow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E171F9CD2FA007D845D /* TVShow.xcdatamodeld */; };
+		526F1E1B1F9CD349007D845D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1A1F9CD349007D845D /* MobileCoreServices.framework */; };
+		526F1E1D1F9CD3E2007D845D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1C1F9CD3E2007D845D /* UIKit.framework */; };
+		526F1E1F1F9CD3E9007D845D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1E1F9CD3E9007D845D /* Foundation.framework */; };
+		526F1E211F9CD3F7007D845D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E201F9CD3F7007D845D /* CoreGraphics.framework */; };
+		526F1E431F9CDB9A007D845D /* MovieMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E421F9CDB9A007D845D /* MovieMapping.m */; };
+		526F1E461F9CDBAA007D845D /* TVShowMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E451F9CDBAA007D845D /* TVShowMapping.m */; };
 		52A55A7D1F94259E007E16DC /* MovieTvShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A55A7B1F94259E007E16DC /* MovieTvShowCollectionViewCell.m */; };
 		52A55A7E1F94259E007E16DC /* MovieTvShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A55A7C1F94259E007E16DC /* MovieTvShowCollectionViewCell.xib */; };
 		52D0806A1F7B09580064C3BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D080691F7B09580064C3BF /* AppDelegate.m */; };
@@ -53,6 +71,25 @@
 		5263311A1F83D411004769AD /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		5263311C1F83D421004769AD /* TVShow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShow.h; sourceTree = "<group>"; };
 		5263311D1F83D421004769AD /* TVShow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVShow.m; sourceTree = "<group>"; };
+		526F1E061F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libISO8601DateFormatterValueTransformer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		526F1E071F9CD205007D845D /* libRestKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		526F1E081F9CD205007D845D /* libRKValueTransformers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRKValueTransformers.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		526F1E091F9CD205007D845D /* libSOCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSOCKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		526F1E0A1F9CD205007D845D /* libTransitionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTransitionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		526F1E0B1F9CD20F007D845D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		526F1E0D1F9CD21B007D845D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		526F1E0F1F9CD222007D845D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		526F1E111F9CD22E007D845D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		526F1E151F9CD274007D845D /* Movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie.xcdatamodel; sourceTree = "<group>"; };
+		526F1E181F9CD2FA007D845D /* TVShow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVShow.xcdatamodel; sourceTree = "<group>"; };
+		526F1E1A1F9CD349007D845D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		526F1E1C1F9CD3E2007D845D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		526F1E1E1F9CD3E9007D845D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		526F1E201F9CD3F7007D845D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		526F1E411F9CDB9A007D845D /* MovieMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieMapping.h; sourceTree = "<group>"; };
+		526F1E421F9CDB9A007D845D /* MovieMapping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMapping.m; sourceTree = "<group>"; };
+		526F1E441F9CDBAA007D845D /* TVShowMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShowMapping.h; sourceTree = "<group>"; };
+		526F1E451F9CDBAA007D845D /* TVShowMapping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVShowMapping.m; sourceTree = "<group>"; };
 		52A55A7A1F94259E007E16DC /* MovieTvShowCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieTvShowCollectionViewCell.h; sourceTree = "<group>"; };
 		52A55A7B1F94259E007E16DC /* MovieTvShowCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTvShowCollectionViewCell.m; sourceTree = "<group>"; };
 		52A55A7C1F94259E007E16DC /* MovieTvShowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTvShowCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -79,6 +116,9 @@
 		52F84BB71F8E0C8800195510 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		52F84BB81F8E0C8800195510 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		52F84BB91F8E0C8800195510 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		993C1B500FC8E711584F3985 /* Pods-Popular Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popular Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Popular Movies/Pods-Popular Movies.release.xcconfig"; sourceTree = "<group>"; };
+		9A85D836403D072A2A64FD87 /* Pods-Popular Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popular Movies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Popular Movies/Pods-Popular Movies.debug.xcconfig"; sourceTree = "<group>"; };
+		A35B5D86BAF6CD519441838D /* libPods-Popular Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Popular Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +126,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526F1E211F9CD3F7007D845D /* CoreGraphics.framework in Frameworks */,
+				526F1E1F1F9CD3E9007D845D /* Foundation.framework in Frameworks */,
+				526F1E1D1F9CD3E2007D845D /* UIKit.framework in Frameworks */,
+				526F1E1B1F9CD349007D845D /* MobileCoreServices.framework in Frameworks */,
+				526F1E121F9CD22E007D845D /* CFNetwork.framework in Frameworks */,
+				526F1E101F9CD222007D845D /* Security.framework in Frameworks */,
+				526F1E0E1F9CD21B007D845D /* CoreData.framework in Frameworks */,
+				526F1E0C1F9CD20F007D845D /* SystemConfiguration.framework in Frameworks */,
+				526F1E011F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a in Frameworks */,
+				526F1E021F9CD205007D845D /* libRestKit.a in Frameworks */,
+				526F1E031F9CD205007D845D /* libRKValueTransformers.a in Frameworks */,
+				526F1E041F9CD205007D845D /* libSOCKit.a in Frameworks */,
+				526F1E051F9CD205007D845D /* libTransitionKit.a in Frameworks */,
+				106AD408DAE66AEB852F5084 /* libPods-Popular Movies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +198,19 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		526F1E131F9CD25F007D845D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				526F1E141F9CD274007D845D /* Movie.xcdatamodeld */,
+				526F1E171F9CD2FA007D845D /* TVShow.xcdatamodeld */,
+				526F1E411F9CDB9A007D845D /* MovieMapping.h */,
+				526F1E421F9CDB9A007D845D /* MovieMapping.m */,
+				526F1E441F9CDBAA007D845D /* TVShowMapping.h */,
+				526F1E451F9CDBAA007D845D /* TVShowMapping.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		52D0805C1F7B09580064C3BF = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +218,8 @@
 				52D080801F7B09590064C3BF /* Popular MoviesTests */,
 				52D0808B1F7B09590064C3BF /* Popular MoviesUITests */,
 				52D080661F7B09580064C3BF /* Products */,
+				A329367339099D11F4AF2E14 /* Pods */,
+				BCF066235EA284878CEFC053 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +236,7 @@
 		52D080671F7B09580064C3BF /* Popular Movies */ = {
 			isa = PBXGroup;
 			children = (
+				526F1E131F9CD25F007D845D /* Service */,
 				526331151F83D3C6004769AD /* Controllers */,
 				526331141F83D3BE004769AD /* View */,
 				526331131F83D3B0004769AD /* Model */,
@@ -210,6 +280,36 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A329367339099D11F4AF2E14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A85D836403D072A2A64FD87 /* Pods-Popular Movies.debug.xcconfig */,
+				993C1B500FC8E711584F3985 /* Pods-Popular Movies.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BCF066235EA284878CEFC053 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				526F1E201F9CD3F7007D845D /* CoreGraphics.framework */,
+				526F1E1E1F9CD3E9007D845D /* Foundation.framework */,
+				526F1E1C1F9CD3E2007D845D /* UIKit.framework */,
+				526F1E1A1F9CD349007D845D /* MobileCoreServices.framework */,
+				526F1E111F9CD22E007D845D /* CFNetwork.framework */,
+				526F1E0F1F9CD222007D845D /* Security.framework */,
+				526F1E0D1F9CD21B007D845D /* CoreData.framework */,
+				526F1E0B1F9CD20F007D845D /* SystemConfiguration.framework */,
+				526F1E061F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a */,
+				526F1E071F9CD205007D845D /* libRestKit.a */,
+				526F1E081F9CD205007D845D /* libRKValueTransformers.a */,
+				526F1E091F9CD205007D845D /* libSOCKit.a */,
+				526F1E0A1F9CD205007D845D /* libTransitionKit.a */,
+				A35B5D86BAF6CD519441838D /* libPods-Popular Movies.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +317,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D080911F7B09590064C3BF /* Build configuration list for PBXNativeTarget "Popular Movies" */;
 			buildPhases = (
+				32D12587139A924EA18C9F22 /* [CP] Check Pods Manifest.lock */,
 				52D080611F7B09580064C3BF /* Sources */,
 				52D080621F7B09580064C3BF /* Frameworks */,
 				52D080631F7B09580064C3BF /* Resources */,
+				71C3D04EE0510194D7CC52A2 /* [CP] Embed Pods Frameworks */,
+				E3FF53E26898C974D2121E15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,6 +443,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32D12587139A924EA18C9F22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Popular Movies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71C3D04EE0510194D7CC52A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Popular Movies/Pods-Popular Movies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3FF53E26898C974D2121E15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Popular Movies/Pods-Popular Movies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52D080611F7B09580064C3BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -347,6 +501,9 @@
 			files = (
 				52ECC6C11F929E9D009F2A8D /* TVShowCollectionViewController.m in Sources */,
 				5263311E1F83D421004769AD /* TVShow.m in Sources */,
+				526F1E461F9CDBAA007D845D /* TVShowMapping.m in Sources */,
+				526F1E191F9CD2FA007D845D /* TVShow.xcdatamodeld in Sources */,
+				526F1E431F9CDB9A007D845D /* MovieMapping.m in Sources */,
 				52ECC6CE1F92A7C2009F2A8D /* Actor.m in Sources */,
 				5263311B1F83D411004769AD /* News.m in Sources */,
 				52188B7C1F83F5C300428F1E /* RssFeedTableViewController.m in Sources */,
@@ -355,6 +512,7 @@
 				526331181F83D402004769AD /* Movie.m in Sources */,
 				52A55A7D1F94259E007E16DC /* MovieTvShowCollectionViewCell.m in Sources */,
 				52D0806A1F7B09580064C3BF /* AppDelegate.m in Sources */,
+				526F1E161F9CD274007D845D /* Movie.xcdatamodeld in Sources */,
 				52F84BBA1F8E0C8800195510 /* NewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,11 +674,41 @@
 		};
 		52D080921F7B09590064C3BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A85D836403D072A2A64FD87 /* Pods-Popular Movies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/ISO8601DateFormatterValueTransformer\"",
+					"\"${PODS_ROOT}/Headers/Public/RKValueTransformers\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"",
+					"\"$(BUILT_PRODUCTS_DIR/../../Headers\"",
+				);
 				INFOPLIST_FILE = "Popular Movies/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"ISO8601DateFormatterValueTransformer\"",
+					"-l\"RKValueTransformers\"",
+					"-l\"RestKit\"",
+					"-l\"SOCKit\"",
+					"-l\"TransitionKit\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Selma.Popular-Movies";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,11 +717,41 @@
 		};
 		52D080931F7B09590064C3BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 993C1B500FC8E711584F3985 /* Pods-Popular Movies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/ISO8601DateFormatterValueTransformer\"",
+					"\"${PODS_ROOT}/Headers/Public/RKValueTransformers\"",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"",
+					"\"$(BUILT_PRODUCTS_DIR/../../Headers\"",
+				);
 				INFOPLIST_FILE = "Popular Movies/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"ISO8601DateFormatterValueTransformer\"",
+					"-l\"RKValueTransformers\"",
+					"-l\"RestKit\"",
+					"-l\"SOCKit\"",
+					"-l\"TransitionKit\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Selma.Popular-Movies";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -634,6 +852,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		526F1E141F9CD274007D845D /* Movie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				526F1E151F9CD274007D845D /* Movie.xcdatamodel */,
+			);
+			currentVersion = 526F1E151F9CD274007D845D /* Movie.xcdatamodel */;
+			path = Movie.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		526F1E171F9CD2FA007D845D /* TVShow.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				526F1E181F9CD2FA007D845D /* TVShow.xcdatamodel */,
+			);
+			currentVersion = 526F1E181F9CD2FA007D845D /* TVShow.xcdatamodel */;
+			path = TVShow.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52D0805D1F7B09580064C3BF /* Project object */;
 }
