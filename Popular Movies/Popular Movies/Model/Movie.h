@@ -7,15 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Date.h"
+
+//This class is a mdel for a single movie
 @interface Movie : NSObject
-@property (nonatomic,strong) NSString* movieTitle;
-@property (nonatomic,strong) NSArray* movieGenre;
-@property (nonatomic,strong) Date* dateOfPublishing;
-@property (nonatomic) NSInteger ratingNumber;
-@property (nonatomic,strong) NSArray* castArray;
-@property (nonatomic,strong) NSString* director;
-@property (nonatomic,strong) NSArray* writers;
-@property (nonatomic,strong) NSString* country;
-@property (nonatomic,strong) NSArray* stars;
+//Add the properties which will be mapped with related JSON from API
 @end

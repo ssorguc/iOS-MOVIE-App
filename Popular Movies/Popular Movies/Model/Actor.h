@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//This class is a model for a single actor 
 @interface Actor : NSObject
-@property (nonatomic,strong) NSString* actorsName;
-@property (nonatomic,strong) NSString* biografy;
+//Add the properties which will be mapped with related JSON from API
 @end

@@ -12,4 +12,5 @@
 @interface MovieTvShowCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 +(CAGradientLayer*)blackGradient;
+extern NSString * const reuseIdentifier;
 @end

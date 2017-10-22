@@ -28,15 +28,11 @@
     [super viewDidLoad];
     self.tableView.userInteractionEnabled = YES;
     newsTableView.scrollEnabled = YES;
+    
     //Registrating the custom table view with reuse identifier
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([NewsTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([NewsTableViewCell class])];
-    newsArray = [[NSMutableArray alloc]init];
-    newsParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.boxofficemojo.com/data/rss.php?file=topstories.xml"]];
-    [newsParser setDelegate:self];
-    [newsParser parse];
-    if (newsArray.count != 0) {
-        [self.tableView reloadData];
-    }
+    
+    [self loadNews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,8 +62,6 @@
 }
 
 -(void)parser:(NSXMLParser *)parser {
-    
-    
 }
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     currentElement = elementName;
@@ -94,7 +88,7 @@
 }
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string;
 {
-    // Depending on what we need from xml, save different string to be added as atributes of single news
+    // Depending on what we need from xml, save different strings that will be added as atributes of single news
     if([currentElement isEqualToString:@"title"]){
         [newsTitle appendString:string];
     }
@@ -104,49 +98,15 @@
     else if([currentElement isEqualToString:@"description"]){
         [newsText appendString:string];
     }
-    
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(void)loadNews{
+    newsArray = [[NSMutableArray alloc]init];
+    newsParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.boxofficemojo.com/data/rss.php?file=topstories.xml"]];
+    [newsParser setDelegate:self];
+    [newsParser parse];
+    if (newsArray.count != 0) {
+        [self.tableView reloadData];
+    }
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 @end

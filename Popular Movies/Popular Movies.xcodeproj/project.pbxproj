@@ -20,7 +20,6 @@
 		52D080781F7B09580064C3BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D080771F7B09580064C3BF /* main.m */; };
 		52D080821F7B09590064C3BF /* Popular_MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D080811F7B09590064C3BF /* Popular_MoviesTests.m */; };
 		52D0808D1F7B09590064C3BF /* Popular_MoviesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0808C1F7B09590064C3BF /* Popular_MoviesUITests.m */; };
-		52ECC6BB1F92970E009F2A8D /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECC6BA1F92970E009F2A8D /* Date.m */; };
 		52ECC6BE1F929E8A009F2A8D /* MoviesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECC6BD1F929E8A009F2A8D /* MoviesCollectionViewController.m */; };
 		52ECC6C11F929E9D009F2A8D /* TVShowCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECC6C01F929E9D009F2A8D /* TVShowCollectionViewController.m */; };
 		52ECC6CE1F92A7C2009F2A8D /* Actor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECC6CD1F92A7C2009F2A8D /* Actor.m */; };
@@ -71,8 +70,6 @@
 		52D080881F7B09590064C3BF /* Popular MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Popular MoviesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0808C1F7B09590064C3BF /* Popular_MoviesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Popular_MoviesUITests.m; sourceTree = "<group>"; };
 		52D0808E1F7B09590064C3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52ECC6B91F92970E009F2A8D /* Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
-		52ECC6BA1F92970E009F2A8D /* Date.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
 		52ECC6BC1F929E8A009F2A8D /* MoviesCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesCollectionViewController.h; sourceTree = "<group>"; };
 		52ECC6BD1F929E8A009F2A8D /* MoviesCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesCollectionViewController.m; sourceTree = "<group>"; };
 		52ECC6BF1F929E9D009F2A8D /* TVShowCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShowCollectionViewController.h; sourceTree = "<group>"; };
@@ -118,8 +115,6 @@
 				5263311A1F83D411004769AD /* News.m */,
 				5263311C1F83D421004769AD /* TVShow.h */,
 				5263311D1F83D421004769AD /* TVShow.m */,
-				52ECC6B91F92970E009F2A8D /* Date.h */,
-				52ECC6BA1F92970E009F2A8D /* Date.m */,
 				52ECC6CC1F92A7C2009F2A8D /* Actor.h */,
 				52ECC6CD1F92A7C2009F2A8D /* Actor.m */,
 			);
@@ -361,7 +356,6 @@
 				52A55A7D1F94259E007E16DC /* MovieTvShowCollectionViewCell.m in Sources */,
 				52D0806A1F7B09580064C3BF /* AppDelegate.m in Sources */,
 				52F84BBA1F8E0C8800195510 /* NewsTableViewCell.m in Sources */,
-				52ECC6BB1F92970E009F2A8D /* Date.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

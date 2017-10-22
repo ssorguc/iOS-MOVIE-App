@@ -16,14 +16,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     _backgroundBox.layer.cornerRadius=4;
-
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

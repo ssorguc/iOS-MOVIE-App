@@ -9,13 +9,14 @@
 #import "MovieTvShowCollectionViewCell.h"
 
 @implementation MovieTvShowCollectionViewCell
+NSString * const reuseIdentifier = @"MovieTVShowCell";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setUpGradient];
-    // Initialization code
-    
 }
+
+//Functions that set up the gradient on cover image of a Movie and TV Show
 +(CAGradientLayer*)blackGradient{
     UIColor* one = [UIColor clearColor];
     UIColor* two = [UIColor blackColor];

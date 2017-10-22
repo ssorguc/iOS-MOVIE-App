@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//This class is a model for a single TV Show
 @interface TVShow : NSObject
-
+//Add the properties which will be mapped with related JSON from API
 @end
