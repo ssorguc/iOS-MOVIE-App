@@ -21,14 +21,10 @@
 		526F1E0E1F9CD21B007D845D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E0D1F9CD21B007D845D /* CoreData.framework */; };
 		526F1E101F9CD222007D845D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E0F1F9CD222007D845D /* Security.framework */; };
 		526F1E121F9CD22E007D845D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E111F9CD22E007D845D /* CFNetwork.framework */; };
-		526F1E161F9CD274007D845D /* Movie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E141F9CD274007D845D /* Movie.xcdatamodeld */; };
-		526F1E191F9CD2FA007D845D /* TVShow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E171F9CD2FA007D845D /* TVShow.xcdatamodeld */; };
 		526F1E1B1F9CD349007D845D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1A1F9CD349007D845D /* MobileCoreServices.framework */; };
 		526F1E1D1F9CD3E2007D845D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1C1F9CD3E2007D845D /* UIKit.framework */; };
 		526F1E1F1F9CD3E9007D845D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1E1F9CD3E9007D845D /* Foundation.framework */; };
 		526F1E211F9CD3F7007D845D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E201F9CD3F7007D845D /* CoreGraphics.framework */; };
-		526F1E431F9CDB9A007D845D /* MovieMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E421F9CDB9A007D845D /* MovieMapping.m */; };
-		526F1E461F9CDBAA007D845D /* TVShowMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F1E451F9CDBAA007D845D /* TVShowMapping.m */; };
 		52A55A7D1F94259E007E16DC /* MovieTvShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A55A7B1F94259E007E16DC /* MovieTvShowCollectionViewCell.m */; };
 		52A55A7E1F94259E007E16DC /* MovieTvShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A55A7C1F94259E007E16DC /* MovieTvShowCollectionViewCell.xib */; };
 		52D0806A1F7B09580064C3BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D080691F7B09580064C3BF /* AppDelegate.m */; };
@@ -80,16 +76,10 @@
 		526F1E0D1F9CD21B007D845D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		526F1E0F1F9CD222007D845D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		526F1E111F9CD22E007D845D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		526F1E151F9CD274007D845D /* Movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie.xcdatamodel; sourceTree = "<group>"; };
-		526F1E181F9CD2FA007D845D /* TVShow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVShow.xcdatamodel; sourceTree = "<group>"; };
 		526F1E1A1F9CD349007D845D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		526F1E1C1F9CD3E2007D845D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		526F1E1E1F9CD3E9007D845D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		526F1E201F9CD3F7007D845D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		526F1E411F9CDB9A007D845D /* MovieMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieMapping.h; sourceTree = "<group>"; };
-		526F1E421F9CDB9A007D845D /* MovieMapping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMapping.m; sourceTree = "<group>"; };
-		526F1E441F9CDBAA007D845D /* TVShowMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShowMapping.h; sourceTree = "<group>"; };
-		526F1E451F9CDBAA007D845D /* TVShowMapping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVShowMapping.m; sourceTree = "<group>"; };
 		52A55A7A1F94259E007E16DC /* MovieTvShowCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieTvShowCollectionViewCell.h; sourceTree = "<group>"; };
 		52A55A7B1F94259E007E16DC /* MovieTvShowCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTvShowCollectionViewCell.m; sourceTree = "<group>"; };
 		52A55A7C1F94259E007E16DC /* MovieTvShowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTvShowCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -201,12 +191,6 @@
 		526F1E131F9CD25F007D845D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				526F1E141F9CD274007D845D /* Movie.xcdatamodeld */,
-				526F1E171F9CD2FA007D845D /* TVShow.xcdatamodeld */,
-				526F1E411F9CDB9A007D845D /* MovieMapping.h */,
-				526F1E421F9CDB9A007D845D /* MovieMapping.m */,
-				526F1E441F9CDBAA007D845D /* TVShowMapping.h */,
-				526F1E451F9CDBAA007D845D /* TVShowMapping.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -501,9 +485,6 @@
 			files = (
 				52ECC6C11F929E9D009F2A8D /* TVShowCollectionViewController.m in Sources */,
 				5263311E1F83D421004769AD /* TVShow.m in Sources */,
-				526F1E461F9CDBAA007D845D /* TVShowMapping.m in Sources */,
-				526F1E191F9CD2FA007D845D /* TVShow.xcdatamodeld in Sources */,
-				526F1E431F9CDB9A007D845D /* MovieMapping.m in Sources */,
 				52ECC6CE1F92A7C2009F2A8D /* Actor.m in Sources */,
 				5263311B1F83D411004769AD /* News.m in Sources */,
 				52188B7C1F83F5C300428F1E /* RssFeedTableViewController.m in Sources */,
@@ -512,7 +493,6 @@
 				526331181F83D402004769AD /* Movie.m in Sources */,
 				52A55A7D1F94259E007E16DC /* MovieTvShowCollectionViewCell.m in Sources */,
 				52D0806A1F7B09580064C3BF /* AppDelegate.m in Sources */,
-				526F1E161F9CD274007D845D /* Movie.xcdatamodeld in Sources */,
 				52F84BBA1F8E0C8800195510 /* NewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,29 +832,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		526F1E141F9CD274007D845D /* Movie.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				526F1E151F9CD274007D845D /* Movie.xcdatamodel */,
-			);
-			currentVersion = 526F1E151F9CD274007D845D /* Movie.xcdatamodel */;
-			path = Movie.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		526F1E171F9CD2FA007D845D /* TVShow.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				526F1E181F9CD2FA007D845D /* TVShow.xcdatamodel */,
-			);
-			currentVersion = 526F1E181F9CD2FA007D845D /* TVShow.xcdatamodel */;
-			path = TVShow.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 52D0805D1F7B09580064C3BF /* Project object */;
 }
