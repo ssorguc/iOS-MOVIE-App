@@ -7,10 +7,8 @@ build/
 DerivedData/
 
 ##API Key
-/Popular\ Movies/Popular\ Movies/APIKey.plist
-Popular\ Movies/Popular\ Movies/APIKey.plist
+/iOS-MOVIE-App/Popular\ Movies/Popular\ Movies/APIKey.plist
 *APIKey.plist
-APIKey.plist
 
 ## Various settings
 *.pbxuser
@@ -41,7 +39,6 @@ xcuserdata/
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
  Pods/
-Podfile.lock
 
 # Carthage
 #
