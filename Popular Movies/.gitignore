@@ -6,6 +6,10 @@
 build/
 DerivedData/
 
+##API Key
+/iOS-MOVIE-App/Popular\ Movies/Popular\ Movies/APIKey.plist
+*APIKey.plist
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
