@@ -8,7 +8,7 @@
 
 #ifndef APICallbacks_h
 #define APICallbacks_h
-
+//Blocks definition to reduce line length of APIRequest classes (MovieService and TVShowService classes)
 typedef void(^SuccessCallback)(void);
 typedef void(^SuccessCallbackWithObjects)(NSArray *objects);
 typedef void(^SuccessCallbackWithObject)(NSObject *object);

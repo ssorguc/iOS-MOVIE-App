@@ -9,6 +9,7 @@ Podfile.lock
 ##API Key
 /iOS-MOVIE-App/Popular\ Movies/Popular\ Movies/APIKey.plist
 *APIKey.plist 
+APIKey.plist
 
 ## Various settings
 *.pbxuser

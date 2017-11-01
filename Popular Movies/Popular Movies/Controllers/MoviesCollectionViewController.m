@@ -54,6 +54,7 @@
     //Setting up the cover image of the cell
     NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: movieSample.posterPath];
     [cell.coverImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
     //Setting up the title of the movie
     cell.titleLabel.text = [movieSample.title uppercaseString];
     
@@ -80,7 +81,7 @@
         [self.collectionView reloadData];
     } onError:^(NSError* error){
     }];
-    [movieService getMoviesFromAPIonSuccess:^(NSObject* object){
+    [movieService getTopRatedMoviesFromAPIonSuccess:^(NSObject* object){
         MovieCollection *collection = [(RKMappingResult*)object firstObject];
         [moviesArray addObjectsFromArray:[collection results]];
         [self.collectionView reloadData];

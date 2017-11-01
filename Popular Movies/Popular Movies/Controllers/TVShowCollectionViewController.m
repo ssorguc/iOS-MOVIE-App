@@ -51,12 +51,6 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
      MovieTvShowCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:movieTVShowReuseIdentifier forIndexPath:indexPath];
-    //Setting up the black gradient on coverImageView
-    /*CAGradientLayer* bottomBox = [CAGradientLayer layer];
-    bottomBox.frame = cell.coverImageView.bounds;
-    bottomBox = [Gradient setUpGradient];
-    bottomBox.frame = CGRectMake(0, 0, collectionView.frame.size.width/2.2 , collectionView.frame.size.height/2.2);
-    [cell.coverImageView.layer addSublayer:bottomBox];*/
     
     tvShowSample = [[TVShow alloc]init];
     tvShowSample = (TVShow*)[tvShowArray objectAtIndex:indexPath.row];

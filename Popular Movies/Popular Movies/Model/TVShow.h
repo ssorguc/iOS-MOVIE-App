@@ -19,12 +19,11 @@
 @property (nonatomic,strong) NSNumber* voteAverage;
 @property (nonatomic,strong) NSString* overview;
 @property (nonatomic,strong) NSString* posterPath;
-@property (nonatomic,strong) NSArray* genres;
-@property (nonatomic,strong) NSArray* createdBy;
+@property (nonatomic,strong) NSArray* genres;// RELATIONSHIP OBJECT
+@property (nonatomic,strong) NSArray* createdBy;// RELATIONSHIP OBJECT
 @property (nonatomic,strong) NSNumber* numberOfEpisodes;
 @property (nonatomic,strong) NSNumber* numberOfSeasons;
 @property (nonatomic,strong) NSDate* lastAirDate;
-@property (nonatomic,strong) NSArray* seasons;
-
+@property (nonatomic,strong) NSArray* seasons;// RELATIONSHIP OBJECT
 
 @end

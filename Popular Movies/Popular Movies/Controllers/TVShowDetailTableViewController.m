@@ -77,7 +77,6 @@
         }
         cell1.genreLabel.text = [genresTemp componentsJoinedByString:@", "];
         
-        //Trailer video
         
         return cell1;
     }
@@ -128,7 +127,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 300.0f;
+    return 390.0f;
 }
 
 @end

@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="175" height="254"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieSample" translatesAutoresizingMaskIntoConstraints="NO" id="z6b-oD-8KZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z6b-oD-8KZ">
                         <rect key="frame" x="0.0" y="0.0" width="175" height="254"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 January 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vpU-WY-FNk">
@@ -77,6 +77,5 @@
     </objects>
     <resources>
         <image name="Icon-60" width="60" height="60"/>
-        <image name="movieSample" width="91" height="138"/>
     </resources>
 </document>

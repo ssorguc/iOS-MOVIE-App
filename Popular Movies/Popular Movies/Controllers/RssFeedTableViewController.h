@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RssFeedTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource,NSXMLParserDelegate>
+@interface RssFeedTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, NSXMLParserDelegate>
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MovieDetailTableViewController : UITableViewController <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) NSNumber* movieId;
+@property (nonatomic,strong) NSNumber* movieId; //Property used for transfering data between controllers
 @end

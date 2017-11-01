@@ -28,7 +28,6 @@
 #import "SingleReviewTableViewCell.h"
 #import "ActorCollectionView.h"
 #import "CrewMember.h"
-#import "NoResultsTableViewCell.h"
 @interface MovieDetailTableViewController (){
     MovieService* movieService;
     NSMutableArray* writers;
@@ -54,8 +53,7 @@
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([MovieDescriptionTableViewCell class]) bundle:nil] forCellReuseIdentifier:descriptionReuseIdentifier];
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([CastTableViewCell class]) bundle:nil] forCellReuseIdentifier:castReuseIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ReviewTableViewCell class]) bundle:nil] forCellReuseIdentifier:reviewReuseIdentifier];
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([NoResultsTableViewCell class]) bundle:nil] forCellReuseIdentifier:noResultsReuseIdentifier];
-
+    
     movieService = [[MovieService alloc]init];
     [self loadMovieDetails];
     [self loadMovieTrailerByMovieId];
@@ -153,13 +151,9 @@
              }
              cell2.writerLabel.text = allWriters;
              cell2.directorLabel.text = allDirectors;
-             cell2.starsLabel.text =@"";
+             
             return cell2;
         }
-       /* else if (indexPath.section == 2){
-            ImageGalleryTableViewCell* cell3 = (ImageGalleryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:imageGalleryReuseIdentifier forIndexPath:indexPath];
-            return cell3;
-        }*/
         else if (indexPath.section == 2){
             CastTableViewCell* cell4 = (CastTableViewCell*)[tableView dequeueReusableCellWithIdentifier:castReuseIdentifier forIndexPath:indexPath];
             cell4.castCollectionView.dataSource = self;
@@ -171,8 +165,7 @@
         }
         else if (indexPath.section == 3 ){
             if(reviewsCollection.totalResults == 0){
-                NoResultsTableViewCell* noResultCell = (NoResultsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:noResultsReuseIdentifier forIndexPath:indexPath];
-                return noResultCell;
+                //If there is no reviews it would implement different cell,for example that would say no reviews
             }
             else{
                 ReviewTableViewCell* cell5 = (ReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reviewReuseIdentifier forIndexPath:indexPath];
@@ -187,6 +180,8 @@
     }
     return cell;
 }
+#pragma Collection Views Handling
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if([collectionView isKindOfClass:[ActorCollectionView class]]){
@@ -205,24 +200,8 @@
     return 6;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
-    if([collectionView isKindOfClass:[ActorCollectionView class]]){
-        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
-        Actor* singleActor = [[Actor alloc]init];
-        singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
-        cellOneActor.actorRollLabel.text = singleActor.character;
-        cellOneActor.actorNameLabel.text = singleActor.name;
-        if(singleActor.profilePath){
-        NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
-            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
-        return cellOneActor;
-    }
-    return cell;
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 370.0f;
+    return 400.0f;
 }
 
 -(void)loadMovieTrailerByMovieId{
@@ -235,7 +214,6 @@
     }
      ];
 }
-
 -(void)loadMovieDetails{
     [movieService getMovieDetailsFromAPIWithId:self.movieId onSuccess:^(NSObject* object){
         selectedMovie = [(RKMappingResult*)object firstObject];
@@ -256,5 +234,25 @@
         [self.tableView reloadData];
     } onError:^(NSError* error){}];
 }
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
+    if([collectionView isKindOfClass:[ActorCollectionView class]]){
+        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
+        Actor* singleActor = [[Actor alloc]init];
+        singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
+        
+        //Set up the single actor cell properties
+        cellOneActor.actorRollLabel.text = singleActor.character;
+        cellOneActor.actorNameLabel.text = singleActor.name;
+        if(singleActor.profilePath){
+        NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
+            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
+        return cellOneActor;
+    }
+    return cell;
+}
+
 
 @end

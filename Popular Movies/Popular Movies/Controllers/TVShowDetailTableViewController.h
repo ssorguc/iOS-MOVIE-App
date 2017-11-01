@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TVShowDetailTableViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) NSNumber* tvshowId;
+@property (nonatomic,strong) NSNumber* tvshowId;//Property used for transfering data between controllers
 @end

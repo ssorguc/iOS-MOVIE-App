@@ -12,7 +12,6 @@
 @property (nonatomic,strong) NSNumber* voteCount;
 @property (nonatomic,strong) NSNumber* movieId;
 @property (nonatomic,strong) NSNumber* runtime;
-
 @property Boolean video;
 @property (nonatomic,strong) NSNumber* voteAverage;
 @property (nonatomic,strong) NSString* title;

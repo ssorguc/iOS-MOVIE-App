@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "APICallbacks.h"
 @interface MovieService : NSObject
-- (void)getMoviesFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError;
+- (void)getTopRatedMoviesFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError;
 - (void)getPopularMoviesFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError;
 - (void)getMovieDetailsFromAPIWithId:(NSNumber*)movieId onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError;
 - (void)getMovieTrailerFromAPIWithId:(NSNumber*)movieId onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError;

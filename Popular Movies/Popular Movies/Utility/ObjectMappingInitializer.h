@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <RestKit.h>
-
+//ObjectMappingInitializer class for setting up the mapping for RestKit
 @interface ObjectMappingInitializer : NSObject
 +(void)initializeRKObjectManagerMapping:(RKObjectManager*)objectManager;
 @end
