@@ -1,4 +1,3 @@
-
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -6,6 +5,12 @@
 ## Build generated
 build/
 DerivedData/
+
+##API Key
+/Popular\ Movies/Popular\ Movies/APIKey.plist
+Popular\ Movies/Popular\ Movies/APIKey.plist
+*APIKey.plist
+APIKey.plist
 
 ## Various settings
 *.pbxuser
@@ -17,11 +22,6 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-
-##API Key
-/Popular Movies/Popular Movies/APIKey.plist
-*APIKey.plist
-APIKey.plist
 
 ## Other
 *.moved-aside
@@ -42,9 +42,7 @@ APIKey.plist
 #
  Pods/
 Podfile.lock
-*Podfile.lock
-Popular Movies/Podfile.lock
-Popular Movies/Pods/Headers/Private/RestKit/CoreData.h
+
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
