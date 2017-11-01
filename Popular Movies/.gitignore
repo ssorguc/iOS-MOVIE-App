@@ -5,10 +5,11 @@
 ## Build generated
 build/
 DerivedData/
-Podfile.lock
+
 ##API Key
-/iOS-MOVIE-App/Popular\ Movies/Popular\ Movies/APIKey.plist
-*APIKey.plist 
+/Popular\ Movies/Popular\ Movies/APIKey.plist
+Popular\ Movies/Popular\ Movies/APIKey.plist
+*APIKey.plist
 APIKey.plist
 
 ## Various settings
@@ -40,7 +41,8 @@ xcuserdata/
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
  Pods/
-*Podfile.lock
+Podfile.lock
+
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
