@@ -17,6 +17,10 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
+##API Key
+/iOS-MOVIE-App/Popular\ Movies/Popular\ Movies/APIKey.plist
+*APIKey.plist
+
 ## Other
 *.moved-aside
 *.xccheckout

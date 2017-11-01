@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <RestKit/RestKit.h>
+#import "ObjectMappingInitializer.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //configure restkit
+    //Configure RestKit
+    //Initialize AFNetworking HTTPClient
+    //Generally you will dispatch all requests through the AFRKHTTPClient class.
+    /* AFRKHTTPClient is a web client object configured to talk to a particular web server.
+     It is initialized with a base URL and allows you to set configuration that is common to the requests in your application, such as HTTP headers and authentication information. */
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
+    AFRKHTTPClient *client = [[AFRKHTTPClient alloc] initWithBaseURL:baseURL];
+    //Now that you have a client configured, you can send and process HTTP requests through the client.
+    /*When making a request through the client, you supply the resource path on the remote web server that you wish to interact with. Since the most common action in an iOS application is making an asynchronous request to a remote web service, RestKit provides very straight-forward convenience methods for the HTTP verbs: GET, POST, PUT and DELETE. You only need to declare that your class implements the RKRequestDelegate protocol */
+    
+    //RKObjectManager - Captures the common patterns for communicating with a RESTful web application over HTTP using object mapping
+    //Much as RKClient is your gateway to a simpler life with HTTP, RKObjectManager is your gateway to the world of object mapping. 
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    [ObjectMappingInitializer initializeRKObjectManagerMapping:objectManager];
+    
     return YES;
 }
 

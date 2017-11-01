@@ -1,4 +1,6 @@
 target 'Popular Movies'
 platform :ios, '9.0'
 pod 'RestKit', '~> 0.27.0'
-
+pod 'SDWebImage', '~> 4.0'
+pod 'SDWebImage/WebP'
+pod 'youtube-ios-player-helper', '~> 0.1'

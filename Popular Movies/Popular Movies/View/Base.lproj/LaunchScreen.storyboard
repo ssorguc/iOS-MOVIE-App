@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,14 +24,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jfF-6a-4gp">
-                                <rect key="frame" x="156.66666666666669" y="263" width="101.00000000000006" height="83"/>
+                                <rect key="frame" x="156.66666666666666" y="263" width="100.99999999999997" height="83"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZE-dd-k7h">
-                                <rect key="frame" x="144.66666666666669" y="354" width="125.00000000000006" height="28"/>
+                                <rect key="frame" x="144.66666666666666" y="354" width="124.99999999999997" height="28"/>
                                 <attributedString key="attributedText">
                                     <fragment content="POPULAR">
                                         <attributes>
-                                            <color key="NSColor" red="0.85099054078765324" green="0.70849708836743586" blue="0.010286489081758788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="24" name="HelveticaNeue"/>
                                             <real key="NSKern" value="1.8"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -39,7 +39,7 @@
                                     </fragment>
                                     <fragment content=" MOVIES">
                                         <attributes>
-                                            <color key="NSColor" red="0.85099054078765324" green="0.70849708836743586" blue="0.010286489081758788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="24" name="HelveticaNeue"/>
                                             <real key="NSKern" value="1.55"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>

@@ -5,6 +5,10 @@
 ## Build generated
 build/
 DerivedData/
+Podfile.lock
+##API Key
+/iOS-MOVIE-App/Popular\ Movies/Popular\ Movies/APIKey.plist
+*APIKey.plist 
 
 ## Various settings
 *.pbxuser
