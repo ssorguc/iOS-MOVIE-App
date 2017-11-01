@@ -61,6 +61,8 @@
     return 200.0f;
 }
 
+#pragma mark - XML parsing
+
 -(void)parser:(NSXMLParser *)parser {
 }
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{

@@ -10,7 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface MovieTvShowCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *rateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
-+(CAGradientLayer*)blackGradient;
-extern NSString * const reuseIdentifier;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+extern NSString * const movieTVShowReuseIdentifier;
 @end

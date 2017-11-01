@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <RestKit/RestKit.h>
+#import "ObjectMappingInitializer.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //Configure RestKit
+    //Initialize AFNetworking HTTPClient to dispatch all requests through the AFRKHTTPClient class.
+
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.themoviedb.org"];
+    AFRKHTTPClient *client = [[AFRKHTTPClient alloc] initWithBaseURL:baseURL];
+    
+    //Captures the common patterns for communicating with a RESTful web application over HTTP using object mapping
+    //Much as RKClient is your gateway to a simpler life with HTTP, RKObjectManager is your gateway to the world of object mapping. 
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    [ObjectMappingInitializer initializeRKObjectManagerMapping:objectManager];
+    
     return YES;
 }
 

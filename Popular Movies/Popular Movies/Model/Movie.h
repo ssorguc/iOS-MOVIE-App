@@ -7,8 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-
-//This class is a mdel for a single movie
-@interface Movie : NSObject
-//Add the properties which will be mapped with related JSON from API
+#import "MappableEntity.h"
+@interface Movie : MappableEntity
+@property (nonatomic,strong) NSNumber* voteCount;
+@property (nonatomic,strong) NSNumber* movieId;
+@property (nonatomic,strong) NSNumber* runtime;
+@property Boolean video;
+@property (nonatomic,strong) NSNumber* voteAverage;
+@property (nonatomic,strong) NSString* title;
+@property (nonatomic,strong) NSNumber* popularity;
+@property (nonatomic,strong) NSString* posterPath;
+@property (nonatomic,strong) NSString* originalLanguage;
+@property (nonatomic,strong) NSString* originalTitle;
+@property (nonatomic,strong) NSString* backdropPath;
+@property Boolean adult;
+@property (nonatomic,strong) NSString* overview;
+@property (nonatomic,strong) NSDate* releaseDate;
+@property (nonatomic,strong) NSArray* genres; // RELATIONSHIP OBJECT
+- (NSDictionary*)registrationData;
 @end

@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoviesCollectionViewController : UICollectionViewController <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface MoviesCollectionViewController : UICollectionViewController <UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @end

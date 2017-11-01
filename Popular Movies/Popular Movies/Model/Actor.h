@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-//This class is a model for a single actor 
-@interface Actor : NSObject
-//Add the properties which will be mapped with related JSON from API
+#import "MappableEntity.h"
+
+@interface Actor : MappableEntity
+@property (nonatomic,strong) NSNumber* castId;
+@property (nonatomic,strong) NSString* character;
+@property (nonatomic,strong) NSNumber* creditId;
+@property (nonatomic,strong) NSNumber* gender;
+@property (nonatomic,strong) NSString* actorId;
+@property (nonatomic,strong) NSString* name;
+@property (nonatomic,strong) NSNumber* order;
+@property (nonatomic,strong) NSString* profilePath;
 @end
