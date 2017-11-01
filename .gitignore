@@ -19,7 +19,7 @@ DerivedData/
 xcuserdata/
 
 ##API Key
-/iOS-MOVIE-App/Popular\ Movies/Popular\ Movies/APIKey.plist
+/Popular Movies/Popular Movies/APIKey.plist
 *APIKey.plist
 APIKey.plist
 
@@ -43,6 +43,8 @@ APIKey.plist
  Pods/
 Podfile.lock
 *Podfile.lock
+Popular Movies/Podfile.lock
+Popular Movies/Pods/Headers/Private/RestKit/CoreData.h
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
