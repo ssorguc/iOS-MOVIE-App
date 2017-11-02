@@ -16,7 +16,8 @@
              };
 }
 + (NSArray*)pathPatterns {
-    return @[[NSString stringWithFormat:@"/3/movie/:movieId/videos"]
+    return @[[NSString stringWithFormat:@"/3/movie/:movieId/videos"],
+             [NSString stringWithFormat:@"/3/tv/:tvId/videos"]
              ];
 }
 + (NSDictionary*)fieldsDictionaryForMapping {
