@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		106AD408DAE66AEB852F5084 /* libPods-Popular Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35B5D86BAF6CD519441838D /* libPods-Popular Movies.a */; };
 		52188B7C1F83F5C300428F1E /* RssFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52188B7B1F83F5C300428F1E /* RssFeedTableViewController.m */; };
+		5225B8151FAB37B2006A1CE3 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5225B8141FAB37B2006A1CE3 /* APIKey.plist */; };
 		5228FCB31FA89509001C6B7E /* ReviewsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228FCB21FA89509001C6B7E /* ReviewsTableView.m */; };
 		5228FCB61FA8A357001C6B7E /* CrewMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228FCB51FA8A357001C6B7E /* CrewMember.m */; };
 		5228FCBE1FA8CB42001C6B7E /* NoResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5228FCBC1FA8CB42001C6B7E /* NoResultsTableViewCell.xib */; };
@@ -77,7 +78,6 @@
 		52ECC6CE1F92A7C2009F2A8D /* Actor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECC6CD1F92A7C2009F2A8D /* Actor.m */; };
 		52F84BBA1F8E0C8800195510 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F84BB81F8E0C8800195510 /* NewsTableViewCell.m */; };
 		52F84BBB1F8E0C8800195510 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F84BB91F8E0C8800195510 /* NewsTableViewCell.xib */; };
-		52FDCC651FA9D0F5009DEB1A /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FDCC641FA9D0F5009DEB1A /* APIKey.plist */; };
 		52FDCC681FA9D947009DEB1A /* APIKeyHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FDCC671FA9D947009DEB1A /* APIKeyHandling.m */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +101,7 @@
 /* Begin PBXFileReference section */
 		52188B7A1F83F5C300428F1E /* RssFeedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RssFeedTableViewController.h; sourceTree = "<group>"; };
 		52188B7B1F83F5C300428F1E /* RssFeedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RssFeedTableViewController.m; sourceTree = "<group>"; };
+		5225B8141FAB37B2006A1CE3 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		5228FCB11FA89509001C6B7E /* ReviewsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsTableView.h; sourceTree = "<group>"; };
 		5228FCB21FA89509001C6B7E /* ReviewsTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsTableView.m; sourceTree = "<group>"; };
 		5228FCB41FA8A357001C6B7E /* CrewMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrewMember.h; sourceTree = "<group>"; };
@@ -214,7 +215,6 @@
 		52F84BB71F8E0C8800195510 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		52F84BB81F8E0C8800195510 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		52F84BB91F8E0C8800195510 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
-		52FDCC641FA9D0F5009DEB1A /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		52FDCC661FA9D947009DEB1A /* APIKeyHandling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeyHandling.h; sourceTree = "<group>"; };
 		52FDCC671FA9D947009DEB1A /* APIKeyHandling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIKeyHandling.m; sourceTree = "<group>"; };
 		993C1B500FC8E711584F3985 /* Pods-Popular Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popular Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Popular Movies/Pods-Popular Movies.release.xcconfig"; sourceTree = "<group>"; };
@@ -441,8 +441,8 @@
 				52D080691F7B09580064C3BF /* AppDelegate.m */,
 				52D080711F7B09580064C3BF /* Assets.xcassets */,
 				52D080761F7B09580064C3BF /* Info.plist */,
-				52FDCC641FA9D0F5009DEB1A /* APIKey.plist */,
 				52D080771F7B09580064C3BF /* main.m */,
+				5225B8141FAB37B2006A1CE3 /* APIKey.plist */,
 			);
 			path = "Popular Movies";
 			sourceTree = "<group>";
@@ -617,7 +617,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52FDCC651FA9D0F5009DEB1A /* APIKey.plist in Resources */,
+				5225B8151FAB37B2006A1CE3 /* APIKey.plist in Resources */,
 				52D080751F7B09580064C3BF /* LaunchScreen.storyboard in Resources */,
 				52D080721F7B09580064C3BF /* Assets.xcassets in Resources */,
 				522E94031FA133EC00E66B0E /* SingleReviewTableViewCell.xib in Resources */,

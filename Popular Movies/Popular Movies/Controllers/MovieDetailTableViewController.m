@@ -30,9 +30,6 @@
 #import "CrewMember.h"
 @interface MovieDetailTableViewController (){
     MovieService* movieService;
-    NSMutableArray* writers;
-    NSMutableArray* stars;
-    NSMutableArray* director;
     Movie* selectedMovie;
     NSString* trailerLink;
     VideosCollection* videos;
@@ -84,7 +81,7 @@
     if([tableView isKindOfClass:[ReviewsTableView class]]){
         SingleReviewTableViewCell *reviewCell = (SingleReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:singleReviewReuseIdentifier forIndexPath:indexPath];
         SingleReview* singleReview = [[SingleReview alloc]init];
-        singleReview = (SingleReview*)[reviewsCollection.results objectAtIndex:indexPath.row];
+        if(reviewsCollection.results) singleReview = (SingleReview*)[reviewsCollection.results objectAtIndex:indexPath.row];
         reviewCell.nameLabel.text = singleReview.author;
         reviewCell.reviewContentLabel.text = singleReview.content;
         return reviewCell;
@@ -110,10 +107,10 @@
             cell1.genreLabel.text = [genresTemp componentsJoinedByString:@", "];
 
             //Trailer video
-            if(videos.videoResults){
+            if(videos.videoResults.count!=0){
             t = [videos.videoResults objectAtIndex:0];
             NSDictionary *playerVars = @{@"playsinline" : @1,};
-            if(t)[cell1.movieTrailerPlayer loadWithVideoId:t.key playerVars:playerVars];
+            [cell1.movieTrailerPlayer loadWithVideoId:t.key playerVars:playerVars];
             }
             NSInteger value = [selectedMovie.runtime integerValue]/60;
             NSInteger value2 = [selectedMovie.runtime integerValue]- value*60;
@@ -205,7 +202,7 @@
     if([collectionView isKindOfClass:[ActorCollectionView class]]){
         ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
         Actor* singleActor = [[Actor alloc]init];
-        singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
+        if(castCollection.cast) singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
         
         //Set up the single actor cell properties
         cellOneActor.actorRollLabel.text = singleActor.character;
@@ -224,7 +221,6 @@
 -(void)loadMovieTrailerByMovieId{
     [movieService getMovieTrailerFromAPIWithId:self.movieId onSuccess:^(NSObject* object){
         videos = [(RKMappingResult*)object firstObject];
-        t = [videos.videoResults objectAtIndex:0];
         [self.tableView reloadData];
     } onError:^(NSError* error){
         

@@ -27,8 +27,12 @@
              @"total_pages": @"totalPages" };
 }
 + (NSArray*)pathPatterns {
-    return @[[NSString stringWithFormat:@"/3/tv/popular"],
-             [NSString stringWithFormat:@"/3/tv/top_rated"]
+    
+    return @[[NSString stringWithFormat:@"/3/tv/latest"],
+             [NSString stringWithFormat:@"/3/tv/popular"],
+             [NSString stringWithFormat:@"/3/tv/airing_today"],
+             [NSString stringWithFormat:@"/3/tv/top_rated"],
+             [NSString stringWithFormat:@"/3/tv/on_the_air"]
              ];
 }
 

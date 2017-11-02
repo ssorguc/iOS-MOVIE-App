@@ -18,10 +18,33 @@
 }
 @end
 @implementation TVShowService
-
-- (void)getTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+- (void)getAiringTodayTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    apiKey = [APIKeyHandling getAPIKeyValue];
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/airing_today?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        onSuccess(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        onError(error);
+    }];
+}
+- (void)getLatestTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    apiKey = [APIKeyHandling getAPIKeyValue];
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/latest?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        onSuccess(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        onError(error);
+    }];
+}
+- (void)getPopularTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     apiKey = [APIKeyHandling getAPIKeyValue];
     [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/popular?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        onSuccess(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        onError(error);
+    }];
+}
+- (void)getTopRatedTVShowsFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    apiKey = [APIKeyHandling getAPIKeyValue];
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/top_rated?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         onError(error);
@@ -59,6 +82,9 @@
         } failure:^(RKObjectRequestOperation *operation, NSError *error) {
             onError(error);
         }];
+    
+}
+-(void)getTVShowReviewsFromAPIWithId:(NSNumber *)tvId onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     
 }
 @end

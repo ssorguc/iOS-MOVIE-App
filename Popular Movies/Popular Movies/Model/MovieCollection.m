@@ -28,7 +28,8 @@
 }
 + (NSArray*)pathPatterns {
     return @[[NSString stringWithFormat:@"/3/movie/popular"],
-             [NSString stringWithFormat:@"/3/movie/top_rated"]
+             [NSString stringWithFormat:@"/3/movie/top_rated"],
+             [NSString stringWithFormat:@"/3/movie/latest"]
              ];
 }
 
