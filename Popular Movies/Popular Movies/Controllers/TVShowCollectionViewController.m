@@ -30,7 +30,7 @@
     // Registration of custom cell class
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTvShowCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:movieTVShowReuseIdentifier];
     
-    [self loadTVShows];
+    [self loadTopRatedTVShows];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,18 +75,15 @@
     [self performSegueWithIdentifier:@"tvShowDetailsSegue" sender:indexPath];
 }
 
--(void)loadTVShows{
+-(void)loadTopRatedTVShows{
     tvShowArray = [[NSMutableArray alloc]init];
     TVShowService* tvShowService = [[TVShowService alloc]init];
-    
-    [tvShowService getTVShowFromAPIonSuccess:^(NSObject* object){
+    [tvShowService getTopRatedTVShowsFromAPIonSuccess:^(NSObject* object){
         TVShowCollection *collection = [(RKMappingResult*)object firstObject];
         [tvShowArray addObjectsFromArray:[collection results]];
         [self.collectionView reloadData];
-    } onError:^(NSError* error){
-        
-    }];
-   
+    }
+    onError:^(NSError* error){}];
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {

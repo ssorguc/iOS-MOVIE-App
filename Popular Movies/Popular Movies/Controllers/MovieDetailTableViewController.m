@@ -30,9 +30,6 @@
 #import "CrewMember.h"
 @interface MovieDetailTableViewController (){
     MovieService* movieService;
-    NSMutableArray* writers;
-    NSMutableArray* stars;
-    NSMutableArray* director;
     Movie* selectedMovie;
     NSString* trailerLink;
     VideosCollection* videos;
@@ -84,7 +81,7 @@
     if([tableView isKindOfClass:[ReviewsTableView class]]){
         SingleReviewTableViewCell *reviewCell = (SingleReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:singleReviewReuseIdentifier forIndexPath:indexPath];
         SingleReview* singleReview = [[SingleReview alloc]init];
-        singleReview = (SingleReview*)[reviewsCollection.results objectAtIndex:indexPath.row];
+        if(reviewsCollection.results) singleReview = (SingleReview*)[reviewsCollection.results objectAtIndex:indexPath.row];
         reviewCell.nameLabel.text = singleReview.author;
         reviewCell.reviewContentLabel.text = singleReview.content;
         return reviewCell;
@@ -110,13 +107,13 @@
             cell1.genreLabel.text = [genresTemp componentsJoinedByString:@", "];
 
             //Trailer video
+            if(videos.videoResults.count!=0){
             t = [videos.videoResults objectAtIndex:0];
             NSDictionary *playerVars = @{@"playsinline" : @1,};
-            if(t)[cell1.movieTrailerPlayer loadWithVideoId:t.key playerVars:playerVars];
-           
+            [cell1.movieTrailerPlayer loadWithVideoId:t.key playerVars:playerVars];
+            }
             NSInteger value = [selectedMovie.runtime integerValue]/60;
             NSInteger value2 = [selectedMovie.runtime integerValue]- value*60;
-            
             cell1.durationLabel.text = [[[[NSString stringWithFormat:@"%lu",value]stringByAppendingString:@" h "]stringByAppendingString:[NSString stringWithFormat:@"%lu",value2]]stringByAppendingString:@" min"];
             return cell1;
          }
@@ -199,7 +196,24 @@
     if([collectionView isKindOfClass:[ActorCollectionView class]]) return castCollection.cast.count;
     return 6;
 }
-
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
+    if([collectionView isKindOfClass:[ActorCollectionView class]]){
+        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
+        Actor* singleActor = [[Actor alloc]init];
+        if(castCollection.cast) singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
+        
+        //Set up the single actor cell properties
+        cellOneActor.actorRollLabel.text = singleActor.character;
+        cellOneActor.actorNameLabel.text = singleActor.name;
+        if(singleActor.profilePath){
+            NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
+            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
+        return cellOneActor;
+    }
+    return cell;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 400.0f;
 }
@@ -207,7 +221,6 @@
 -(void)loadMovieTrailerByMovieId{
     [movieService getMovieTrailerFromAPIWithId:self.movieId onSuccess:^(NSObject* object){
         videos = [(RKMappingResult*)object firstObject];
-        t = [videos.videoResults objectAtIndex:0];
         [self.tableView reloadData];
     } onError:^(NSError* error){
         
@@ -235,24 +248,6 @@
     } onError:^(NSError* error){}];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
-    if([collectionView isKindOfClass:[ActorCollectionView class]]){
-        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
-        Actor* singleActor = [[Actor alloc]init];
-        singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
-        
-        //Set up the single actor cell properties
-        cellOneActor.actorRollLabel.text = singleActor.character;
-        cellOneActor.actorNameLabel.text = singleActor.name;
-        if(singleActor.profilePath){
-        NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
-            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
-        return cellOneActor;
-    }
-    return cell;
-}
 
 
 @end

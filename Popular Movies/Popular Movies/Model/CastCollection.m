@@ -25,7 +25,8 @@
     return nil;
 }
 + (NSArray*)pathPatterns {
-    return @[@"/3/movie/:movieId/credits"
+    return @[@"/3/movie/:movieId/credits",
+             @"/3/tv/:tvId/credits"
              ];
 }
 +(NSArray*)relationships {
