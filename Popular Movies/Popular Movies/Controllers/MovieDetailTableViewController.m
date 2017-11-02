@@ -110,13 +110,13 @@
             cell1.genreLabel.text = [genresTemp componentsJoinedByString:@", "];
 
             //Trailer video
+            if(videos.videoResults){
             t = [videos.videoResults objectAtIndex:0];
             NSDictionary *playerVars = @{@"playsinline" : @1,};
             if(t)[cell1.movieTrailerPlayer loadWithVideoId:t.key playerVars:playerVars];
-           
+            }
             NSInteger value = [selectedMovie.runtime integerValue]/60;
             NSInteger value2 = [selectedMovie.runtime integerValue]- value*60;
-            
             cell1.durationLabel.text = [[[[NSString stringWithFormat:@"%lu",value]stringByAppendingString:@" h "]stringByAppendingString:[NSString stringWithFormat:@"%lu",value2]]stringByAppendingString:@" min"];
             return cell1;
          }
@@ -199,7 +199,24 @@
     if([collectionView isKindOfClass:[ActorCollectionView class]]) return castCollection.cast.count;
     return 6;
 }
-
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
+    if([collectionView isKindOfClass:[ActorCollectionView class]]){
+        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
+        Actor* singleActor = [[Actor alloc]init];
+        singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
+        
+        //Set up the single actor cell properties
+        cellOneActor.actorRollLabel.text = singleActor.character;
+        cellOneActor.actorNameLabel.text = singleActor.name;
+        if(singleActor.profilePath){
+            NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
+            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
+        return cellOneActor;
+    }
+    return cell;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 400.0f;
 }
@@ -235,24 +252,6 @@
     } onError:^(NSError* error){}];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
-    if([collectionView isKindOfClass:[ActorCollectionView class]]){
-        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
-        Actor* singleActor = [[Actor alloc]init];
-        singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
-        
-        //Set up the single actor cell properties
-        cellOneActor.actorRollLabel.text = singleActor.character;
-        cellOneActor.actorNameLabel.text = singleActor.name;
-        if(singleActor.profilePath){
-        NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
-            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
-        return cellOneActor;
-    }
-    return cell;
-}
 
 
 @end
