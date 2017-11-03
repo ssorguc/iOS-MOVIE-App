@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *directorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *writerLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *directorStaticLabel;
+@property (weak, nonatomic) IBOutlet UILabel *writerStaticLabel;
 extern NSString* const descriptionReuseIdentifier;
 @end

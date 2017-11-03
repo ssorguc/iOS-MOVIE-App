@@ -19,20 +19,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="288.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 h 45 min" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="FLt-Sr-UQe">
-                        <rect key="frame" x="14" y="223" width="353" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="FLt-Sr-UQe">
+                        <rect key="frame" x="14" y="223" width="353" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 March 216 (USA)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="api-V2-3UI">
-                        <rect key="frame" x="14" y="239" width="353" height="17"/>
+                        <rect key="frame" x="14" y="223" width="353" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action, Adventure" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-Vm-TQT">
-                        <rect key="frame" x="14" y="260" width="353" height="17"/>
+                        <rect key="frame" x="14" y="244" width="353" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -52,6 +52,7 @@
                     <constraint firstItem="api-V2-3UI" firstAttribute="top" secondItem="FLt-Sr-UQe" secondAttribute="bottom" id="0Qs-Gb-Yla"/>
                     <constraint firstItem="vce-Xw-xBj" firstAttribute="trailing" secondItem="qzr-Vm-TQT" secondAttribute="trailing" id="3Tm-4B-Amm"/>
                     <constraint firstItem="FLt-Sr-UQe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="8au-fv-rKT"/>
+                    <constraint firstItem="ACa-aU-cIr" firstAttribute="top" secondItem="vce-Xw-xBj" secondAttribute="bottom" constant="4" id="BOj-kg-pIY"/>
                     <constraint firstAttribute="trailing" secondItem="qzr-Vm-TQT" secondAttribute="trailing" constant="8" id="GaO-WN-6uA"/>
                     <constraint firstItem="vce-Xw-xBj" firstAttribute="trailing" secondItem="api-V2-3UI" secondAttribute="trailing" id="HJm-bM-eu8"/>
                     <constraint firstAttribute="trailing" secondItem="FLt-Sr-UQe" secondAttribute="trailing" constant="8" id="Qh0-bY-EQp"/>
