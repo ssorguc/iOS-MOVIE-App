@@ -45,6 +45,7 @@ Podfile.lock
 *Podfile.lock
 Popular Movies/Podfile.lock
 Popular Movies/Pods/Headers/Private/RestKit/CoreData.h
+Popular Movies/Pods
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
