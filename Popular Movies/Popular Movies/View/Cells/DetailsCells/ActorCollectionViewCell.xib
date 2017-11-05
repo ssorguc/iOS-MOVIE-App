@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,14 +23,14 @@
                         <rect key="frame" x="10" y="10" width="164" height="214"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaI-UY-BO6">
-                        <rect key="frame" x="10" y="234" width="164" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="10" y="234" width="164" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.45000000000000001" preferredMaxLayoutWidth="164" translatesAutoresizingMaskIntoConstraints="NO" id="upn-zo-lPW">
-                        <rect key="frame" x="10" y="255" width="164" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="10" y="253" width="164" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.97741256480000005" green="0.97741256480000005" blue="0.97741256480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -54,9 +55,9 @@
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="184" height="284"/>
             <connections>
-                <outlet property="actorImageView" destination="08k-SC-hqM" id="OZh-8b-Op6"/>
-                <outlet property="actorNameLabel" destination="GaI-UY-BO6" id="nWk-Ub-EX4"/>
-                <outlet property="actorRollLabel" destination="upn-zo-lPW" id="TkO-WN-xeE"/>
+                <outlet property="actorNameLabel" destination="GaI-UY-BO6" id="SSo-lS-q1K"/>
+                <outlet property="characterNameLabel" destination="upn-zo-lPW" id="E6C-6w-u4v"/>
+                <outlet property="pictureImageView" destination="08k-SC-hqM" id="GUt-JU-G5q"/>
             </connections>
             <point key="canvasLocation" x="-137" y="56"/>
         </collectionViewCell>

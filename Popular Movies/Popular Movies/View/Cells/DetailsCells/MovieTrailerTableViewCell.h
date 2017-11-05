@@ -5,15 +5,10 @@
 //  Created by Test on 24/10/2017.
 //  Copyright © 2017 Test. All rights reserved.
 //
-
+#import "VideosCollection.h"
 #import <UIKit/UIKit.h>
 #import "YTPlayerView.h"
 @interface MovieTrailerTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet YTPlayerView *movieTrailerPlayer;
-@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *genreLabel;
-@property (weak, nonatomic) IBOutlet UIView *randomBox;
 extern NSString * const movieTrailerCellReuseIdentifier;
+-(void)setUpTrailerCellWithTitle:(NSString*)title releaseDateString:(NSDate*)releaseDate genresString: (NSArray*)genres trailers:(VideosCollection*)trailers runtime:(NSNumber*)runtime withIndexPath:(NSIndexPath*)indexPath;
 @end

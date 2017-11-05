@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "ActorCollectionViewCell.h"
 @interface CastTableViewCell : UITableViewCell
 extern NSString* const castReuseIdentifier;
-@property (weak, nonatomic) IBOutlet UICollectionView *castCollectionView;
+-(void)setUpCastCollectionViewCellWithDelegate:(id)delegate withDataSource:(id)dataSource;
 @end

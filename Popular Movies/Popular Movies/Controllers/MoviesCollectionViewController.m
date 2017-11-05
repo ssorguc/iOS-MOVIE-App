@@ -80,13 +80,14 @@
         [moviesArray addObjectsFromArray:[collection results]];
         [self.collectionView reloadData];
     } onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
     }];
     [movieService getTopRatedMoviesFromAPIonSuccess:^(NSObject* object){
         MovieCollection *collection = [(RKMappingResult*)object firstObject];
         [moviesArray addObjectsFromArray:[collection results]];
         [self.collectionView reloadData];
     } onError:^(NSError* error){
-    
+        NSLog(@"There's been an error with requestiong data from API.");
     }];
 }
 

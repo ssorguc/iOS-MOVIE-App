@@ -10,6 +10,6 @@
 #import "ReviewsTableView.h"
 #import <Foundation/Foundation.h>
 @interface ReviewTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet ReviewsTableView *reviewsTableView;
 extern NSString* const reviewReuseIdentifier;
+-(void)setUpReviewsCellWithDelegate:(id)delegate withDataSource:(id)dataSource;
 @end

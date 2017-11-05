@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,8 +25,8 @@
                         <color key="textColor" red="0.82241434010152281" green="0.82241434010152281" blue="0.82241434010152281" alpha="0.8791202910958904" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 2 3 4 5 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsO-hv-72D">
-                        <rect key="frame" x="83" y="27" width="287" height="23"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsO-hv-72D">
+                        <rect key="frame" x="83" y="27" width="297" height="23"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -42,10 +43,10 @@
                         <color key="textColor" red="1" green="0.92923524479999997" blue="0.014463961040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017 2016 2015 2014" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-RL-mWh">
-                        <rect key="frame" x="83" y="88" width="287" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017 " lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-RL-mWh">
+                        <rect key="frame" x="83" y="88" width="297" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="287" id="gwt-76-Gh1"/>
+                            <constraint firstAttribute="width" constant="297" id="gwt-76-Gh1"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,8 +65,8 @@
                     <constraint firstItem="KsO-hv-72D" firstAttribute="top" secondItem="FgM-AE-Boq" secondAttribute="bottom" constant="1" id="Ygv-gc-FyJ"/>
                     <constraint firstAttribute="trailing" secondItem="FgM-AE-Boq" secondAttribute="trailing" constant="12" id="bh9-Yt-9pS"/>
                     <constraint firstItem="KsO-hv-72D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="27" id="fEt-0b-taA"/>
-                    <constraint firstAttribute="trailing" secondItem="GkH-RL-mWh" secondAttribute="trailing" constant="30" id="kYY-hn-DQF"/>
-                    <constraint firstAttribute="trailing" secondItem="KsO-hv-72D" secondAttribute="trailing" constant="30" id="lPt-kR-NBi"/>
+                    <constraint firstAttribute="trailing" secondItem="GkH-RL-mWh" secondAttribute="trailing" constant="20" id="kYY-hn-DQF"/>
+                    <constraint firstAttribute="trailing" secondItem="KsO-hv-72D" secondAttribute="trailing" constant="20" id="lPt-kR-NBi"/>
                     <constraint firstItem="lhM-Hc-BoQ" firstAttribute="top" secondItem="PYd-Ki-7Cs" secondAttribute="bottom" constant="41" id="r6D-bM-ZUd"/>
                     <constraint firstItem="GkH-RL-mWh" firstAttribute="top" secondItem="PYd-Ki-7Cs" secondAttribute="bottom" constant="41" id="tvt-Ug-un1"/>
                     <constraint firstItem="KsO-hv-72D" firstAttribute="leading" secondItem="GkH-RL-mWh" secondAttribute="leading" id="u7Y-Q8-9ot"/>
@@ -75,8 +76,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="seasonsNumLabel" destination="KsO-hv-72D" id="NrG-VY-FIJ"/>
-                <outlet property="seasonsYearsLabel" destination="GkH-RL-mWh" id="YHX-9l-ybt"/>
+                <outlet property="seasonNumLabel" destination="KsO-hv-72D" id="zhn-MB-5UY"/>
+                <outlet property="seasonsYearsLabel" destination="GkH-RL-mWh" id="jYL-RJ-riM"/>
             </connections>
             <point key="canvasLocation" x="-15" y="128.5"/>
         </tableViewCell>

@@ -8,6 +8,11 @@
 
 #import "SingleReviewTableViewCell.h"
 
+@interface SingleReviewTableViewCell()
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@end
 @implementation SingleReviewTableViewCell
 NSString* const singleReviewReuseIdentifier = @"singleReviewCell";
 - (void)awakeFromNib {
@@ -20,5 +25,8 @@ NSString* const singleReviewReuseIdentifier = @"singleReviewCell";
 
     // Configure the view for the selected state
 }
-
+-(void)setUpSingleReviewCellWithAuthor:(NSString*)authorString withContent:(NSString*)contentString{
+    self.authorLabel.text = authorString;
+    self.contentLabel.text = contentString;
+}
 @end

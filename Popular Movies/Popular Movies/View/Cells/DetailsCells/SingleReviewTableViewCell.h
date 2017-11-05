@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SingleReviewTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *reviewContentLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+-(void)setUpSingleReviewCellWithAuthor:(NSString*)authorString withContent:(NSString*)contentString;
 extern NSString* const singleReviewReuseIdentifier;
 @end

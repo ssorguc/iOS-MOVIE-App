@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -209,6 +210,7 @@
                     <connections>
                         <outlet property="collectionView" destination="eLO-Fk-VwS" id="xht-1E-wOY"/>
                         <segue destination="Qd3-jq-vZY" kind="show" identifier="movieDetailSegue" id="ss2-WK-Obe"/>
+                        <segue destination="sNb-s4-12a" kind="show" identifier="playTrailerSegue" id="edF-2R-1Zr"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtA-Ac-8fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,6 +239,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRg-5s-epj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3218" y="384"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="c2M-vy-Hef">
+            <objects>
+                <viewController id="sNb-s4-12a" customClass="TrailerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Toz-jO-PMa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ru3-J0-4IK" customClass="YTPlayerView">
+                                <rect key="frame" x="16" y="100" width="343" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="5xs-lX-Y1o"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieTrailerview" destination="ru3-J0-4IK" id="Y5C-Ry-3Am"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EvE-sk-uMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4040.8000000000002" y="389.95502248875567"/>
         </scene>
     </scenes>
     <resources>

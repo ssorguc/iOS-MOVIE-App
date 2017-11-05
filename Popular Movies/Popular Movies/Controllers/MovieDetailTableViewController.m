@@ -8,11 +8,11 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Movie.h"
 #import "Genre.h"
+#import "TrailerViewController.h"
 #import "MovieService.h"
 #import "CastCollection.h"
 #import "Actor.h"
 #import "SingleReview.h"
-#import "YTPlayerView.h"
 #import "CollectionReview.h"
 #import "MovieDetailTableViewController.h"
 #import "MovieTrailerTableViewCell.h"
@@ -37,16 +37,12 @@
     NSArray* cast;
     CollectionReview* reviewsCollection;
     Trailer* t;
-    NSString* allWriters;
-    NSString* allDirectors;
 }
 @end
 
 @implementation MovieDetailTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTrailerTableViewCell class]) bundle:nil] forCellReuseIdentifier:movieTrailerCellReuseIdentifier];
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([ImageGalleryTableViewCell class]) bundle:nil] forCellReuseIdentifier:imageGalleryReuseIdentifier];
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([MovieDescriptionTableViewCell class]) bundle:nil] forCellReuseIdentifier:descriptionReuseIdentifier];
@@ -55,9 +51,10 @@
     
     movieService = [[MovieService alloc]init];
     [self loadMovieDetails];
-    [self loadMovieTrailerByMovieId];
     [self loadCastDetails];
     [self loadReviews];
+    
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +85,7 @@
     }
     else{
         if(indexPath.section == 0){
-             return [self setUpMovieTrailerCell:(MovieTrailerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:movieTrailerCellReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+            return [self setUpMovieTrailerCell:(MovieTrailerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:movieTrailerCellReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
          }
          else if (indexPath.section == 1){
              return [self setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)[tableView dequeueReusableCellWithIdentifier:descriptionReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
@@ -106,87 +103,28 @@
 #pragma Setting up custom cells
 
 -(MovieTrailerTableViewCell* )setUpMovieTrailerCell:(MovieTrailerTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    NSDateFormatter* df = [[NSDateFormatter alloc]init];
-    //Release date label
-    [df setDateFormat:@"d MMMM yyyy"];
-    cell.releaseDateLabel.text = [df stringFromDate:selectedMovie.releaseDate];
-    //Movie title label
-    [df setDateFormat:@"yyyy"];
-    cell.titleLabel.text = [[[[selectedMovie.title uppercaseString] stringByAppendingString:@" ("] stringByAppendingString:[df stringFromDate:selectedMovie.releaseDate]] stringByAppendingString:@")"];
-    //Genres label
-    NSMutableArray* genresTemp = [[NSMutableArray alloc]init];
-    for (Genre* g in selectedMovie.genres){
-        [genresTemp addObject:g.name];
-    }
-    cell.genreLabel.text = [genresTemp componentsJoinedByString:@", "];
-    //Trailer video
-    if(videos.videoResults.count!=0){
-        t = [videos.videoResults objectAtIndex:0];
-        NSDictionary *playerVars = @{@"playsinline" : @1,};
-        [cell.movieTrailerPlayer loadWithVideoId:t.key playerVars:playerVars];
-    }
-    NSInteger value = [selectedMovie.runtime integerValue]/60;
-    NSInteger value2 = [selectedMovie.runtime integerValue]- value*60;
-    cell.durationLabel.text = [[[[NSString stringWithFormat:@"%lu",value]stringByAppendingString:@" h "]stringByAppendingString:[NSString stringWithFormat:@"%lu",value2]]stringByAppendingString:@" min"];
+    [cell setUpTrailerCellWithTitle: selectedMovie.title releaseDateString: selectedMovie.releaseDate genresString: selectedMovie.genres trailers: videos runtime: selectedMovie.runtime withIndexPath:indexPath];
     return cell;
 }
 -(MovieDescriptionTableViewCell* )setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    cell.descriptionLabel.text = selectedMovie.overview;
-    cell.directorLabel.text = trailerLink;
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:2];
-    [formatter setRoundingMode: NSNumberFormatterRoundUp];
-    cell.rateLabel.text = [formatter stringFromNumber:selectedMovie.voteAverage];
-    [self getWritersDirectorsStringForLabel];
-    cell.writerLabel.text = allWriters;
-    cell.directorLabel.text = allDirectors;
+    [cell setUpDescriptionCellWithCrew:castCollection.crew withRate:selectedMovie.voteAverage withOverview:selectedMovie.overview];
     return cell;
 }
 -(CastTableViewCell* )setUpCastCollectionCell:(CastTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    cell.castCollectionView.dataSource = self;
-    cell.castCollectionView.delegate = self;
-    [cell.castCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([ActorCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:actorReuseIdentifier];
-    [cell.castCollectionView reloadData];
-    
+    [cell setUpCastCollectionViewCellWithDelegate:self withDataSource:self];
     return cell;
 }
 -(ReviewTableViewCell*)setUpReviewsCell:(ReviewTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
-    cell.reviewsTableView.delegate = self;
-    cell.reviewsTableView.dataSource = self;
-    [cell.reviewsTableView registerNib:[UINib nibWithNibName:NSStringFromClass([SingleReviewTableViewCell class]) bundle:nil] forCellReuseIdentifier:singleReviewReuseIdentifier];
-    
-    [cell.reviewsTableView reloadData];
+    [cell setUpReviewsCellWithDelegate:self withDataSource:self];
     return cell;
 }
 -(SingleReviewTableViewCell* )setUpSingleReviewCell:(SingleReviewTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
     SingleReview* singleReview = [[SingleReview alloc]init];
     if(reviewsCollection.results) singleReview = (SingleReview*)[reviewsCollection.results objectAtIndex:indexPath.row];
-    cell.nameLabel.text = singleReview.author;
-    cell.reviewContentLabel.text = singleReview.content;
+    [cell setUpSingleReviewCellWithAuthor:singleReview.author withContent:singleReview.content];
     return cell;
 }
--(void)getWritersDirectorsStringForLabel{
-    allWriters = @"";
-    allDirectors = @"";
-    NSInteger i = 1;
-    for(CrewMember* crewTemp in castCollection.crew){
-        if([crewTemp.job isEqualToString:@"Director"]){
-            allDirectors = [allDirectors stringByAppendingString:crewTemp.name];
-            allDirectors = [allDirectors stringByAppendingString:@", "];
-            
-        }
-        if([crewTemp.job isEqualToString:@"Writer"]){
-            allWriters = [allWriters stringByAppendingString:crewTemp.name];
-            allWriters = [allWriters stringByAppendingString:@", "];
-        }
-        if(i == castCollection.crew.count){
-            if([allDirectors length]!=0 )allDirectors = [allDirectors substringToIndex:[allDirectors length]-2];
-            if([allWriters length]!=0 )allWriters = [allWriters substringToIndex:[allWriters length]-2];
-        }
-        i=i+1;
-    }
-}
+
 #pragma Collection Views Handling
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -213,19 +151,12 @@
         ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
         Actor* singleActor = [[Actor alloc]init];
         if(castCollection.cast) singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
-        
-        //Set up the single actor cell properties
-        cellOneActor.actorRollLabel.text = singleActor.character;
-        cellOneActor.actorNameLabel.text = singleActor.name;
-        if(singleActor.profilePath){
-            NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
-            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
+        [cellOneActor setUpActorCellWithActor:singleActor];
         return cellOneActor;
     }
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
     if(indexPath.section == 1){
         static MovieDescriptionTableViewCell* cell = nil;
         static dispatch_once_t onceToken;
@@ -254,37 +185,38 @@
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return size.height;
 }
-
-#pragma Fetching data
--(void)loadMovieTrailerByMovieId{
-    [movieService getMovieTrailerFromAPIWithId:self.movieId onSuccess:^(NSObject* object){
-        videos = [(RKMappingResult*)object firstObject];
-        [self.tableView reloadData];
-    } onError:^(NSError* error){
-        
+#pragma Segue handling
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"tvShowDetailsSegue"]) {
+        TrailerViewController* trailerView = [segue destinationViewController];
+        trailerView.movieID = self.movieId;
     }
-     ];
 }
+#pragma Fetching data
 
 -(void)loadMovieDetails{
     [movieService getMovieDetailsFromAPIWithId:self.movieId onSuccess:^(NSObject* object){
         selectedMovie = [(RKMappingResult*)object firstObject];
         [self.tableView reloadData];
     } onError:^(NSError* error){
-        NSLog(@"greska");
+        NSLog(@"There's been an error with requestiong data from API.");
     }];
 }
 -(void)loadCastDetails{
     [movieService getCastInformation:_movieId onSuccess:^(NSObject* object){
         castCollection = [(RKMappingResult*)object firstObject];
         [self.tableView reloadData];
-    } onError:^(NSError* error){}];
+    } onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
+    }];
 }
 -(void)loadReviews{
     [movieService getMovieReviewsFromAPIWithId:_movieId onSuccess:^(NSObject* object){
         reviewsCollection = [(RKMappingResult*)object firstObject];
         [self.tableView reloadData];
-    } onError:^(NSError* error){}];
+    } onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
+    }];
 }
 
 

@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SingleSeason.h"
 @interface SeasonsTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *seasonsNumLabel;
-@property (weak, nonatomic) IBOutlet UILabel *seasonsYearsLabel;
-
-
 extern NSString* const seasonsReuseIdentifier;
+-(void)setUpSeasonsCellWithSeasons:(NSArray*)seasons  withNumberOfSeasons:(NSNumber*)numberOfSeasons;
 @end

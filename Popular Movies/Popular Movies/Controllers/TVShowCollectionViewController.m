@@ -83,7 +83,9 @@
         [tvShowArray addObjectsFromArray:[collection results]];
         [self.collectionView reloadData];
     }
-    onError:^(NSError* error){}];
+    onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
+    }];
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {

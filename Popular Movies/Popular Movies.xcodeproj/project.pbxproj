@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		106AD408DAE66AEB852F5084 /* libPods-Popular Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35B5D86BAF6CD519441838D /* libPods-Popular Movies.a */; };
 		52188B7C1F83F5C300428F1E /* RssFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52188B7B1F83F5C300428F1E /* RssFeedTableViewController.m */; };
+		5221B2011FAF6DCD00022553 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5221B2001FAF6DCD00022553 /* TrailerViewController.m */; };
 		5225B8151FAB37B2006A1CE3 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5225B8141FAB37B2006A1CE3 /* APIKey.plist */; };
 		5228FCB31FA89509001C6B7E /* ReviewsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228FCB21FA89509001C6B7E /* ReviewsTableView.m */; };
 		5228FCB61FA8A357001C6B7E /* CrewMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228FCB51FA8A357001C6B7E /* CrewMember.m */; };
-		5228FCBE1FA8CB42001C6B7E /* NoResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5228FCBC1FA8CB42001C6B7E /* NoResultsTableViewCell.xib */; };
 		522E93B51F9DF4A600E66B0E /* MappableEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E93B41F9DF4A600E66B0E /* MappableEntity.m */; };
 		522E93BB1F9DF55000E66B0E /* ObjectMappingInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E93BA1F9DF55000E66B0E /* ObjectMappingInitializer.m */; };
 		522E93C51F9E932100E66B0E /* MovieDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E93C41F9E932100E66B0E /* MovieDetailTableViewController.m */; };
@@ -101,12 +101,13 @@
 /* Begin PBXFileReference section */
 		52188B7A1F83F5C300428F1E /* RssFeedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RssFeedTableViewController.h; sourceTree = "<group>"; };
 		52188B7B1F83F5C300428F1E /* RssFeedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RssFeedTableViewController.m; sourceTree = "<group>"; };
+		5221B1FF1FAF6DCD00022553 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
+		5221B2001FAF6DCD00022553 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		5225B8141FAB37B2006A1CE3 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		5228FCB11FA89509001C6B7E /* ReviewsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsTableView.h; sourceTree = "<group>"; };
 		5228FCB21FA89509001C6B7E /* ReviewsTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsTableView.m; sourceTree = "<group>"; };
 		5228FCB41FA8A357001C6B7E /* CrewMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrewMember.h; sourceTree = "<group>"; };
 		5228FCB51FA8A357001C6B7E /* CrewMember.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrewMember.m; sourceTree = "<group>"; };
-		5228FCBC1FA8CB42001C6B7E /* NoResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoResultsTableViewCell.xib; sourceTree = "<group>"; };
 		522E93B31F9DF4A600E66B0E /* MappableEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MappableEntity.h; sourceTree = "<group>"; };
 		522E93B41F9DF4A600E66B0E /* MappableEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MappableEntity.m; sourceTree = "<group>"; };
 		522E93B91F9DF55000E66B0E /* ObjectMappingInitializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectMappingInitializer.h; sourceTree = "<group>"; };
@@ -389,6 +390,8 @@
 				522E93C41F9E932100E66B0E /* MovieDetailTableViewController.m */,
 				522E93DD1FA0F2D200E66B0E /* TVShowDetailTableViewController.h */,
 				522E93DE1FA0F2D200E66B0E /* TVShowDetailTableViewController.m */,
+				5221B1FF1FAF6DCD00022553 /* TrailerViewController.h */,
+				5221B2001FAF6DCD00022553 /* TrailerViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -473,7 +476,6 @@
 				522E93FA1FA10AE600E66B0E /* RSS FEED */,
 				522E940E1FA1C6A900E66B0E /* Gradient.h */,
 				522E940F1FA1C6A900E66B0E /* Gradient.m */,
-				5228FCBC1FA8CB42001C6B7E /* NoResultsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -631,7 +633,6 @@
 				522E940D1FA1C62C00E66B0E /* SeasonsTableViewCell.xib in Resources */,
 				52A2B4FC1FA878DA00FFBF65 /* ActorCollectionViewCell.xib in Resources */,
 				52D080701F7B09580064C3BF /* Main.storyboard in Resources */,
-				5228FCBE1FA8CB42001C6B7E /* NoResultsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +721,7 @@
 				5247D3F81FA6684200D06128 /* CreatedBy.m in Sources */,
 				5228FCB61FA8A357001C6B7E /* CrewMember.m in Sources */,
 				522E93DF1FA0F2D200E66B0E /* TVShowDetailTableViewController.m in Sources */,
+				5221B2011FAF6DCD00022553 /* TrailerViewController.m in Sources */,
 				522E93E51FA0FB3800E66B0E /* TVShowService.m in Sources */,
 				52C988CB1FA50049006EEEC7 /* VideosCollection.m in Sources */,
 				522E94071FA1C05100E66B0E /* ReviewTableViewCell.m in Sources */,

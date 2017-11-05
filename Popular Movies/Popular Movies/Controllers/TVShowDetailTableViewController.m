@@ -35,20 +35,12 @@
     VideosCollection* tvShowVideoCollection;
     Trailer* t;
     CastCollection* tvShowCast;
-    NSMutableArray* writers;
-    NSMutableArray* stars;
-    NSMutableArray* director;
-    NSString* yearsString;
-    NSString* allWriters;
-    NSString* allDirectors;
 }
 @end
 
 @implementation TVShowDetailTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
- 
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTrailerTableViewCell class]) bundle:nil] forCellReuseIdentifier:movieTrailerCellReuseIdentifier];
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([ImageGalleryTableViewCell class]) bundle:nil] forCellReuseIdentifier:imageGalleryReuseIdentifier];
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([MovieDescriptionTableViewCell class]) bundle:nil] forCellReuseIdentifier:descriptionReuseIdentifier];
@@ -58,7 +50,7 @@
     [self loadPopularTVShows];
     [self loadTvShowTrailers];
     [self loadCast];
-
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,123 +88,47 @@
 }
 #pragma Custom cell setup
 - (MovieTrailerTableViewCell*)setUpTrailerCell:(MovieTrailerTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSDateFormatter* df = [[NSDateFormatter alloc]init];
-    //Release date
-    [df setDateFormat:@"d MMMM yyyy"];
-    cell.releaseDateLabel.text = [df stringFromDate:selectedTVShow.firstAirDate];
-    //Movie title
-    cell.titleLabel.text = [self getTitleString];
-    //Genres
-    cell.genreLabel.text = [self getGenresString];
-    //Trailer
-    if(tvShowVideoCollection.videoResults.count != 0){
-        t = [tvShowVideoCollection.videoResults objectAtIndex:0];
-        NSDictionary *playerVars = @{@"playsinline" : @1};
-        [cell.movieTrailerPlayer loadWithVideoId:t.key playerVars:playerVars];
-        cell.durationLabel.text = @"";
-    }
+    [cell setUpTrailerCellWithTitle:selectedTVShow.name releaseDateString:selectedTVShow.firstAirDate genresString:selectedTVShow.genres trailers:tvShowVideoCollection runtime:0 withIndexPath:indexPath];
     return cell;
 }
 - (MovieDescriptionTableViewCell*)setUpMovieDescriptionCell:(MovieDescriptionTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    cell.descriptionLabel.text = selectedTVShow.overview;
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:2];
-    [formatter setRoundingMode: NSNumberFormatterRoundUp];
-    cell.rateLabel.text = [formatter stringFromNumber:selectedTVShow.voteAverage];
-    [self getWritersDirectorsStringForLabel];
-    cell.writerLabel.text = allWriters;
-    cell.directorLabel.text = allDirectors;
+    [cell setUpDescriptionCellWithCrew:tvShowCast.crew withRate:selectedTVShow.voteAverage withOverview:selectedTVShow.overview];
     return cell;
-}
+  }
 - (SeasonsTableViewCell*)setUpSeasonsCell:(SeasonsTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    cell.seasonsNumLabel.text = [self getSeasonNumberString];
-    cell.seasonsYearsLabel.text = [self getSeasonsYearsNumber];
+    [cell setUpSeasonsCellWithSeasons:selectedTVShow.seasons withNumberOfSeasons:selectedTVShow.numberOfSeasons];
     return cell;
 }
 -(CastTableViewCell*)setUpCastCollectionCell:(CastTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
-    cell.castCollectionView.dataSource = self;
-    cell.castCollectionView.delegate = self;
-    [cell.castCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([ActorCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:actorReuseIdentifier];
-    [cell.castCollectionView reloadData];
+    [cell setUpCastCollectionViewCellWithDelegate:self withDataSource:self];
     return cell;
 }
--(void)getWritersDirectorsStringForLabel{
-    allWriters = @"";
-    allDirectors = @"";
-    NSInteger i = 1;
-    for(CrewMember* crewTemp in tvShowCast.crew){
-        if([crewTemp.job isEqualToString:@"Director"]){
-            allDirectors = [allDirectors stringByAppendingString:crewTemp.name];
-            allDirectors = [allDirectors stringByAppendingString:@", "];
-            
-        }
-        if([crewTemp.job isEqualToString:@"Writer"]){
-            allWriters = [allWriters stringByAppendingString:crewTemp.name];
-            allWriters = [allWriters stringByAppendingString:@", "];
-        }
-        if(i == tvShowCast.crew.count){
-            if([allDirectors length]!=0 )allDirectors = [allDirectors substringToIndex:[allDirectors length]-2];
-            if([allWriters length]!=0 )allWriters = [allWriters substringToIndex:[allWriters length]-2];
-        }
-        i=i+1;
-    }
-}
 
--(NSString*)getSeasonNumberString{
-    NSString* seasonsString = @"";
-    
-    NSInteger i;
-    for(i=1; i<=[selectedTVShow.numberOfSeasons integerValue];i++){
-        seasonsString = [seasonsString stringByAppendingString:[NSString stringWithFormat:@"%lu",i]];
-        seasonsString = [seasonsString stringByAppendingString:@" "];
-    }
-    return seasonsString;
-}
--(NSString*)getSeasonsYearsNumber{
-    NSString* seasonYearsString = @"";
-    NSDateFormatter* df = [[NSDateFormatter alloc]init];
-    [df setDateFormat:@"yyyy"];
-    for(SingleSeason*  seasonItem in selectedTVShow.seasons){
-        seasonYearsString = [seasonYearsString stringByAppendingString:[NSString stringWithFormat:@"%@",[df stringFromDate: seasonItem.airDate]]];
-        seasonYearsString = [seasonYearsString stringByAppendingString:@" "];
-    }
-    return seasonYearsString;
-}
--(NSString*)getGenresString{
-    NSString* genreString;
-    NSMutableArray* genresTemp = [[NSMutableArray alloc]init];
-    for (Genre* g in selectedTVShow.genres){
-        [genresTemp addObject:g.name];
-    }
-    genreString = [genresTemp componentsJoinedByString:@", "];
-    return genreString;
-}
-
--(NSString*)getTitleString{
-    NSDateFormatter* df = [[NSDateFormatter alloc]init];
-    [df setDateFormat:@"yyyy"];
-    return [[[[selectedTVShow.name uppercaseString] stringByAppendingString:@" ("] stringByAppendingString:[df stringFromDate:selectedTVShow.firstAirDate]] stringByAppendingString:@")"];
-}
 #pragma Fetching data
 -(void)loadPopularTVShows{
     [tvShowService getTVShowDetailsFromAPIWithId:_tvshowId onSuccess:^(NSObject* object) {
         selectedTVShow = [(RKMappingResult*)object firstObject];
         [self.tableView reloadData];
-    }onError:^(NSError* error){}];
+    }onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
+    }];
 }
 -(void)loadTvShowTrailers{
     [tvShowService getTVShowTrailerFromAPIWithId:self.tvshowId onSuccess:^(NSObject* object){
         tvShowVideoCollection = [(RKMappingResult*)object firstObject];
         if(t)t = [tvShowVideoCollection.videoResults objectAtIndex:0];
         [self.tableView reloadData];
-    } onError:^(NSError* error){}];
+    } onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
+    }];
 }
 -(void)loadCast{
     [tvShowService getTVShowCastFromAPIWithId:self.tvshowId onSuccess:^(NSObject* object){
         tvShowCast = [(RKMappingResult*)object firstObject];
         [self.tableView reloadData];
-    } onError:^(NSError* error){}];
+    } onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
+    }];
 }
 
 #pragma Collection Views Handling
@@ -240,14 +156,8 @@
     if([collectionView isKindOfClass:[ActorCollectionView class]]){
         ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
         Actor* singleActor = [[Actor alloc]init];
-        singleActor = (Actor*)[tvShowCast.cast objectAtIndex:indexPath.row];
-        
-        //Set up the single actor cell properties
-        cellOneActor.actorRollLabel.text = singleActor.character;
-        cellOneActor.actorNameLabel.text = singleActor.name;
-        if(singleActor.profilePath){
-            NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
-            [cellOneActor.actorImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
+        if(tvShowCast.cast) singleActor = (Actor*)[tvShowCast.cast objectAtIndex:indexPath.row];
+        [cellOneActor setUpActorCellWithActor:singleActor];
         return cellOneActor;
     }
     return cell;

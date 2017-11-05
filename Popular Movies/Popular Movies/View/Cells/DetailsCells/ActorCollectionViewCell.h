@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Actor.h"
 @interface ActorCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *actorNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *actorImageView;
-@property (weak, nonatomic) IBOutlet UILabel *actorRollLabel;
+-(void)setUpActorCellWithActor:(Actor*)singleActor;
 extern NSString* const actorReuseIdentifier;
 @end
