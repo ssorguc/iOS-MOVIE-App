@@ -8,7 +8,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Movie.h"
 #import "Genre.h"
-#import "TrailerViewController.h"
+#import "ActorViewController.h"
 #import "MovieService.h"
 #import "CastCollection.h"
 #import "Actor.h"
@@ -27,6 +27,7 @@
 #import "ReviewsTableView.h"
 #import "SingleReviewTableViewCell.h"
 #import "ActorCollectionView.h"
+#import "DirectorWriterTableViewCell.h"
 #import "CrewMember.h"
 @interface MovieDetailTableViewController (){
     MovieService* movieService;
@@ -37,6 +38,8 @@
     NSArray* cast;
     CollectionReview* reviewsCollection;
     Trailer* t;
+    NSString* allDirectors;
+    NSString* allWriters;
 }
 @end
 
@@ -48,12 +51,12 @@
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([MovieDescriptionTableViewCell class]) bundle:nil] forCellReuseIdentifier:descriptionReuseIdentifier];
     [self.tableView  registerNib:[UINib nibWithNibName:NSStringFromClass([CastTableViewCell class]) bundle:nil] forCellReuseIdentifier:castReuseIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ReviewTableViewCell class]) bundle:nil] forCellReuseIdentifier:reviewReuseIdentifier];
-    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DirectorWriterTableViewCell class]) bundle:nil] forCellReuseIdentifier:directorWriterReuseIdentifier];
     movieService = [[MovieService alloc]init];
     [self loadMovieDetails];
     [self loadCastDetails];
     [self loadReviews];
-    
+    [self loadTrailers];
     [super viewDidLoad];
 }
 
@@ -64,11 +67,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSInteger numS = 5;
     if([tableView isKindOfClass:[ReviewsTableView class]])
         return 1;
     if(reviewsCollection.results.count==0)
-        return 3;
-    return 4;
+        return numS-1;
+    
+    return numS;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -87,13 +92,16 @@
         if(indexPath.section == 0){
             return [self setUpMovieTrailerCell:(MovieTrailerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:movieTrailerCellReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
          }
-         else if (indexPath.section == 1){
-             return [self setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)[tableView dequeueReusableCellWithIdentifier:descriptionReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+        else if(indexPath.section == 1){
+            return [self setUpDirectorsWritersCells:(DirectorWriterTableViewCell*)[tableView dequeueReusableCellWithIdentifier:directorWriterReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
         }
         else if (indexPath.section == 2){
-            return [self setUpCastCollectionCell:(CastTableViewCell*)[tableView dequeueReusableCellWithIdentifier:castReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+             return [self setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)[tableView dequeueReusableCellWithIdentifier:descriptionReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
         }
         else if (indexPath.section == 3){
+            return [self setUpCastCollectionCell:(CastTableViewCell*)[tableView dequeueReusableCellWithIdentifier:castReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+        }
+        else if (indexPath.section == 4){
             return [self setUpReviewsCell: (ReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reviewReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
         }
     }
@@ -108,6 +116,10 @@
 }
 -(MovieDescriptionTableViewCell* )setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
     [cell setUpDescriptionCellWithCrew:castCollection.crew withRate:selectedMovie.voteAverage withOverview:selectedMovie.overview];
+    return cell;
+}
+-(DirectorWriterTableViewCell* )setUpDirectorsWritersCells:(DirectorWriterTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
+    [cell setUpDirectorsWritersCellWithCrew:castCollection.crew];
     return cell;
 }
 -(CastTableViewCell* )setUpCastCollectionCell:(CastTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
@@ -157,7 +169,20 @@
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section == 1){
+    if(indexPath.section == 0) return 420.0f;
+    else if(indexPath.section == 1){
+        static DirectorWriterTableViewCell* cell = nil;
+        static dispatch_once_t onceToken;
+        
+        dispatch_once(&onceToken, ^{
+            cell = [self.tableView dequeueReusableCellWithIdentifier:directorWriterReuseIdentifier];
+        });
+        
+        cell = [self setUpDirectorsWritersCells:cell atIndexPath:indexPath];
+        
+        return [self calculateHeightForConfiguredSizingCell:cell];
+    }
+    else if(indexPath.section == 2){
         static MovieDescriptionTableViewCell* cell = nil;
         static dispatch_once_t onceToken;
         
@@ -169,7 +194,7 @@
         
         return [self calculateHeightForConfiguredSizingCell:cell];
     }
-    else if(indexPath.section == 3){
+    else if(indexPath.section == 4){
         if(reviewsCollection.results.count == 1) return 250.0f;
         else if(reviewsCollection.results.count == 2)return 450.0f;
         else return 500.0f;
@@ -177,7 +202,7 @@
     if([tableView isKindOfClass:[ReviewsTableView class]]){
         return 200.0f;
     }
-    return 400.0f;
+    return 415.0f;
 }
 
 - (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
@@ -187,11 +212,15 @@
 }
 #pragma Segue handling
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"tvShowDetailsSegue"]) {
-        TrailerViewController* trailerView = [segue destinationViewController];
-        trailerView.movieID = self.movieId;
+    if ([segue.identifier isEqualToString:@"actorSegue"]) {
+        //NSIndexPath *indexPath = [[ indexPathsForSelectedItems] lastObject];
+        //ActorViewController* actorDetailsController = [segue destinationViewController];
     }
 }
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"actorSegue" sender:indexPath];
+}
+
 #pragma Fetching data
 
 -(void)loadMovieDetails{
@@ -213,6 +242,14 @@
 -(void)loadReviews{
     [movieService getMovieReviewsFromAPIWithId:_movieId onSuccess:^(NSObject* object){
         reviewsCollection = [(RKMappingResult*)object firstObject];
+        [self.tableView reloadData];
+    } onError:^(NSError* error){
+        NSLog(@"There's been an error with requestiong data from API.");
+    }];
+}
+-(void)loadTrailers{
+    [movieService getMovieTrailerFromAPIWithId:_movieId onSuccess:^(NSObject* object){
+        videos = [(RKMappingResult*)object firstObject];
         [self.tableView reloadData];
     } onError:^(NSError* error){
         NSLog(@"There's been an error with requestiong data from API.");

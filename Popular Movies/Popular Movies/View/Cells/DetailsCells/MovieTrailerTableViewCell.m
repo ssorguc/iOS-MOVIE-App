@@ -47,8 +47,9 @@ NSString * const movieTrailerCellReuseIdentifier = @"movieTrailerCell";
     Trailer* t = [[Trailer alloc]init];
     if(trailers.videoResults.count!=0){
         t = [trailers.videoResults objectAtIndex:0];
-        NSDictionary *playerVars = @{@"playsinline" : @1,};
-        [self.movieTrailerView loadWithVideoId:t.key playerVars:playerVars];
+        /*NSDictionary *playerVars = @{@"playsinline" : @1,};
+        [self.movieTrailerView loadWithVideoId:t.key playerVars:playerVars];*/
+        [self.movieTrailerView loadWithVideoId:t.key];
     }
     
     NSInteger value = [runtime integerValue]/60;

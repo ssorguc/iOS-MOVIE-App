@@ -14,6 +14,7 @@
 #import "MovieCollection.h"
 #import "Gradient.h"
 #import <RestKit/RestKit.h>
+#import "DirectorWriterTableViewCell.h"
 #import "MovieDetailTableViewController.h"
 @interface MoviesCollectionViewController ()
 {
