@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="47k-YP-tAa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rss Feed Table View Controller-->
+        <scene sceneID="vRj-UV-2qp">
+            <objects>
+                <tableViewController id="gse-AQ-eeH" customClass="RssFeedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" sectionFooterHeight="15" id="wba-xD-H3j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.25487014651298523" green="0.25492024421691895" blue="0.25486692786216736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.25487014650000001" green="0.25492024419999998" blue="0.25486692789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsC" rowHeight="200" id="tcM-Cf-87j">
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcM-Cf-87j" id="Rjg-jZ-qiz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.25487014650000001" green="0.25492024419999998" blue="0.25486692789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gse-AQ-eeH" id="G0f-l2-7bH"/>
+                            <outlet property="delegate" destination="gse-AQ-eeH" id="g6F-Cm-Hu1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="6Ij-Dy-xPT"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="wba-xD-H3j" id="vZh-hw-7wO"/>
+                        <outlet property="tableView" destination="wba-xD-H3j" id="Ldr-gU-LLl"/>
+                        <outlet property="view" destination="wba-xD-H3j" id="6Xe-ja-lnZ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g2-4s-jPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2399.1999999999998" y="-300.89955022488761"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QSc-NL-YHa">
+            <objects>
+                <tabBarController id="47k-YP-tAa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ezw-ev-htd"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2LJ-Oy-IoF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.085759041878172626" green="0.085759041878172626" blue="0.085759041878172626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CJb-g8-Dv3" kind="relationship" relationship="viewControllers" id="fw1-6n-kqx"/>
+                        <segue destination="bqN-NJ-fZv" kind="relationship" relationship="viewControllers" id="ah6-x6-dp1"/>
+                        <segue destination="q8Z-VQ-5pz" kind="relationship" relationship="viewControllers" id="Lvs-wn-zKz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goY-NR-4UL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="34"/>
+        </scene>
+        <!--TV Shows-->
+        <scene sceneID="Phg-Qn-Emv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q8Z-VQ-5pz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TV Shows" image="tv-show-icon-Spotlight-40" selectedImage="tv-show-icon-Spotlight-40" id="jVx-DY-350"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rLh-TE-s0c">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nq7-aw-kz4" kind="relationship" relationship="rootViewController" id="2W6-eY-HOM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ljg-xn-Vq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="1063"/>
+        </scene>
+        <!--Show Collection View Controller-->
+        <scene sceneID="bq3-1b-Jd7">
+            <objects>
+                <collectionViewController id="nq7-aw-kz4" customClass="TVShowCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xIK-zx-o7N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q2r-XH-01R">
+                            <size key="itemSize" width="175" height="254"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="nq7-aw-kz4" id="zt4-sL-b8M"/>
+                            <outlet property="delegate" destination="nq7-aw-kz4" id="viL-KH-NMf"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="AIk-UN-nye"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xIK-zx-o7N" id="ocZ-5r-j7m"/>
+                        <segue destination="aIg-8C-J1q" kind="show" identifier="tvShowDetailsSegue" id="hZ8-Rh-7nP"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NkN-JW-prw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2436" y="1063"/>
+        </scene>
+        <!--Show Detail Table View Controller-->
+        <scene sceneID="AVP-KI-ThO">
+            <objects>
+                <tableViewController id="aIg-8C-J1q" customClass="TVShowDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GRW-Kq-fEt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="aIg-8C-J1q" id="YEO-fP-bF6"/>
+                            <outlet property="delegate" destination="aIg-8C-J1q" id="qgQ-82-K1t"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8G-Rk-YQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3217" y="1063"/>
+        </scene>
+        <!--Rss Feed-->
+        <scene sceneID="BCI-Rv-aUO">
+            <objects>
+                <navigationController id="CJb-g8-Dv3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rss Feed" image="rss-feed-Small" selectedImage="rss-feed-Small" id="SsY-he-jhX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Msi-uN-xSZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gse-AQ-eeH" kind="relationship" relationship="rootViewController" id="bB6-gq-Dgj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZr-kp-RAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689.5999999999999" y="-299.55022488755623"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="frM-jA-rSj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bqN-NJ-fZv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movies" image="movies-icon-Small" selectedImage="movies-icon-Small" id="SGR-IZ-0I2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="toh-zA-cBc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cj9-db-tmE" kind="relationship" relationship="rootViewController" id="8a8-b1-cgc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84f-0i-TVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="384"/>
+        </scene>
+        <!--Movies Collection View Controller-->
+        <scene sceneID="GoP-r0-fhi">
+            <objects>
+                <collectionViewController id="Cj9-db-tmE" customClass="MoviesCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eLO-Fk-VwS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sw7-NF-TLH">
+                            <size key="itemSize" width="175" height="254"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="Cj9-db-tmE" id="9bR-YT-B4K"/>
+                            <outlet property="delegate" destination="Cj9-db-tmE" id="vkd-y5-QKG"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="s54-cM-Jtf"/>
+                    <connections>
+                        <outlet property="collectionView" destination="eLO-Fk-VwS" id="xht-1E-wOY"/>
+                        <segue destination="Qd3-jq-vZY" kind="show" identifier="movieDetailSegue" id="ss2-WK-Obe"/>
+                        <segue destination="sNb-s4-12a" kind="show" identifier="playTrailerSegue" id="edF-2R-1Zr"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dtA-Ac-8fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2436" y="384"/>
+        </scene>
+        <!--Movie Detail Table View Controller-->
+        <scene sceneID="60b-9L-K8Z">
+            <objects>
+                <tableViewController id="Qd3-jq-vZY" customClass="MovieDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BXT-o6-LZU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Qd3-jq-vZY" id="dMq-t8-QSU"/>
+                            <outlet property="delegate" destination="Qd3-jq-vZY" id="rAf-IN-Dmq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRg-5s-epj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3218" y="384"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="c2M-vy-Hef">
+            <objects>
+                <viewController id="sNb-s4-12a" customClass="TrailerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Toz-jO-PMa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ru3-J0-4IK" customClass="YTPlayerView">
+                                <rect key="frame" x="16" y="100" width="343" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="5xs-lX-Y1o"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieTrailerview" destination="ru3-J0-4IK" id="Y5C-Ry-3Am"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EvE-sk-uMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4040.8000000000002" y="389.95502248875567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="movies-icon-Small" width="29" height="29"/>
+        <image name="rss-feed-Small" width="29" height="29"/>
+        <image name="tv-show-icon-Spotlight-40" width="40" height="40"/>
+    </resources>
+</document>
