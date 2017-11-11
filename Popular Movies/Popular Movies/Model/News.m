@@ -9,9 +9,4 @@
 #import "News.h"
 
 @implementation News
-
-@synthesize title = _title;
-@synthesize text = _text;
-@synthesize source_link = _source_link;
-
 @end

@@ -939,7 +939,7 @@
 					"\"$(BUILT_PRODUCTS_DIR/../../Headers\"",
 				);
 				INFOPLIST_FILE = "Popular Movies/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -984,7 +984,7 @@
 					"\"$(BUILT_PRODUCTS_DIR/../../Headers\"",
 				);
 				INFOPLIST_FILE = "Popular Movies/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
