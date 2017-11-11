@@ -51,7 +51,7 @@
     apiKey = [APIKeyHandling getAPIKeyValue];
     Movie *tempMovie = [Movie new];
     tempMovie.movieId = movieId;
-    [[RKObjectManager sharedManager] getObject:tempMovie path:[NSString stringWithFormat:@"/3/movie/%@?api_key=%@&language=en-US",movieId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [[RKObjectManager sharedManager] getObject:tempMovie path:[NSString stringWithFormat:@"/3/movie/%@?api_key=%@&append_to_response=images%%2Ccredits%%2Cvideos%%2Creviews",movieId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         onError(error);

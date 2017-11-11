@@ -46,6 +46,8 @@
 		526331181F83D402004769AD /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 526331171F83D402004769AD /* Movie.m */; };
 		5263311B1F83D411004769AD /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 5263311A1F83D411004769AD /* News.m */; };
 		5263311E1F83D421004769AD /* TVShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5263311D1F83D421004769AD /* TVShow.m */; };
+		52637AD01FB7A2E3004DDD6B /* ImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 52637ACF1FB7A2E3004DDD6B /* ImagesCollection.m */; };
+		52637AD31FB7A360004DDD6B /* SingleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 52637AD21FB7A360004DDD6B /* SingleImage.m */; };
 		526F1E011F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E061F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a */; };
 		526F1E021F9CD205007D845D /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E071F9CD205007D845D /* libRestKit.a */; };
 		526F1E031F9CD205007D845D /* libRKValueTransformers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E081F9CD205007D845D /* libRKValueTransformers.a */; };
@@ -169,6 +171,10 @@
 		5263311A1F83D411004769AD /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		5263311C1F83D421004769AD /* TVShow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShow.h; sourceTree = "<group>"; };
 		5263311D1F83D421004769AD /* TVShow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVShow.m; sourceTree = "<group>"; };
+		52637ACE1FB7A2E3004DDD6B /* ImagesCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesCollection.h; sourceTree = "<group>"; };
+		52637ACF1FB7A2E3004DDD6B /* ImagesCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesCollection.m; sourceTree = "<group>"; };
+		52637AD11FB7A360004DDD6B /* SingleImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleImage.h; sourceTree = "<group>"; };
+		52637AD21FB7A360004DDD6B /* SingleImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleImage.m; sourceTree = "<group>"; };
 		526F1E061F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libISO8601DateFormatterValueTransformer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		526F1E071F9CD205007D845D /* libRestKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		526F1E081F9CD205007D845D /* libRKValueTransformers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRKValueTransformers.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,6 +377,10 @@
 				5247D3EB1FA5FA6C00D06128 /* CastCollection.m */,
 				5247D3F01FA602B900D06128 /* CollectionReview.h */,
 				5247D3F11FA602B900D06128 /* CollectionReview.m */,
+				52637ACE1FB7A2E3004DDD6B /* ImagesCollection.h */,
+				52637ACF1FB7A2E3004DDD6B /* ImagesCollection.m */,
+				52637AD11FB7A360004DDD6B /* SingleImage.h */,
+				52637AD21FB7A360004DDD6B /* SingleImage.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -743,9 +753,11 @@
 				526331181F83D402004769AD /* Movie.m in Sources */,
 				522E93C81F9E940900E66B0E /* MovieService.m in Sources */,
 				522E940C1FA1C62C00E66B0E /* SeasonsTableViewCell.m in Sources */,
+				52637AD01FB7A2E3004DDD6B /* ImagesCollection.m in Sources */,
 				522E93DA1F9F7E9B00E66B0E /* MovieCollection.m in Sources */,
 				522E93C51F9E932100E66B0E /* MovieDetailTableViewController.m in Sources */,
 				5292E7BF1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.m in Sources */,
+				52637AD31FB7A360004DDD6B /* SingleImage.m in Sources */,
 				52FDCC681FA9D947009DEB1A /* APIKeyHandling.m in Sources */,
 				522E94021FA133EC00E66B0E /* SingleReviewTableViewCell.m in Sources */,
 				5228FCB31FA89509001C6B7E /* ReviewsTableView.m in Sources */,

@@ -11,6 +11,7 @@
     NSString* allWriters;
     NSString* allDirectors;
 }
+@property (weak, nonatomic) IBOutlet UILabel *staticDirectorsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statisWriterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *allWritersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *allDirectorsLabel;
@@ -30,27 +31,23 @@ NSString* const directorWriterReuseIdentifier = @"directorWriterCell";
     [self getWritersDirectorsStringForLabelWithCastCollectionCrew:crew];
     self.allWritersLabel.text = allWriters;
     self.allDirectorsLabel.text = allDirectors;
-    
 }
 -(void)getWritersDirectorsStringForLabelWithCastCollectionCrew:(NSArray*)crew{
     allWriters = @"";
     allDirectors = @"";
-    NSInteger i = 1;
     for(CrewMember* crewTemp in crew){
         if([crewTemp.job isEqualToString:@"Director"]){
             allDirectors = [allDirectors stringByAppendingString:crewTemp.name];
             allDirectors = [allDirectors stringByAppendingString:@", "];
-            
         }
         if([crewTemp.job isEqualToString:@"Writer"]){
             allWriters = [allWriters stringByAppendingString:crewTemp.name];
             allWriters = [allWriters stringByAppendingString:@", "];
         }
-        if(i == crew.count){
+        if([crewTemp isEqual:[crew lastObject]]){
             if([allDirectors length]!=0 )allDirectors = [allDirectors substringToIndex:[allDirectors length]-2];
             if([allWriters length]!=0 )allWriters = [allWriters substringToIndex:[allWriters length]-2];
         }
-        i=i+1;
-    }
+   }
 }
 @end

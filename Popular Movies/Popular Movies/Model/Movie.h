@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "MappableEntity.h"
+#import "CollectionReview.h"
+#import "VideosCollection.h"
+#import "CastCollection.h"
+#import "ImagesCollection.h"
 @interface Movie : MappableEntity
 @property (nonatomic,strong) NSNumber* voteCount;
 @property (nonatomic,strong) NSNumber* movieId;
@@ -25,4 +29,8 @@
 @property (nonatomic,strong) NSDate* releaseDate;
 @property (nonatomic,strong) NSArray* genres; // RELATIONSHIP OBJECT
 - (NSDictionary*)registrationData;
+@property (nonatomic,strong) ImagesCollection* images;
+@property (nonatomic,strong) CastCollection* credits;
+@property (nonatomic,strong) VideosCollection* videos;
+@property (nonatomic,strong) CollectionReview* reviews;
 @end

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,13 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="383" height="133.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="349" translatesAutoresizingMaskIntoConstraints="NO" id="c3c-Qg-fDF">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No directors" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="349" translatesAutoresizingMaskIntoConstraints="NO" id="c3c-Qg-fDF">
                         <rect key="frame" x="97" y="69" width="270" height="54"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="349" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-Oh-J5E">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No writers" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="349" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-Oh-J5E">
                         <rect key="frame" x="97" y="11" width="270" height="54"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,6 +67,7 @@
             <connections>
                 <outlet property="allDirectorsLabel" destination="8ke-Oh-J5E" id="iza-Bj-yge"/>
                 <outlet property="allWritersLabel" destination="c3c-Qg-fDF" id="z0N-9e-aPJ"/>
+                <outlet property="staticDirectorsLabel" destination="XTl-4v-dJF" id="HvW-1V-xtN"/>
                 <outlet property="statisWriterLabel" destination="6IZ-fJ-wOc" id="dHW-aK-Zue"/>
             </connections>
             <point key="canvasLocation" x="2.5" y="99"/>

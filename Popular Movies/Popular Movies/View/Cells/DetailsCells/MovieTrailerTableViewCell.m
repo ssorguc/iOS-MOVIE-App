@@ -23,6 +23,7 @@
 NSString * const movieTrailerCellReuseIdentifier = @"movieTrailerCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.movieTrailerView.backgroundColor = [UIColor blackColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

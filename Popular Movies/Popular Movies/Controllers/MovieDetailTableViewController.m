@@ -32,12 +32,6 @@
 @interface MovieDetailTableViewController (){
     MovieService* movieService;
     Movie* selectedMovie;
-    NSString* trailerLink;
-    VideosCollection* videos;
-    CastCollection* castCollection;
-    NSArray* cast;
-    CollectionReview* reviewsCollection;
-    Trailer* t;
     NSString* allDirectors;
     NSString* allWriters;
 }
@@ -54,9 +48,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DirectorWriterTableViewCell class]) bundle:nil] forCellReuseIdentifier:directorWriterReuseIdentifier];
     movieService = [[MovieService alloc]init];
     [self loadMovieDetails];
-    [self loadCastDetails];
-    [self loadReviews];
-    [self loadTrailers];
     [super viewDidLoad];
 }
 
@@ -70,7 +61,7 @@
     NSInteger numS = 5;
     if([tableView isKindOfClass:[ReviewsTableView class]])
         return 1;
-    if(reviewsCollection.results.count==0)
+    if(selectedMovie.reviews.results.count==0)
         return numS-1;
     
     return numS;
@@ -78,7 +69,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if([tableView isKindOfClass:[ReviewsTableView class]]){
-        return reviewsCollection.results.count;
+        return selectedMovie.reviews.results.count;
     }
     return 1;
 }
@@ -111,15 +102,15 @@
 #pragma Setting up custom cells
 
 -(MovieTrailerTableViewCell* )setUpMovieTrailerCell:(MovieTrailerTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpTrailerCellWithTitle: selectedMovie.title releaseDateString: selectedMovie.releaseDate genresString: selectedMovie.genres trailers: videos runtime: selectedMovie.runtime withIndexPath:indexPath];
+    [cell setUpTrailerCellWithTitle: selectedMovie.title releaseDateString: selectedMovie.releaseDate genresString: selectedMovie.genres trailers:selectedMovie.videos runtime: selectedMovie.runtime withIndexPath:indexPath];
     return cell;
 }
 -(MovieDescriptionTableViewCell* )setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpDescriptionCellWithCrew:castCollection.crew withRate:selectedMovie.voteAverage withOverview:selectedMovie.overview];
+    [cell setUpDescriptionCellWithCrew:selectedMovie.credits.crew withRate:selectedMovie.voteAverage withOverview:selectedMovie.overview];
     return cell;
 }
 -(DirectorWriterTableViewCell* )setUpDirectorsWritersCells:(DirectorWriterTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpDirectorsWritersCellWithCrew:castCollection.crew];
+    [cell setUpDirectorsWritersCellWithCrew:selectedMovie.credits.crew];
     return cell;
 }
 -(CastTableViewCell* )setUpCastCollectionCell:(CastTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
@@ -132,7 +123,7 @@
 }
 -(SingleReviewTableViewCell* )setUpSingleReviewCell:(SingleReviewTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
     SingleReview* singleReview = [[SingleReview alloc]init];
-    if(reviewsCollection.results) singleReview = (SingleReview*)[reviewsCollection.results objectAtIndex:indexPath.row];
+    if(selectedMovie.reviews.results) singleReview = (SingleReview*)[selectedMovie.reviews.results objectAtIndex:indexPath.row];
     [cell setUpSingleReviewCellWithAuthor:singleReview.author withContent:singleReview.content];
     return cell;
 }
@@ -153,7 +144,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if([collectionView isKindOfClass:[ActorCollectionView class]]) return castCollection.cast.count;
+    if([collectionView isKindOfClass:[ActorCollectionView class]]) return selectedMovie.credits.cast.count;
     return 6;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -162,13 +153,16 @@
     if([collectionView isKindOfClass:[ActorCollectionView class]]){
         ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
         Actor* singleActor = [[Actor alloc]init];
-        if(castCollection.cast) singleActor = (Actor*)[castCollection.cast objectAtIndex:indexPath.row];
+        if(selectedMovie.credits.cast) singleActor = (Actor*)[selectedMovie.credits.cast objectAtIndex:indexPath.row];
         [cellOneActor setUpActorCellWithActor:singleActor];
         return cellOneActor;
     }
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if([tableView isKindOfClass:[ReviewsTableView class]]){
+        return 200.0f;
+    }
     if(indexPath.section == 0) return 420.0f;
     else if(indexPath.section == 1){
         static DirectorWriterTableViewCell* cell = nil;
@@ -195,12 +189,9 @@
         return [self calculateHeightForConfiguredSizingCell:cell];
     }
     else if(indexPath.section == 4){
-        if(reviewsCollection.results.count == 1) return 250.0f;
-        else if(reviewsCollection.results.count == 2)return 450.0f;
+        if(selectedMovie.reviews.results.count == 1) return 250.0f;
+        else if(selectedMovie.reviews.results.count == 2)return 450.0f;
         else return 500.0f;
-    }
-    if([tableView isKindOfClass:[ReviewsTableView class]]){
-        return 200.0f;
     }
     return 415.0f;
 }
@@ -231,31 +222,4 @@
         NSLog(@"There's been an error with requestiong data from API.");
     }];
 }
--(void)loadCastDetails{
-    [movieService getCastInformation:_movieId onSuccess:^(NSObject* object){
-        castCollection = [(RKMappingResult*)object firstObject];
-        [self.tableView reloadData];
-    } onError:^(NSError* error){
-        NSLog(@"There's been an error with requestiong data from API.");
-    }];
-}
--(void)loadReviews{
-    [movieService getMovieReviewsFromAPIWithId:_movieId onSuccess:^(NSObject* object){
-        reviewsCollection = [(RKMappingResult*)object firstObject];
-        [self.tableView reloadData];
-    } onError:^(NSError* error){
-        NSLog(@"There's been an error with requestiong data from API.");
-    }];
-}
--(void)loadTrailers{
-    [movieService getMovieTrailerFromAPIWithId:_movieId onSuccess:^(NSObject* object){
-        videos = [(RKMappingResult*)object firstObject];
-        [self.tableView reloadData];
-    } onError:^(NSError* error){
-        NSLog(@"There's been an error with requestiong data from API.");
-    }];
-}
-
-
-
 @end

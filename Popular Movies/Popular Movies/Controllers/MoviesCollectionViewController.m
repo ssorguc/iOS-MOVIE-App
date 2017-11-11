@@ -31,6 +31,7 @@
     // Registrate custom cell class
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTvShowCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:movieTVShowReuseIdentifier];
     movieService = [[MovieService alloc]init];
+    
     [self loadMovies];
 }
 
