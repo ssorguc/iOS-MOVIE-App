@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		106AD408DAE66AEB852F5084 /* libPods-Popular Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35B5D86BAF6CD519441838D /* libPods-Popular Movies.a */; };
 		52188B7C1F83F5C300428F1E /* RssFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52188B7B1F83F5C300428F1E /* RssFeedTableViewController.m */; };
-		5221B2011FAF6DCD00022553 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5221B2001FAF6DCD00022553 /* TrailerViewController.m */; };
 		5225B8151FAB37B2006A1CE3 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5225B8141FAB37B2006A1CE3 /* APIKey.plist */; };
 		5228FCB31FA89509001C6B7E /* ReviewsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228FCB21FA89509001C6B7E /* ReviewsTableView.m */; };
 		5228FCB61FA8A357001C6B7E /* CrewMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228FCB51FA8A357001C6B7E /* CrewMember.m */; };
@@ -47,6 +46,8 @@
 		526331181F83D402004769AD /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 526331171F83D402004769AD /* Movie.m */; };
 		5263311B1F83D411004769AD /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 5263311A1F83D411004769AD /* News.m */; };
 		5263311E1F83D421004769AD /* TVShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5263311D1F83D421004769AD /* TVShow.m */; };
+		52637AD01FB7A2E3004DDD6B /* ImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 52637ACF1FB7A2E3004DDD6B /* ImagesCollection.m */; };
+		52637AD31FB7A360004DDD6B /* SingleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 52637AD21FB7A360004DDD6B /* SingleImage.m */; };
 		526F1E011F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E061F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a */; };
 		526F1E021F9CD205007D845D /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E071F9CD205007D845D /* libRestKit.a */; };
 		526F1E031F9CD205007D845D /* libRKValueTransformers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E081F9CD205007D845D /* libRKValueTransformers.a */; };
@@ -60,6 +61,9 @@
 		526F1E1D1F9CD3E2007D845D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1C1F9CD3E2007D845D /* UIKit.framework */; };
 		526F1E1F1F9CD3E9007D845D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E1E1F9CD3E9007D845D /* Foundation.framework */; };
 		526F1E211F9CD3F7007D845D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F1E201F9CD3F7007D845D /* CoreGraphics.framework */; };
+		5292E7BB1FB3219F004E4F07 /* ActorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5292E7BA1FB3219F004E4F07 /* ActorViewController.m */; };
+		5292E7BF1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5292E7BD1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.m */; };
+		5292E7C01FB4A0DD004E4F07 /* DirectorWriterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5292E7BE1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.xib */; };
 		52A2B4FB1FA878DA00FFBF65 /* ActorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A2B4F91FA878DA00FFBF65 /* ActorCollectionViewCell.m */; };
 		52A2B4FC1FA878DA00FFBF65 /* ActorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A2B4FA1FA878DA00FFBF65 /* ActorCollectionViewCell.xib */; };
 		52A2B5051FA8843E00FFBF65 /* ActorCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A2B5041FA8843E00FFBF65 /* ActorCollectionView.m */; };
@@ -101,8 +105,6 @@
 /* Begin PBXFileReference section */
 		52188B7A1F83F5C300428F1E /* RssFeedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RssFeedTableViewController.h; sourceTree = "<group>"; };
 		52188B7B1F83F5C300428F1E /* RssFeedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RssFeedTableViewController.m; sourceTree = "<group>"; };
-		5221B1FF1FAF6DCD00022553 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
-		5221B2001FAF6DCD00022553 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		5225B8141FAB37B2006A1CE3 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		5228FCB11FA89509001C6B7E /* ReviewsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsTableView.h; sourceTree = "<group>"; };
 		5228FCB21FA89509001C6B7E /* ReviewsTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsTableView.m; sourceTree = "<group>"; };
@@ -169,6 +171,10 @@
 		5263311A1F83D411004769AD /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		5263311C1F83D421004769AD /* TVShow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShow.h; sourceTree = "<group>"; };
 		5263311D1F83D421004769AD /* TVShow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVShow.m; sourceTree = "<group>"; };
+		52637ACE1FB7A2E3004DDD6B /* ImagesCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesCollection.h; sourceTree = "<group>"; };
+		52637ACF1FB7A2E3004DDD6B /* ImagesCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesCollection.m; sourceTree = "<group>"; };
+		52637AD11FB7A360004DDD6B /* SingleImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleImage.h; sourceTree = "<group>"; };
+		52637AD21FB7A360004DDD6B /* SingleImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleImage.m; sourceTree = "<group>"; };
 		526F1E061F9CD205007D845D /* libISO8601DateFormatterValueTransformer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libISO8601DateFormatterValueTransformer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		526F1E071F9CD205007D845D /* libRestKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		526F1E081F9CD205007D845D /* libRKValueTransformers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRKValueTransformers.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +188,11 @@
 		526F1E1C1F9CD3E2007D845D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		526F1E1E1F9CD3E9007D845D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		526F1E201F9CD3F7007D845D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5292E7B91FB3219F004E4F07 /* ActorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorViewController.h; sourceTree = "<group>"; };
+		5292E7BA1FB3219F004E4F07 /* ActorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActorViewController.m; sourceTree = "<group>"; };
+		5292E7BC1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectorWriterTableViewCell.h; sourceTree = "<group>"; };
+		5292E7BD1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DirectorWriterTableViewCell.m; sourceTree = "<group>"; };
+		5292E7BE1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectorWriterTableViewCell.xib; sourceTree = "<group>"; };
 		52A2B4F81FA878DA00FFBF65 /* ActorCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorCollectionViewCell.h; sourceTree = "<group>"; };
 		52A2B4F91FA878DA00FFBF65 /* ActorCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActorCollectionViewCell.m; sourceTree = "<group>"; };
 		52A2B4FA1FA878DA00FFBF65 /* ActorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActorCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -290,6 +301,9 @@
 				522E93E61FA101C300E66B0E /* MovieDescriptionTableViewCell.h */,
 				522E93E71FA101C300E66B0E /* MovieDescriptionTableViewCell.m */,
 				522E93E81FA101C300E66B0E /* MovieDescriptionTableViewCell.xib */,
+				5292E7BC1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.h */,
+				5292E7BD1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.m */,
+				5292E7BE1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.xib */,
 				522E93EB1FA103B000E66B0E /* ImageGalleryTableViewCell.h */,
 				522E93EC1FA103B000E66B0E /* ImageGalleryTableViewCell.m */,
 				522E93ED1FA103B000E66B0E /* ImageGalleryTableViewCell.xib */,
@@ -363,6 +377,10 @@
 				5247D3EB1FA5FA6C00D06128 /* CastCollection.m */,
 				5247D3F01FA602B900D06128 /* CollectionReview.h */,
 				5247D3F11FA602B900D06128 /* CollectionReview.m */,
+				52637ACE1FB7A2E3004DDD6B /* ImagesCollection.h */,
+				52637ACF1FB7A2E3004DDD6B /* ImagesCollection.m */,
+				52637AD11FB7A360004DDD6B /* SingleImage.h */,
+				52637AD21FB7A360004DDD6B /* SingleImage.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,8 +408,8 @@
 				522E93C41F9E932100E66B0E /* MovieDetailTableViewController.m */,
 				522E93DD1FA0F2D200E66B0E /* TVShowDetailTableViewController.h */,
 				522E93DE1FA0F2D200E66B0E /* TVShowDetailTableViewController.m */,
-				5221B1FF1FAF6DCD00022553 /* TrailerViewController.h */,
-				5221B2001FAF6DCD00022553 /* TrailerViewController.m */,
+				5292E7B91FB3219F004E4F07 /* ActorViewController.h */,
+				5292E7BA1FB3219F004E4F07 /* ActorViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -623,6 +641,7 @@
 				52D080751F7B09580064C3BF /* LaunchScreen.storyboard in Resources */,
 				52D080721F7B09580064C3BF /* Assets.xcassets in Resources */,
 				522E94031FA133EC00E66B0E /* SingleReviewTableViewCell.xib in Resources */,
+				5292E7C01FB4A0DD004E4F07 /* DirectorWriterTableViewCell.xib in Resources */,
 				522E93F41FA1054200E66B0E /* CastTableViewCell.xib in Resources */,
 				52F84BBB1F8E0C8800195510 /* NewsTableViewCell.xib in Resources */,
 				522E93EA1FA101C300E66B0E /* MovieDescriptionTableViewCell.xib in Resources */,
@@ -721,7 +740,6 @@
 				5247D3F81FA6684200D06128 /* CreatedBy.m in Sources */,
 				5228FCB61FA8A357001C6B7E /* CrewMember.m in Sources */,
 				522E93DF1FA0F2D200E66B0E /* TVShowDetailTableViewController.m in Sources */,
-				5221B2011FAF6DCD00022553 /* TrailerViewController.m in Sources */,
 				522E93E51FA0FB3800E66B0E /* TVShowService.m in Sources */,
 				52C988CB1FA50049006EEEC7 /* VideosCollection.m in Sources */,
 				522E94071FA1C05100E66B0E /* ReviewTableViewCell.m in Sources */,
@@ -735,8 +753,11 @@
 				526331181F83D402004769AD /* Movie.m in Sources */,
 				522E93C81F9E940900E66B0E /* MovieService.m in Sources */,
 				522E940C1FA1C62C00E66B0E /* SeasonsTableViewCell.m in Sources */,
+				52637AD01FB7A2E3004DDD6B /* ImagesCollection.m in Sources */,
 				522E93DA1F9F7E9B00E66B0E /* MovieCollection.m in Sources */,
 				522E93C51F9E932100E66B0E /* MovieDetailTableViewController.m in Sources */,
+				5292E7BF1FB4A0DD004E4F07 /* DirectorWriterTableViewCell.m in Sources */,
+				52637AD31FB7A360004DDD6B /* SingleImage.m in Sources */,
 				52FDCC681FA9D947009DEB1A /* APIKeyHandling.m in Sources */,
 				522E94021FA133EC00E66B0E /* SingleReviewTableViewCell.m in Sources */,
 				5228FCB31FA89509001C6B7E /* ReviewsTableView.m in Sources */,
@@ -750,6 +771,7 @@
 				522E93D71F9F7E3500E66B0E /* RelationshipObject.m in Sources */,
 				522E94131FA25CA400E66B0E /* Genre.m in Sources */,
 				5247D3F21FA602B900D06128 /* CollectionReview.m in Sources */,
+				5292E7BB1FB3219F004E4F07 /* ActorViewController.m in Sources */,
 				52D0806A1F7B09580064C3BF /* AppDelegate.m in Sources */,
 				52F84BBA1F8E0C8800195510 /* NewsTableViewCell.m in Sources */,
 				5247D3EC1FA5FA6C00D06128 /* CastCollection.m in Sources */,
@@ -929,7 +951,7 @@
 					"\"$(BUILT_PRODUCTS_DIR/../../Headers\"",
 				);
 				INFOPLIST_FILE = "Popular Movies/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -974,7 +996,7 @@
 					"\"$(BUILT_PRODUCTS_DIR/../../Headers\"",
 				);
 				INFOPLIST_FILE = "Popular Movies/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",

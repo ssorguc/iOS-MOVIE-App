@@ -14,6 +14,7 @@
 #import "MovieCollection.h"
 #import "Gradient.h"
 #import <RestKit/RestKit.h>
+#import "DirectorWriterTableViewCell.h"
 #import "MovieDetailTableViewController.h"
 @interface MoviesCollectionViewController ()
 {
@@ -30,6 +31,7 @@
     // Registrate custom cell class
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTvShowCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:movieTVShowReuseIdentifier];
     movieService = [[MovieService alloc]init];
+    
     [self loadMovies];
 }
 

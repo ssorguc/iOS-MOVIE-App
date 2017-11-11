@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,60 +18,66 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="288.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="FLt-Sr-UQe">
-                        <rect key="frame" x="11" y="207" width="353" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 March 216 (USA)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="api-V2-3UI">
+                        <rect key="frame" x="16" y="243" width="353" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-S6-evv" customClass="YTPlayerView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+                        <color key="backgroundColor" red="0.1013840437" green="0.1013840437" blue="0.1013840437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.1013840437" green="0.1013840437" blue="0.1013840437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTERSTELAR" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="336" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-aU-cIr">
+                        <rect key="frame" x="11" y="195" width="353" height="23"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action, Adventure" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-Vm-TQT">
+                        <rect key="frame" x="16" y="261" width="353" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="FLt-Sr-UQe">
+                        <rect key="frame" x="16" y="219" width="353" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25 March 216 (USA)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="api-V2-3UI">
-                        <rect key="frame" x="11" y="231" width="353" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Action, Adventure" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-Vm-TQT">
-                        <rect key="frame" x="11" y="256" width="353" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vce-Xw-xBj">
-                        <rect key="frame" x="8" y="11" width="359" height="184"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INTERSTELAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="336" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-aU-cIr">
-                                <rect key="frame" x="0.0" y="161" width="359" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play-3-512" translatesAutoresizingMaskIntoConstraints="NO" id="PZO-gH-rNx">
-                                <rect key="frame" x="154" y="67" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="IM6-S6-evv" firstAttribute="leading" secondItem="ACa-aU-cIr" secondAttribute="leading" constant="-11" id="2hp-if-57D"/>
+                    <constraint firstItem="qzr-Vm-TQT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6x2-PX-Pon"/>
+                    <constraint firstAttribute="trailing" secondItem="api-V2-3UI" secondAttribute="trailing" constant="6" id="9zY-Cf-Vyy"/>
+                    <constraint firstItem="api-V2-3UI" firstAttribute="top" secondItem="FLt-Sr-UQe" secondAttribute="bottom" constant="8" id="AD7-1h-Zjw"/>
+                    <constraint firstItem="qzr-Vm-TQT" firstAttribute="top" secondItem="api-V2-3UI" secondAttribute="bottom" constant="1" id="Czp-GP-bNJ"/>
+                    <constraint firstItem="IM6-S6-evv" firstAttribute="trailing" secondItem="ACa-aU-cIr" secondAttribute="trailing" constant="11" id="DOU-av-gNe"/>
+                    <constraint firstItem="FLt-Sr-UQe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GDQ-8x-JMB"/>
+                    <constraint firstItem="IM6-S6-evv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="H6B-5h-kag"/>
+                    <constraint firstItem="api-V2-3UI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JBN-Zl-Rmq"/>
+                    <constraint firstAttribute="bottom" secondItem="qzr-Vm-TQT" secondAttribute="bottom" constant="10.5" id="LlL-YU-jNy"/>
+                    <constraint firstAttribute="bottom" secondItem="IM6-S6-evv" secondAttribute="bottom" constant="109.5" id="VfJ-Fx-B2l"/>
+                    <constraint firstAttribute="trailing" secondItem="ACa-aU-cIr" secondAttribute="trailing" constant="11" id="bBE-LQ-sTc"/>
+                    <constraint firstAttribute="trailing" secondItem="qzr-Vm-TQT" secondAttribute="trailing" constant="6" id="hMr-Ro-h5C"/>
+                    <constraint firstItem="ACa-aU-cIr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="kKC-i0-Jd1"/>
+                    <constraint firstItem="FLt-Sr-UQe" firstAttribute="top" secondItem="ACa-aU-cIr" secondAttribute="bottom" constant="1" id="kKj-RJ-Re8"/>
+                    <constraint firstItem="ACa-aU-cIr" firstAttribute="top" secondItem="IM6-S6-evv" secondAttribute="bottom" constant="16" id="ttL-fJ-3z2"/>
+                    <constraint firstAttribute="trailing" secondItem="FLt-Sr-UQe" secondAttribute="trailing" constant="6" id="yuS-60-YQr"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="durationLabel" destination="FLt-Sr-UQe" id="JtL-33-UTO"/>
                 <outlet property="genresLabel" destination="qzr-Vm-TQT" id="jKx-m7-0Tv"/>
-                <outlet property="movieTrailerView" destination="vce-Xw-xBj" id="NGV-sz-XCs"/>
+                <outlet property="movieTrailerView" destination="IM6-S6-evv" id="MTj-mo-Oik"/>
                 <outlet property="releaseDateLabel" destination="api-V2-3UI" id="OrO-eQ-Xap"/>
                 <outlet property="titelLabel" destination="ACa-aU-cIr" id="3WX-RV-5C5"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="176.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="play-3-512" width="512" height="512"/>
-    </resources>
 </document>
