@@ -36,6 +36,15 @@
         onError(error);
     }];
 }
+- (void)gePopularMoviesFromAPIWithPage:(NSInteger)page onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    apiKey = [APIKeyHandling getAPIKeyValue];
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/movie/popular?api_key=%@&language=en-US&page=%ld",apiKey,page] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        onSuccess(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        onError(error);
+    }];
+   
+}
 -(void)getPopularMoviesFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     
     apiKey = [APIKeyHandling getAPIKeyValue];

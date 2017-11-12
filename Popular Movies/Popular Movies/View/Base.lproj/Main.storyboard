@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -122,7 +121,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NkN-JW-prw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="1218"/>
+            <point key="canvasLocation" x="2398" y="1063"/>
         </scene>
         <!--Show Detail Table View Controller-->
         <scene sceneID="AVP-KI-ThO">
@@ -144,7 +143,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8G-Rk-YQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3217" y="1063"/>
+            <point key="canvasLocation" x="3142" y="1063"/>
         </scene>
         <!--Actor View Controller-->
         <scene sceneID="dGY-Mt-YOe">
@@ -204,7 +203,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="n1e-3X-rnj">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="acell" id="n1e-3X-rnj">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -221,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6si-Ys-arL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4056.8000000000002" y="1165.3673163418291"/>
+            <point key="canvasLocation" x="3900" y="384"/>
         </scene>
         <!--Rss Feed-->
         <scene sceneID="BCI-Rv-aUO">
@@ -283,7 +282,9 @@
                             <outlet property="delegate" destination="Cj9-db-tmE" id="vkd-y5-QKG"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="s54-cM-Jtf"/>
+                    <navigationItem key="navigationItem" id="s54-cM-Jtf">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="eLO-Fk-VwS" id="xht-1E-wOY"/>
                         <segue destination="Qd3-jq-vZY" kind="show" identifier="movieDetailSegue" id="ss2-WK-Obe"/>
@@ -291,7 +292,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtA-Ac-8fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="453"/>
+            <point key="canvasLocation" x="2398" y="384"/>
         </scene>
         <!--Movie Detail Table View Controller-->
         <scene sceneID="60b-9L-K8Z">
@@ -317,7 +318,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRg-5s-epj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3218" y="384"/>
+            <point key="canvasLocation" x="3143" y="384"/>
         </scene>
     </scenes>
     <resources>

@@ -84,19 +84,10 @@
     } onError:^(NSError* error){
         NSLog(@"There's been an error with requestiong data from API.");
     }];
-    [movieService getTopRatedMoviesFromAPIonSuccess:^(NSObject* object){
-        MovieCollection *collection = [(RKMappingResult*)object firstObject];
-        [moviesArray addObjectsFromArray:[collection results]];
-        [self.collectionView reloadData];
-    } onError:^(NSError* error){
-        NSLog(@"There's been an error with requestiong data from API.");
-    }];
 }
-
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self performSegueWithIdentifier:@"movieDetailSegue" sender:indexPath];
 }
-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height/2.2);
@@ -106,6 +97,23 @@
         NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
         MovieDetailTableViewController* movieDetailTVC = [segue destinationViewController];
         movieDetailTVC.movieId = [[moviesArray objectAtIndex:indexPath.row] movieId];
+    }
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat height = scrollView.frame.size.height;
+    
+    CGFloat contentYoffset = scrollView.contentOffset.y;
+    
+    CGFloat distanceFromBottom = scrollView.contentSize.height - contentYoffset;
+    
+    if(distanceFromBottom < height)
+    {
+        [movieService gePopularMoviesFromAPIWithPage:2 onSuccess:^(NSObject* object){
+            MovieCollection *collection = [(RKMappingResult*)object firstObject];
+            [moviesArray addObjectsFromArray:[collection results]];
+            [self.collectionView reloadData];
+        } onError:^(NSError* error){}];
     }
 }
 @end
