@@ -21,6 +21,7 @@
     NSMutableArray* moviesArray;
     MovieService* movieService;
     Movie* movieSample;
+    NSInteger numberOfPages;
 }
 @end
 
@@ -31,7 +32,7 @@
     // Registrate custom cell class
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MovieTvShowCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:movieTVShowReuseIdentifier];
     movieService = [[MovieService alloc]init];
-    
+    numberOfPages = 1;
     [self loadMovies];
 }
 
@@ -49,41 +50,41 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MovieTvShowCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:movieTVShowReuseIdentifier forIndexPath:indexPath];
-
     movieSample = [[Movie alloc]init];
-    movieSample = (Movie*)[moviesArray objectAtIndex:indexPath.row];
-    
-    //Setting up the cover image of the cell
-    NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: movieSample.posterPath];
-    [cell.coverImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    
-    //Setting up the title of the movie
-    cell.titleLabel.text = [movieSample.title uppercaseString];
-    
-    //Setting up the release date of the movie
-    NSDateFormatter* df = [[NSDateFormatter alloc]init];
-    [df setDateFormat:@"d MMMM yyyy"];
-    NSString *result = [df stringFromDate:movieSample.releaseDate];
-    cell.dateLabel.text = result;
-    
-    //Setting up the vote average of the movie
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:2];
-    [formatter setRoundingMode: NSNumberFormatterRoundUp];
-    cell.rateLabel.text = [formatter stringFromNumber:movieSample.voteAverage];
+    if(moviesArray.count!=0){
+        movieSample = (Movie*)[moviesArray objectAtIndex:indexPath.row];
+        
+        //Setting up the cover image of the cell
+        NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: movieSample.posterPath];
+        [cell.coverImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        
+        //Setting up the title of the movie
+        cell.titleLabel.text = [movieSample.title uppercaseString];
+        
+        //Setting up the release date of the movie
+        NSDateFormatter* df = [[NSDateFormatter alloc]init];
+        [df setDateFormat:@"d MMMM yyyy"];
+        NSString *result = [df stringFromDate:movieSample.releaseDate];
+        cell.dateLabel.text = result;
+        
+        //Setting up the vote average of the movie
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setMaximumFractionDigits:2];
+        [formatter setRoundingMode: NSNumberFormatterRoundUp];
+        cell.rateLabel.text = [formatter stringFromNumber:movieSample.voteAverage];
+    }
     return cell;
 }
 
 -(void)loadMovies{
     moviesArray = [[NSMutableArray alloc]init];
-    [movieService getPopularMoviesFromAPIonSuccess:^(NSObject* object){
+    [movieService gePopularMoviesFromAPIWithPage:numberOfPages onSuccess:^(NSObject* object){
         MovieCollection *collection = [(RKMappingResult*)object firstObject];
         [moviesArray addObjectsFromArray:[collection results]];
+        numberOfPages=numberOfPages+1;
         [self.collectionView reloadData];
-    } onError:^(NSError* error){
-        NSLog(@"There's been an error with requestiong data from API.");
-    }];
+    } onError:^(NSError* error){}];
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self performSegueWithIdentifier:@"movieDetailSegue" sender:indexPath];
@@ -109,11 +110,7 @@
     
     if(distanceFromBottom < height)
     {
-        [movieService gePopularMoviesFromAPIWithPage:2 onSuccess:^(NSObject* object){
-            MovieCollection *collection = [(RKMappingResult*)object firstObject];
-            [moviesArray addObjectsFromArray:[collection results]];
-            [self.collectionView reloadData];
-        } onError:^(NSError* error){}];
+        [self loadMovies];
     }
 }
 @end
