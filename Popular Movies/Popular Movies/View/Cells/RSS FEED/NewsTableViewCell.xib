@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,14 +23,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsY-39-stO">
                         <rect key="frame" x="8" y="8" width="398" height="186"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXX-uh-qRX">
-                                <rect key="frame" x="8" y="164.5" width="382" height="13.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd7-oH-qQO">
-                                <rect key="frame" x="12" y="34" width="374" height="14.5"/>
+                                <rect key="frame" x="12" y="34" width="374" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -39,18 +35,31 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAZ-Yx-OuF">
+                                <rect key="frame" x="8" y="164" width="382" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="IRY-8t-SXi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="link">
+                                    <color key="titleColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openSourceLink:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="A3K-If-4Oh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hWZ-aj-FzR" firstAttribute="trailing" secondItem="zd7-oH-qQO" secondAttribute="trailing" id="0sK-is-cy9"/>
                             <constraint firstItem="hWZ-aj-FzR" firstAttribute="leading" secondItem="zd7-oH-qQO" secondAttribute="leading" id="6M2-kf-lL2"/>
                             <constraint firstItem="zd7-oH-qQO" firstAttribute="top" secondItem="hWZ-aj-FzR" secondAttribute="bottom" constant="8" symbolic="YES" id="FrX-kK-ElV"/>
+                            <constraint firstItem="vAZ-Yx-OuF" firstAttribute="bottom" secondItem="xsY-39-stO" secondAttribute="bottomMargin" id="IvT-2n-oK7"/>
                             <constraint firstAttribute="trailing" secondItem="zd7-oH-qQO" secondAttribute="trailing" constant="12" id="JWI-CC-Hay"/>
-                            <constraint firstItem="zXX-uh-qRX" firstAttribute="leading" secondItem="xsY-39-stO" secondAttribute="leading" constant="8" id="Zf1-Dn-W5n"/>
-                            <constraint firstAttribute="trailing" secondItem="zXX-uh-qRX" secondAttribute="trailing" constant="8" id="qyH-z7-G3w"/>
+                            <constraint firstItem="vAZ-Yx-OuF" firstAttribute="centerX" secondItem="zd7-oH-qQO" secondAttribute="centerX" id="lj3-sa-1F8"/>
+                            <constraint firstItem="vAZ-Yx-OuF" firstAttribute="leading" secondItem="xsY-39-stO" secondAttribute="leadingMargin" id="oQ6-sx-SGo"/>
                             <constraint firstItem="zd7-oH-qQO" firstAttribute="leading" secondItem="xsY-39-stO" secondAttribute="leading" constant="12" id="rFC-1l-5KF"/>
                             <constraint firstItem="hWZ-aj-FzR" firstAttribute="top" secondItem="xsY-39-stO" secondAttribute="top" constant="8" id="yRM-wa-IsN"/>
-                            <constraint firstAttribute="bottom" secondItem="zXX-uh-qRX" secondAttribute="bottom" constant="8" id="zIq-9s-5qe"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -66,10 +75,10 @@
             <color key="tintColor" white="0.30357530379999997" alpha="1" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="backgroundBox" destination="xsY-39-stO" id="uN6-t1-AQE"/>
-                <outlet property="descriptionLabel" destination="zd7-oH-qQO" id="qwq-jB-Nj4"/>
-                <outlet property="linkLabel" destination="zXX-uh-qRX" id="jMp-M3-TU3"/>
-                <outlet property="titleLabel" destination="hWZ-aj-FzR" id="04g-SU-tm1"/>
+                <outlet property="backgroundBox" destination="xsY-39-stO" id="AZm-W2-PYC"/>
+                <outlet property="contentLabel" destination="zd7-oH-qQO" id="wtJ-QF-rnB"/>
+                <outlet property="linkButton" destination="vAZ-Yx-OuF" id="DBM-Fb-S75"/>
+                <outlet property="newsTitleLabel" destination="hWZ-aj-FzR" id="br9-QL-jWj"/>
             </connections>
             <point key="canvasLocation" x="313" y="143"/>
         </tableViewCell>

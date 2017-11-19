@@ -30,7 +30,9 @@
                         <rect key="frame" x="8" y="51.5" width="375" height="143.5"/>
                         <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tableView>
                 </subviews>
                 <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

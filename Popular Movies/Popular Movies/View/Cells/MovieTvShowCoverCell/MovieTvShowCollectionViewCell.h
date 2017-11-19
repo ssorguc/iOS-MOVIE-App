@@ -10,9 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface MovieTvShowCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *rateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 extern NSString * const movieTVShowReuseIdentifier;
+-(void)setUpMovieTvShowCollectionViewCellWithTitle:(NSString*)title imageLink:(NSString*)posterPath releaseDate:(NSDate*)date rating:(NSNumber*)voteAverage;
 @end

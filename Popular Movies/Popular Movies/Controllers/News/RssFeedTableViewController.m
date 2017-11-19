@@ -52,15 +52,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsTableViewCell *cell = (NewsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewsTableViewCell class]) forIndexPath:indexPath];
     News * newsSample = (News*)[newsArray objectAtIndex:indexPath.row];
-    cell.titleLabel.text = newsSample.title;
-    cell.linkLabel.text = newsSample.source_link;
-    cell.descriptionLabel.text = newsSample.text;
+    cell.userInteractionEnabled = YES;
+    [cell setUpNewsCellWithNews:newsSample];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 200.0f;
 }
-
 #pragma mark - XML parsing
 
 -(void)parser:(NSXMLParser *)parser {
@@ -84,7 +82,7 @@
     if ([elementName isEqualToString:@"item"]) {
         singleArticle.text = newsText;
         singleArticle.title = newsTitle;
-        singleArticle.source_link = newsSource;
+        singleArticle.sourceLink = newsSource;
         [newsArray addObject:singleArticle];
     }
 }

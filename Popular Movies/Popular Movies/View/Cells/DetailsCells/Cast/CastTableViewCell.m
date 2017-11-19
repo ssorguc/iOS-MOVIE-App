@@ -5,10 +5,13 @@
 //  Created by Test on 25/10/2017.
 //  Copyright © 2017 Test. All rights reserved.
 //
+#import "ActorCollectionView.h"
 #import "ActorCollectionViewCell.h"
 #import "ActorCollectionView.h"
 #import "ActorCollectionViewCell.h"
 #import "CastTableViewCell.h"
+#import "ActorViewController.h"
+#import "ActorViewController.h"
 @interface CastTableViewCell()
 @property (weak, nonatomic) IBOutlet ActorCollectionView *castCollectionView;
 
@@ -17,6 +20,7 @@
 NSString* const castReuseIdentifier = @"castCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.castCollectionView.userInteractionEnabled = YES;
     
 }
 
@@ -29,6 +33,7 @@ NSString* const castReuseIdentifier = @"castCell";
     self.castCollectionView.delegate = delegate;
     self.castCollectionView.dataSource = delegate;
     [self.castCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([ActorCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:actorReuseIdentifier];
-    [self.castCollectionView reloadData];}
+    [self.castCollectionView reloadData];
+}
 
 @end

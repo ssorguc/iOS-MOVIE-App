@@ -14,13 +14,13 @@
 #import "Actor.h"
 #import "CastCollection.h"
 #import "APIKeyHandling.h"
-@interface MovieService(){
+@interface MovieService()
+{
     NSString* apiKey;
 }
 @end
 @implementation MovieService
 - (void)getTopRatedMoviesFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
-    
     apiKey = [APIKeyHandling getAPIKeyValue];
     [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/movie/top_rated?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);
@@ -35,6 +35,15 @@
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         onError(error);
     }];
+}
+- (void)gePopularMoviesFromAPIWithPage:(NSInteger)page onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    apiKey = [APIKeyHandling getAPIKeyValue];
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/movie/popular?api_key=%@&language=en-US&page=%ld",apiKey,page] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        onSuccess(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        onError(error);
+    }];
+   
 }
 -(void)getPopularMoviesFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     
@@ -51,7 +60,7 @@
     apiKey = [APIKeyHandling getAPIKeyValue];
     Movie *tempMovie = [Movie new];
     tempMovie.movieId = movieId;
-    [[RKObjectManager sharedManager] getObject:tempMovie path:[NSString stringWithFormat:@"/3/movie/%@?api_key=%@&language=en-US",movieId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [[RKObjectManager sharedManager] getObject:tempMovie path:[NSString stringWithFormat:@"/3/movie/%@?api_key=%@&append_to_response=images%%2Ccredits%%2Cvideos%%2Creviews",movieId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         onError(error);

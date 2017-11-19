@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SingleReviewTableViewCell : UITableViewCell
--(void)setUpSingleReviewCellWithAuthor:(NSString*)authorString withContent:(NSString*)contentString;
 extern NSString* const singleReviewReuseIdentifier;
+-(void)setUpSingleReviewCellWithAuthor:(NSString*)authorString withContent:(NSString*)contentString;
 @end

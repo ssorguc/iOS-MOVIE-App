@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Actor.h"
 @interface ActorCollectionViewCell : UICollectionViewCell
--(void)setUpActorCellWithActor:(Actor*)singleActor;
 extern NSString* const actorReuseIdentifier;
+-(void)setUpActorCellWithActor:(Actor*)singleActor;
 @end
