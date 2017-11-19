@@ -14,13 +14,13 @@
 #import "Actor.h"
 #import "CastCollection.h"
 #import "APIKeyHandling.h"
-@interface MovieService(){
+@interface MovieService()
+{
     NSString* apiKey;
 }
 @end
 @implementation MovieService
 - (void)getTopRatedMoviesFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
-    
     apiKey = [APIKeyHandling getAPIKeyValue];
     [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/movie/top_rated?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);

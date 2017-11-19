@@ -7,31 +7,30 @@
 //
 
 #import "ActorViewController.h"
-
+#import "ActorService.h"
 @interface ActorViewController ()
-
+{
+    ActorService* actorService;
+    
+}
 @end
 
 @implementation ActorViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    actorService = [[ActorService alloc]init];
+    [self loadActorDetails];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)loadActorDetails{
+    [actorService getActorInformation:self.actorId onSuccess:^(NSObject* object){
+       // selectedMovie = [(RKMappingResult*)object firstObject];
+    } onError:^(NSError* error){
+        
+    }];
 }
-*/
-
 @end

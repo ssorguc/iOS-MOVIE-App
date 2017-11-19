@@ -25,7 +25,13 @@
 + (NSArray*)fieldsArrayForMapping {
     return @[ @"character", @"gender",@"name",@"order"];
 }
-
++(NSArray*)keyPathes {
+    return nil;
+}
++ (NSArray*)pathPatterns {
+    return @[@"/3/person/:actorId"
+             ];
+}
 + (NSDictionary*)fieldsDictionaryForMapping {
     return @{
              @"cast_id": @"castId",

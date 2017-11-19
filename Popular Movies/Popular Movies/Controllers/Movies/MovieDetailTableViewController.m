@@ -104,80 +104,6 @@
     return cell;
 }
 
-#pragma Setting up custom cells
-
--(MovieTrailerTableViewCell* )setUpMovieTrailerCell:(MovieTrailerTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpTrailerCellWithTitle: selectedMovie.title releaseDateString: selectedMovie.releaseDate genresString: selectedMovie.genres trailers:selectedMovie.videos runtime: selectedMovie.runtime withIndexPath:indexPath];
-    return cell;
-}
--(MovieDescriptionTableViewCell* )setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpDescriptionCellWithCrew:selectedMovie.credits.crew withRate:selectedMovie.voteAverage withOverview:selectedMovie.overview];
-    return cell;
-}
--(ImageGalleryTableViewCell* )setUpImageGalleryCell:(ImageGalleryTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpImagesGalleryCellWithImagesCollection:selectedMovie.images withDelegate:self withDataSource:self];
-    return cell;
-}
--(DirectorWriterTableViewCell* )setUpDirectorsWritersCells:(DirectorWriterTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpDirectorsWritersCellWithCrew:selectedMovie.credits.crew];
-    return cell;
-}
--(CastTableViewCell* )setUpCastCollectionCell:(CastTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
-    [cell setUpCastCollectionViewCellWithDelegate:self withDataSource:self];
-    return cell;
-}
--(ReviewTableViewCell*)setUpReviewsCell:(ReviewTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
-    [cell setUpReviewsCellWithDelegate:self withDataSource:self];
-    return cell;
-}
--(SingleReviewTableViewCell* )setUpSingleReviewCell:(SingleReviewTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
-    SingleReview* singleReview = [[SingleReview alloc]init];
-    if(selectedMovie.reviews.results) singleReview = (SingleReview*)[selectedMovie.reviews.results objectAtIndex:indexPath.row];
-    [cell setUpSingleReviewCellWithAuthor:singleReview.author withContent:singleReview.content];
-    return cell;
-}
-
-#pragma Collection Views Handling
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    if([collectionView isKindOfClass:[ActorCollectionView class]]){
-        return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height);
-    }
-    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
-        return CGSizeMake(180.0f , 150.0f);
-    }
-    return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height/2.2);
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1 ;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if([collectionView isKindOfClass:[ActorCollectionView class]]) return selectedMovie.credits.cast.count;
-    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]) return selectedMovie.images.backdrops.count;
-    return 6;
-}
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
-    if([collectionView isKindOfClass:[ActorCollectionView class]]){
-        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
-        Actor* singleActor = [[Actor alloc]init];
-        if(selectedMovie.credits.cast) singleActor = (Actor*)[selectedMovie.credits.cast objectAtIndex:indexPath.row];
-        [cellOneActor setUpActorCellWithActor:singleActor];
-        return cellOneActor;
-    }
-    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
-        SingleImageCollectionViewCell* cellImage = (SingleImageCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
-        if(selectedMovie.images.backdrops){
-          [cellImage setUpSingleImageCellWithSingleImage:[selectedMovie.images.backdrops objectAtIndex:indexPath.row]];
-        }
-        return cellImage;
-    }
-    return cell;
-}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if([tableView isKindOfClass:[ReviewsTableView class]]){
         return 200.0f;
@@ -222,15 +148,100 @@
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return size.height;
 }
+
+#pragma Setting up custom cells
+
+-(MovieTrailerTableViewCell* )setUpMovieTrailerCell:(MovieTrailerTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
+    [cell setUpTrailerCellWithTitle: selectedMovie.title releaseDateString: selectedMovie.releaseDate genresString: selectedMovie.genres trailers:selectedMovie.videos runtime: selectedMovie.runtime withIndexPath:indexPath];
+    return cell;
+}
+
+-(MovieDescriptionTableViewCell* )setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
+    [cell setUpDescriptionCellWithCrew:selectedMovie.credits.crew withRate:selectedMovie.voteAverage withOverview:selectedMovie.overview];
+    return cell;
+}
+
+-(ImageGalleryTableViewCell* )setUpImageGalleryCell:(ImageGalleryTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
+    [cell setUpImagesGalleryCellWithImagesCollection:selectedMovie.images withDelegate:self withDataSource:self];
+    return cell;
+}
+
+-(DirectorWriterTableViewCell* )setUpDirectorsWritersCells:(DirectorWriterTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
+    [cell setUpDirectorsWritersCellWithCrew:selectedMovie.credits.crew];
+    return cell;
+}
+
+-(CastTableViewCell* )setUpCastCollectionCell:(CastTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
+    [cell setUpCastCollectionViewCellWithDelegate:self withDataSource:self];
+    return cell;
+}
+
+-(ReviewTableViewCell*)setUpReviewsCell:(ReviewTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
+    [cell setUpReviewsCellWithDelegate:self withDataSource:self];
+    return cell;
+}
+
+-(SingleReviewTableViewCell* )setUpSingleReviewCell:(SingleReviewTableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
+    SingleReview* singleReview = [[SingleReview alloc]init];
+    if(selectedMovie.reviews.results) singleReview = (SingleReview*)[selectedMovie.reviews.results objectAtIndex:indexPath.row];
+    [cell setUpSingleReviewCellWithAuthor:singleReview.author withContent:singleReview.content];
+    return cell;
+}
+
+#pragma Collection Views Handling
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([collectionView isKindOfClass:[ActorCollectionView class]]){
+        return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height);
+    }
+    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
+        return CGSizeMake(180.0f , 150.0f);
+    }
+    return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height/2.2);
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1 ;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if([collectionView isKindOfClass:[ActorCollectionView class]]) return selectedMovie.credits.cast.count;
+    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]) return selectedMovie.images.backdrops.count;
+    return 6;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell* cell = [[UICollectionViewCell alloc]init];
+    if([collectionView isKindOfClass:[ActorCollectionView class]]){
+        ActorCollectionViewCell* cellOneActor = (ActorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:actorReuseIdentifier forIndexPath:indexPath];
+        Actor* singleActor = [[Actor alloc]init];
+        if(selectedMovie.credits.cast) singleActor = (Actor*)[selectedMovie.credits.cast objectAtIndex:indexPath.row];
+        [cellOneActor setUpActorCellWithActor:singleActor];
+        return cellOneActor;
+    }
+    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
+        SingleImageCollectionViewCell* cellImage = (SingleImageCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
+        if(selectedMovie.images.backdrops){
+          [cellImage setUpSingleImageCellWithSingleImage:[selectedMovie.images.backdrops objectAtIndex:indexPath.row]];
+        }
+        return cellImage;
+    }
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if([collectionView isKindOfClass:[ActorCollectionView class]])[self performSegueWithIdentifier:@"actorSegue" sender:indexPath];
+}
+
 #pragma Segue handling
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"actorSegue"]) {
-        //NSIndexPath *indexPath = [[ indexPathsForSelectedItems] lastObject];
-        //ActorViewController* actorDetailsController = [segue destinationViewController];
+        NSIndexPath* indexPath = (NSIndexPath*)sender;
+        ActorViewController* actorDetailsController = [segue destinationViewController];
+        actorDetailsController.actorId = [[selectedMovie.credits.cast objectAtIndex:indexPath.row] castId];
     }
-}
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"actorSegue" sender:indexPath];
 }
 
 #pragma Fetching data

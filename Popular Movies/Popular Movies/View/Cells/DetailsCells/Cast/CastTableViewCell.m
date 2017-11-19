@@ -11,6 +11,7 @@
 #import "ActorCollectionViewCell.h"
 #import "CastTableViewCell.h"
 #import "ActorViewController.h"
+#import "ActorViewController.h"
 @interface CastTableViewCell()
 @property (weak, nonatomic) IBOutlet ActorCollectionView *castCollectionView;
 

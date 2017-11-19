@@ -10,6 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface MovieTvShowCollectionViewCell : UICollectionViewCell
--(void)setUpMovieTvShowCollectionViewCellWithTitle:(NSString*)title imageLink:(NSString*)posterPath releaseDate:(NSDate*)date rating:(NSNumber*)voteAverage;
 extern NSString * const movieTVShowReuseIdentifier;
+-(void)setUpMovieTvShowCollectionViewCellWithTitle:(NSString*)title imageLink:(NSString*)posterPath releaseDate:(NSDate*)date rating:(NSNumber*)voteAverage;
 @end

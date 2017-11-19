@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ActorViewController : UIViewController
-
+@property (nonatomic,strong) NSNumber* actorId;
 @end
