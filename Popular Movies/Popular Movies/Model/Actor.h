@@ -18,4 +18,6 @@
 @property (nonatomic,strong) NSString* name;
 @property (nonatomic,strong) NSNumber* order;
 @property (nonatomic,strong) NSString* profilePath;
+@property (nonatomic,strong) NSDate* birthday;
+@property (nonatomic,strong) NSString* biography;
 @end

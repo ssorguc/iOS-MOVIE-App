@@ -5,6 +5,7 @@
 //  Created by Test on 10/3/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
+#import "ImagesCollection.h"
 #import "Genre.h"
 #import "Movie.h"
 #import <RestKit.h>
@@ -52,6 +53,10 @@
              ];
 }
 +(NSArray*)relationships {
-    return @[[RelationshipObject relationshipWithKey:@"genres" andMappingClass:[Genre class]]];
+    return @[[RelationshipObject relationshipWithKey:@"genres" andMappingClass:[Genre class]],
+             [RelationshipObject relationshipWithKey:@"images" andMappingClass:[ImagesCollection class]],
+             [RelationshipObject relationshipWithSource:@"videos" destination:@"videos" andMappingClass:[VideosCollection class]],
+             [RelationshipObject relationshipWithSource:@"credits" destination:@"credits" andMappingClass:[CastCollection class]],
+             [RelationshipObject relationshipWithSource:@"reviews" destination:@"reviews" andMappingClass:[CollectionReview class]]];
 }
 @end

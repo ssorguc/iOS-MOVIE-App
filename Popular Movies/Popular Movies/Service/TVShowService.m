@@ -26,6 +26,14 @@
         onError(error);
     }];
 }
+- (void)getPopularTVShowFromAPIWithPageNumber:(NSInteger)page onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    apiKey = [APIKeyHandling getAPIKeyValue];
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/popular?api_key=%@&language=en-US&page=%ld",apiKey,page] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        onSuccess(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        onError(error);
+    }];
+}
 - (void)getLatestTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     apiKey = [APIKeyHandling getAPIKeyValue];
     [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/latest?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {

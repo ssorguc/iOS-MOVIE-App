@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,10 +67,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <connections>
-                <outlet property="coverImageView" destination="z6b-oD-8KZ" id="uTa-x4-kNr"/>
-                <outlet property="dateLabel" destination="vpU-WY-FNk" id="OWK-54-zr1"/>
-                <outlet property="rateLabel" destination="cxl-gD-tRK" id="yas-gP-3jl"/>
-                <outlet property="titleLabel" destination="J71-o4-oRr" id="qed-vM-RDh"/>
+                <outlet property="coverImageView" destination="z6b-oD-8KZ" id="Kx9-he-xT9"/>
+                <outlet property="dateLabel" destination="vpU-WY-FNk" id="kb6-MC-Gta"/>
+                <outlet property="ratingLabel" destination="cxl-gD-tRK" id="nz6-WB-1mr"/>
+                <outlet property="titleLabel" destination="J71-o4-oRr" id="yPv-8k-MGz"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="67"/>
         </collectionViewCell>
