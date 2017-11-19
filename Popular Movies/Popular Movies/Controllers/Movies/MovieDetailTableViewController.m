@@ -12,6 +12,7 @@
 #import "MovieService.h"
 #import "CastCollection.h"
 #import "Actor.h"
+#import "ImageGalleryCollectionView.h"
 #import "SingleReview.h"
 #import "CollectionReview.h"
 #import "MovieDetailTableViewController.h"
@@ -29,6 +30,7 @@
 #import "ActorCollectionView.h"
 #import "DirectorWriterTableViewCell.h"
 #import "CrewMember.h"
+#import "SingleImageCollectionViewCell.h"
 @interface MovieDetailTableViewController (){
     MovieService* movieService;
     Movie* selectedMovie;
@@ -58,7 +60,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSInteger numS = 5;
+    NSInteger numS = 6;
     if([tableView isKindOfClass:[ReviewsTableView class]])
         return 1;
     if(selectedMovie.reviews.results.count==0)
@@ -90,9 +92,12 @@
              return [self setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)[tableView dequeueReusableCellWithIdentifier:descriptionReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
         }
         else if (indexPath.section == 3){
-            return [self setUpCastCollectionCell:(CastTableViewCell*)[tableView dequeueReusableCellWithIdentifier:castReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+            return [self setUpImageGalleryCell:(ImageGalleryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:imageGalleryReuseIdentifier] atIndexPath:indexPath];
         }
         else if (indexPath.section == 4){
+            return [self setUpCastCollectionCell:(CastTableViewCell*)[tableView dequeueReusableCellWithIdentifier:castReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+        }
+        else if (indexPath.section == 5){
             return [self setUpReviewsCell: (ReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reviewReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
         }
     }
@@ -107,6 +112,10 @@
 }
 -(MovieDescriptionTableViewCell* )setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
     [cell setUpDescriptionCellWithCrew:selectedMovie.credits.crew withRate:selectedMovie.voteAverage withOverview:selectedMovie.overview];
+    return cell;
+}
+-(ImageGalleryTableViewCell* )setUpImageGalleryCell:(ImageGalleryTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
+    [cell setUpImagesGalleryCellWithImagesCollection:selectedMovie.images withDelegate:self withDataSource:self];
     return cell;
 }
 -(DirectorWriterTableViewCell* )setUpDirectorsWritersCells:(DirectorWriterTableViewCell*)cell atIndexPath:(NSIndexPath* )indexPath{
@@ -134,7 +143,9 @@
 {
     if([collectionView isKindOfClass:[ActorCollectionView class]]){
         return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height);
-        
+    }
+    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
+        return CGSizeMake(180.0f , 150.0f);
     }
     return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height/2.2);
 }
@@ -145,6 +156,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if([collectionView isKindOfClass:[ActorCollectionView class]]) return selectedMovie.credits.cast.count;
+    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]) return selectedMovie.images.backdrops.count;
     return 6;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -156,6 +168,13 @@
         if(selectedMovie.credits.cast) singleActor = (Actor*)[selectedMovie.credits.cast objectAtIndex:indexPath.row];
         [cellOneActor setUpActorCellWithActor:singleActor];
         return cellOneActor;
+    }
+    if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
+        SingleImageCollectionViewCell* cellImage = (SingleImageCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
+        if(selectedMovie.images.backdrops){
+          [cellImage setUpSingleImageCellWithSingleImage:[selectedMovie.images.backdrops objectAtIndex:indexPath.row]];
+        }
+        return cellImage;
     }
     return cell;
 }
@@ -188,7 +207,9 @@
         
         return [self calculateHeightForConfiguredSizingCell:cell];
     }
-    else if(indexPath.section == 4){
+    else if(indexPath.section == 3) return 220.0f;
+    else if(indexPath.section == 4) return 380.0f;
+    else if(indexPath.section == 5){
         if(selectedMovie.reviews.results.count == 1) return 250.0f;
         else if(selectedMovie.reviews.results.count == 2)return 450.0f;
         else return 500.0f;

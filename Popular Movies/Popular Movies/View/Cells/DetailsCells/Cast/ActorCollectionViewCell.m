@@ -26,6 +26,7 @@ NSString* const actorReuseIdentifier = @"actorCell";
     self.characterNameLabel.text = singleActor.character;
     if(singleActor.profilePath){
         NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleActor.profilePath];
-        [self.pictureImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];}
+        [self.pictureImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    }
 }
 @end

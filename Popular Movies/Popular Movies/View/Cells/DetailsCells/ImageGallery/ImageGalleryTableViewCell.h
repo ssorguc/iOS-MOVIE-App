@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ImagesCollection.h"
 @interface ImageGalleryTableViewCell : UITableViewCell
 extern NSString* const imageGalleryReuseIdentifier;
+-(void)setUpImagesGalleryCellWithImagesCollection:(ImagesCollection*)imagesCollection withDelegate:(id)delegate withDataSource:(id)dataSource;
 @end
