@@ -18,12 +18,14 @@
              @"id": _actorId,
              @"name": _name,
              @"order": _order,
-             @"profile_path": _profilePath
+             @"profile_path": _profilePath,
+             @"biography":_biography,
+             @"birthday":_birthday
              };
 }
 
 + (NSArray*)fieldsArrayForMapping {
-    return @[ @"character", @"gender",@"name",@"order"];
+    return @[ @"character", @"gender",@"name",@"order",@"biography",@"birthday"];
 }
 +(NSArray*)keyPathes {
     return nil;

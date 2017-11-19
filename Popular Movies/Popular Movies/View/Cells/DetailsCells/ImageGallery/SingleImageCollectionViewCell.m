@@ -12,14 +12,14 @@
 
 @end
 @implementation SingleImageCollectionViewCell
-
+NSString* const singleImageReuseIdentifier = @"imageCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 -(void)setUpSingleImageCellWithSingleImage:(SingleImage*)singleImage{
     if(singleImage.filePath){
-        NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: singleImage.filePath];
+        NSString* imageLink = [@"http://image.tmdb.org/t/p/original/" stringByAppendingString: singleImage.filePath];
         [self.singleImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     }
 }

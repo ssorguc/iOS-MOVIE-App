@@ -9,7 +9,6 @@
 #import "ImageGalleryTableViewCell.h"
 @interface ImageGalleryTableViewCell()
 @property (weak, nonatomic) IBOutlet UICollectionView *imagesCollectionView;
-
 @end
 @implementation ImageGalleryTableViewCell
 NSString* const imageGalleryReuseIdentifier = @"imageGalleryCell";
@@ -23,7 +22,7 @@ NSString* const imageGalleryReuseIdentifier = @"imageGalleryCell";
 -(void)setUpImagesGalleryCellWithImagesCollection:(ImagesCollection*)imagesCollection withDelegate:(id)delegate withDataSource:(id)dataSource{
     self.imagesCollectionView.delegate = delegate;
     self.imagesCollectionView.dataSource = dataSource;
-    [self.imagesCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SingleImageCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"imageCell"];
+    [self.imagesCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SingleImageCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:singleImageReuseIdentifier];
     [self.imagesCollectionView reloadData];
 }
 @end

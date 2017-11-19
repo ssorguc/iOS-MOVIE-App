@@ -103,7 +103,7 @@
     }
     return cell;
 }
-
+//Need to fix this method to use UITableViewAutomaticDimension!!!
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if([tableView isKindOfClass:[ReviewsTableView class]]){
         return 200.0f;
@@ -222,7 +222,7 @@
         return cellOneActor;
     }
     if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
-        SingleImageCollectionViewCell* cellImage = (SingleImageCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
+        SingleImageCollectionViewCell* cellImage = (SingleImageCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:singleImageReuseIdentifier forIndexPath:indexPath];
         if(selectedMovie.images.backdrops){
           [cellImage setUpSingleImageCellWithSingleImage:[selectedMovie.images.backdrops objectAtIndex:indexPath.row]];
         }
@@ -240,7 +240,7 @@
     if ([segue.identifier isEqualToString:@"actorSegue"]) {
         NSIndexPath* indexPath = (NSIndexPath*)sender;
         ActorViewController* actorDetailsController = [segue destinationViewController];
-        actorDetailsController.actorId = [[selectedMovie.credits.cast objectAtIndex:indexPath.row] castId];
+        actorDetailsController.actorId = [[selectedMovie.credits.cast objectAtIndex:indexPath.row] actorId];
     }
 }
 
