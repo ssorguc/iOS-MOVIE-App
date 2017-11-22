@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movies-icon" translatesAutoresizingMaskIntoConstraints="NO" id="08k-SC-hqM">
-                        <rect key="frame" x="10" y="10" width="164" height="214"/>
+                        <rect key="frame" x="0.0" y="0.0" width="184" height="224"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaI-UY-BO6">
                         <rect key="frame" x="10" y="234" width="164" height="16"/>
@@ -40,15 +39,17 @@
             <constraints>
                 <constraint firstItem="GaI-UY-BO6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4J9-WM-n0r"/>
                 <constraint firstItem="upn-zo-lPW" firstAttribute="top" secondItem="GaI-UY-BO6" secondAttribute="bottom" constant="3" id="7ey-UM-qcH"/>
+                <constraint firstItem="upn-zo-lPW" firstAttribute="top" secondItem="GaI-UY-BO6" secondAttribute="bottom" constant="3" id="BH5-ii-1lZ"/>
                 <constraint firstAttribute="trailing" secondItem="GaI-UY-BO6" secondAttribute="trailing" constant="10" id="EsE-gm-RAd"/>
                 <constraint firstItem="upn-zo-lPW" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Nwg-rR-n5u"/>
+                <constraint firstItem="upn-zo-lPW" firstAttribute="top" secondItem="08k-SC-hqM" secondAttribute="bottom" constant="29" id="QMJ-5S-42f"/>
                 <constraint firstAttribute="trailing" secondItem="upn-zo-lPW" secondAttribute="trailing" constant="10" id="VI0-Vg-rg5"/>
                 <constraint firstItem="GaI-UY-BO6" firstAttribute="top" secondItem="08k-SC-hqM" secondAttribute="bottom" constant="10" id="Vwz-9T-HeG"/>
                 <constraint firstItem="08k-SC-hqM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="dzA-Zn-KRR"/>
                 <constraint firstItem="GaI-UY-BO6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="eJl-wu-Nwe"/>
-                <constraint firstItem="08k-SC-hqM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="h81-nW-0Oh"/>
-                <constraint firstItem="08k-SC-hqM" firstAttribute="top" secondItem="SEy-5g-ep8" secondAttribute="top" constant="10" id="py8-dG-frh"/>
-                <constraint firstAttribute="trailing" secondItem="08k-SC-hqM" secondAttribute="trailing" constant="10" id="wg8-u2-Kji"/>
+                <constraint firstItem="08k-SC-hqM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="h81-nW-0Oh"/>
+                <constraint firstItem="08k-SC-hqM" firstAttribute="top" secondItem="SEy-5g-ep8" secondAttribute="top" id="py8-dG-frh"/>
+                <constraint firstAttribute="trailing" secondItem="08k-SC-hqM" secondAttribute="trailing" id="wg8-u2-Kji"/>
                 <constraint firstAttribute="bottom" secondItem="08k-SC-hqM" secondAttribute="bottom" constant="60" id="x6J-5F-vSj"/>
                 <constraint firstItem="upn-zo-lPW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="yqn-be-hRS"/>
             </constraints>

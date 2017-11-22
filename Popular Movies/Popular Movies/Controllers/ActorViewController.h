@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActorViewController : UIViewController
+@interface ActorViewController : UIViewController <UITableViewDelegate,UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic,strong) NSNumber* actorId;
 @end

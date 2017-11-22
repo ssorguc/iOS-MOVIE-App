@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,28 +19,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="403" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPy-iy-0gi">
-                        <rect key="frame" x="8" y="8" width="76" height="25.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ltq-hf-t3y" customClass="ReviewsTableView">
-                        <rect key="frame" x="8" y="51.5" width="375" height="143.5"/>
+                        <rect key="frame" x="28" y="52" width="355" height="144"/>
                         <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tableView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPy-iy-0gi">
+                        <rect key="frame" x="28" y="11" width="76" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="ltq-hf-t3y" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="38D-6L-ERi"/>
                     <constraint firstItem="ltq-hf-t3y" firstAttribute="leading" secondItem="sPy-iy-0gi" secondAttribute="leading" id="IG9-RT-3nB"/>
-                    <constraint firstItem="sPy-iy-0gi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Oug-kj-3oI"/>
-                    <constraint firstItem="sPy-iy-0gi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="YGo-Ne-V3E"/>
-                    <constraint firstItem="ltq-hf-t3y" firstAttribute="top" secondItem="sPy-iy-0gi" secondAttribute="bottom" constant="18" id="itu-a3-SCC"/>
+                    <constraint firstItem="sPy-iy-0gi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="Oug-kj-3oI"/>
+                    <constraint firstItem="sPy-iy-0gi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="YGo-Ne-V3E"/>
+                    <constraint firstItem="ltq-hf-t3y" firstAttribute="top" secondItem="sPy-iy-0gi" secondAttribute="bottom" constant="15" id="itu-a3-SCC"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ltq-hf-t3y" secondAttribute="bottom" constant="-6.5" id="sdB-ci-0XS"/>
                 </constraints>
             </tableViewCellContentView>

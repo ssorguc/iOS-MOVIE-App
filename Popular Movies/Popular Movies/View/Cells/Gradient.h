@@ -10,4 +10,6 @@
 
 @interface Gradient : NSObject
 +(CAGradientLayer*)setUpGradient;
++(CAGradientLayer*)setUpActorsGradient;
+
 @end

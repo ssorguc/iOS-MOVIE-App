@@ -79,26 +79,40 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* cell = [[UITableViewCell alloc]init];
     if([tableView isKindOfClass:[ReviewsTableView class]]){
-        return [self setUpSingleReviewCell:(SingleReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:singleReviewReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+        SingleReviewTableViewCell* cellR = (SingleReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:singleReviewReuseIdentifier forIndexPath:indexPath];
+        cellR.backgroundColor = self.tableView.backgroundColor;
+        return [self setUpSingleReviewCell:cellR atIndexPath:indexPath];
     }
     else{
         if(indexPath.section == 0){
-            return [self setUpMovieTrailerCell:(MovieTrailerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:movieTrailerCellReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+            MovieTrailerTableViewCell* cell0 = (MovieTrailerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:movieTrailerCellReuseIdentifier forIndexPath:indexPath];
+            cell0.backgroundColor = self.tableView.backgroundColor;
+            return [self setUpMovieTrailerCell:cell0 atIndexPath:indexPath];
          }
         else if(indexPath.section == 1){
-            return [self setUpDirectorsWritersCells:(DirectorWriterTableViewCell*)[tableView dequeueReusableCellWithIdentifier:directorWriterReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+            DirectorWriterTableViewCell* cell1 =(DirectorWriterTableViewCell*)[tableView dequeueReusableCellWithIdentifier:directorWriterReuseIdentifier forIndexPath:indexPath];
+            cell1.backgroundColor = self.tableView.backgroundColor;
+            return [self setUpDirectorsWritersCells:cell1 atIndexPath:indexPath];
         }
         else if (indexPath.section == 2){
-             return [self setUpMovieDescriptionCell:(MovieDescriptionTableViewCell*)[tableView dequeueReusableCellWithIdentifier:descriptionReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+            MovieDescriptionTableViewCell* cell2 = (MovieDescriptionTableViewCell*)[tableView dequeueReusableCellWithIdentifier:descriptionReuseIdentifier forIndexPath:indexPath];
+             cell2.backgroundColor = self.tableView.backgroundColor;
+             return [self setUpMovieDescriptionCell:cell2 atIndexPath:indexPath];
         }
         else if (indexPath.section == 3){
-            return [self setUpImageGalleryCell:(ImageGalleryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:imageGalleryReuseIdentifier] atIndexPath:indexPath];
+            ImageGalleryTableViewCell* cell3 = (ImageGalleryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:imageGalleryReuseIdentifier];
+            cell3.backgroundColor = self.tableView.backgroundColor;
+            return [self setUpImageGalleryCell:cell3 atIndexPath:indexPath];
         }
         else if (indexPath.section == 4){
-            return [self setUpCastCollectionCell:(CastTableViewCell*)[tableView dequeueReusableCellWithIdentifier:castReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+            CastTableViewCell* cell4 = (CastTableViewCell*)[tableView dequeueReusableCellWithIdentifier:castReuseIdentifier forIndexPath:indexPath];
+            cell4.backgroundColor = self.tableView.backgroundColor;
+            return [self setUpCastCollectionCell:cell4 atIndexPath:indexPath];
         }
         else if (indexPath.section == 5){
-            return [self setUpReviewsCell: (ReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reviewReuseIdentifier forIndexPath:indexPath] atIndexPath:indexPath];
+            ReviewTableViewCell* cell5 = (ReviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reviewReuseIdentifier forIndexPath:indexPath];
+            cell5.backgroundColor = self.tableView.backgroundColor;
+            return [self setUpReviewsCell: cell5 atIndexPath:indexPath];
         }
     }
     return cell;
@@ -196,7 +210,7 @@
         return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height);
     }
     if([collectionView isKindOfClass:[ImageGalleryCollectionView class]]){
-        return CGSizeMake(180.0f , 150.0f);
+        return CGSizeMake(220.0f , 150.0f);
     }
     return CGSizeMake(collectionView.frame.size.width/2.2 , collectionView.frame.size.height/2.2);
 }

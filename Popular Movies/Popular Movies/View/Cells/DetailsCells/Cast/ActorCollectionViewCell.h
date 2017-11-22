@@ -11,4 +11,5 @@
 @interface ActorCollectionViewCell : UICollectionViewCell
 extern NSString* const actorReuseIdentifier;
 -(void)setUpActorCellWithActor:(Actor*)singleActor;
+-(ActorCollectionViewCell*)setUpActorCellWithPosterPath:(NSString *)posterPath withFirstTitle:(NSString*)firstTitle withSecondTitle:(NSString*)secondTitle;
 @end

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,19 +19,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Linda Jacobs " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="tBI-H6-Ux8">
-                        <rect key="frame" x="8" y="8" width="101" height="20"/>
+                        <rect key="frame" x="16" y="8" width="101" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read all" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="51" translatesAutoresizingMaskIntoConstraints="NO" id="6Fv-DP-AzA">
-                        <rect key="frame" x="8" y="174" width="51" height="17"/>
+                        <rect key="frame" x="16" y="174" width="51" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-Yu-c18">
-                        <rect key="frame" x="8" y="36" width="359" height="130"/>
+                        <rect key="frame" x="16" y="36" width="359" height="130"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="130" id="pKO-k8-gcf"/>
                         </constraints>
@@ -43,11 +42,11 @@
                 </subviews>
                 <color key="backgroundColor" red="0.1013840419" green="0.1013840419" blue="0.1013840419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="tBI-H6-Ux8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="27k-0Q-Kf8"/>
-                    <constraint firstAttribute="trailing" secondItem="oEo-Yu-c18" secondAttribute="trailing" constant="8" id="6TW-vG-jyY"/>
+                    <constraint firstItem="tBI-H6-Ux8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="27k-0Q-Kf8"/>
+                    <constraint firstAttribute="trailing" secondItem="oEo-Yu-c18" secondAttribute="trailing" id="6TW-vG-jyY"/>
                     <constraint firstItem="tBI-H6-Ux8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="RWx-vF-pyz"/>
-                    <constraint firstItem="oEo-Yu-c18" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="d28-XD-99P"/>
-                    <constraint firstItem="6Fv-DP-AzA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="gKG-Fc-BY7"/>
+                    <constraint firstItem="oEo-Yu-c18" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="d28-XD-99P"/>
+                    <constraint firstItem="6Fv-DP-AzA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gKG-Fc-BY7"/>
                     <constraint firstItem="oEo-Yu-c18" firstAttribute="top" secondItem="tBI-H6-Ux8" secondAttribute="bottom" constant="8" id="vWc-ik-ISb"/>
                     <constraint firstAttribute="bottom" secondItem="6Fv-DP-AzA" secondAttribute="bottom" constant="8" id="y53-Ry-J3h"/>
                 </constraints>

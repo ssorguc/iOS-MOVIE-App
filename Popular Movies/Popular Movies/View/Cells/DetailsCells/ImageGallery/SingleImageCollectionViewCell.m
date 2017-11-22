@@ -19,7 +19,7 @@ NSString* const singleImageReuseIdentifier = @"imageCell";
 }
 -(void)setUpSingleImageCellWithSingleImage:(SingleImage*)singleImage{
     if(singleImage.filePath){
-        NSString* imageLink = [@"http://image.tmdb.org/t/p/original/" stringByAppendingString: singleImage.filePath];
+        NSString* imageLink = [@"http://image.tmdb.org/t/p/w342/" stringByAppendingString: singleImage.filePath];
         [self.singleImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     }
 }

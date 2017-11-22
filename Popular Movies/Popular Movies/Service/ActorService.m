@@ -16,7 +16,7 @@
 @implementation ActorService
 - (void)getActorInformation:(NSNumber*)actorId onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     apiKey = [APIKeyHandling getAPIKeyValue];
-    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/person/%@?api_key=%@&language=en-US",actorId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/person/%@?api_key=%@&append_to_response=movie_credits",actorId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         onError(error);

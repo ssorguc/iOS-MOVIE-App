@@ -29,4 +29,13 @@ NSString* const actorReuseIdentifier = @"actorCell";
         [self.pictureImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     }
 }
+-(ActorCollectionViewCell*)setUpActorCellWithPosterPath:(NSString *)posterPath withFirstTitle:(NSString*)firstTitle withSecondTitle:(NSString*)secondTitle{
+    self.actorNameLabel.text = firstTitle;
+    self.characterNameLabel.text = secondTitle;
+    if(posterPath){
+        NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: posterPath];
+        [self.pictureImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    }
+    return self;
+}
 @end
