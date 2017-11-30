@@ -58,6 +58,7 @@
 +(NSArray*)relationships {
     return @[ //[RelationshipObject relationshipWithKey:@"created_by" andMappingClass:[CreatedBy class]],
               [RelationshipObject relationshipWithKey:@"seasons" andMappingClass:[SingleSeason class]],
-              [RelationshipObject relationshipWithKey:@"genres" andMappingClass:[Genre class]]];
+              [RelationshipObject relationshipWithKey:@"genres" andMappingClass:[Genre class]],
+              [RelationshipObject relationshipWithKey:@"images" andMappingClass:[ImagesCollection class]]];
 }
 @end

@@ -5,6 +5,7 @@
 //  Created by Test on 10/3/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
+#import "ImagesCollection.h"
 #import "MappableEntity.h"
 #import <Foundation/Foundation.h>
 @interface TVShow : MappableEntity
@@ -25,5 +26,6 @@
 @property (nonatomic,strong) NSNumber* numberOfSeasons;
 @property (nonatomic,strong) NSDate* lastAirDate;
 @property (nonatomic,strong) NSArray* seasons;// RELATIONSHIP OBJECT
+@property (nonatomic,strong) ImagesCollection *images;
 
 @end
