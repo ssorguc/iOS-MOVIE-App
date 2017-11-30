@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ReviewsTableView.h"
 #import <Foundation/Foundation.h>
-@interface ReviewTableViewCell : UITableViewCell
+
 extern NSString* const reviewReuseIdentifier;
+
+@interface ReviewTableViewCell : UITableViewCell
+
 -(void)setUpReviewsCellWithDelegate:(id)delegate withDataSource:(id)dataSource;
+
 @end

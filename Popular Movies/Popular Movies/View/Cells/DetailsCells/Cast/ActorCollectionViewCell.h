@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Actor.h"
-@interface ActorCollectionViewCell : UICollectionViewCell
+
 extern NSString* const actorReuseIdentifier;
+
+@interface ActorCollectionViewCell : UICollectionViewCell
+
 -(void)setUpActorCellWithActor:(Actor*)singleActor;
 -(ActorCollectionViewCell*)setUpActorCellWithPosterPath:(NSString *)posterPath withFirstTitle:(NSString*)firstTitle withSecondTitle:(NSString*)secondTitle;
 @end

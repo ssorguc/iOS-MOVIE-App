@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActorsMoviesTableViewCell : UITableViewCell
 extern NSString* const ActorsMoviesReusableIdentifier;
+
+@interface ActorsMoviesTableViewCell : UITableViewCell
+
 -(ActorsMoviesTableViewCell*)setUpActorsMoviesCollectionViewCellWithDelegate:(id)delegate withDataSource:(id)dataSource;
+
 @end

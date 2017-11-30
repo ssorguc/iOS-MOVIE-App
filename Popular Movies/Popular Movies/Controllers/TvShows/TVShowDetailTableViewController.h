@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TVShowDetailTableViewController : UITableViewController <UICollectionViewDelegateFlowLayout, UITableViewDelegate,UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
+#import "ImageGalleryTableViewCell.h"
+#import "SeasonsTableViewCell.h"
+#import "MovieTrailerTableViewCell.h"
+@interface TVShowDetailTableViewController : UITableViewController <UICollectionViewDelegateFlowLayout, UITableViewDelegate,UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, MovieTrailerTableViewCellDelegate, ImageGalleryTableViewCellDelegate,SeasonsTableViewCellDelegate>
 @property (nonatomic,strong) NSNumber* tvshowId;//Property used for transfering data between controllers
 @end

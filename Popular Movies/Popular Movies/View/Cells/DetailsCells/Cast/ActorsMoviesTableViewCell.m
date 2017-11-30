@@ -7,22 +7,29 @@
 //
 #import "ActorCollectionViewCell.h"
 #import "ActorsMoviesTableViewCell.h"
+
 @interface ActorsMoviesTableViewCell()
+
 @property (weak, nonatomic) IBOutlet UICollectionView *actorsMoviesCollectionView;
 
 @end
-@implementation ActorsMoviesTableViewCell
+
 NSString* const ActorsMoviesReusableIdentifier = @"actorsMovieCell";
+
+@implementation ActorsMoviesTableViewCell
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.selectionStyle = UITableViewCellEditingStyleNone;
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
+#pragma mark - Setting up cell's properties
+
 -(ActorsMoviesTableViewCell*)setUpActorsMoviesCollectionViewCellWithDelegate:(id)delegate withDataSource:(id)dataSource{
     self.actorsMoviesCollectionView.delegate = delegate;
     self.actorsMoviesCollectionView.dataSource = delegate;
@@ -30,4 +37,5 @@ NSString* const ActorsMoviesReusableIdentifier = @"actorsMovieCell";
     [self.actorsMoviesCollectionView reloadData];
     return self;
 }
+
 @end

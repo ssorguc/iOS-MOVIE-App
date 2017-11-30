@@ -11,10 +11,14 @@
 @property (weak, nonatomic) IBOutlet ReviewsTableView *reviewsTableView;
 
 @end
+
 @implementation ReviewTableViewCell
+
 NSString* const reviewReuseIdentifier = @"reviewCell";
+
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -24,7 +28,8 @@ NSString* const reviewReuseIdentifier = @"reviewCell";
     self.reviewsTableView.delegate = delegate;
     self.reviewsTableView.dataSource = dataSource;
     [self.reviewsTableView registerNib:[UINib nibWithNibName:NSStringFromClass([SingleReviewTableViewCell class]) bundle:nil] forCellReuseIdentifier:singleReviewReuseIdentifier];
-    
     [self.reviewsTableView reloadData];
 }
+
+
 @end

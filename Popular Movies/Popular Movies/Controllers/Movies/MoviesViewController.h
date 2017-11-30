@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoviesViewController : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface MoviesViewController : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UIView *moviesFilterView;
 
 @end

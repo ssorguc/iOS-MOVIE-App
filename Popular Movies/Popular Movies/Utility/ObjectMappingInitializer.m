@@ -8,6 +8,8 @@
 #import "CastMember.h"
 #import "SingleImage.h"
 #import "CrewMember.h"
+#import "SearchResult.h"
+#import "SearchResultsCollection.h"
 #import "MovieCollection.h"
 #import "CastCollection.h"
 #import "ObjectMappingInitializer.h"
@@ -78,6 +80,7 @@
              [Actor class],
              [CastMember class],
              [CrewMember class],
+             [SearchResult class],
              [SingleReview class],
              [SingleSeason class],
              [CreatedBy class],
@@ -88,7 +91,8 @@
              [VideosCollection class],
              [CollectionReview class],
              [ImagesCollection class],
-             [MovieCredits class]
+             [MovieCredits class],
+             [SearchResultsCollection class]
              ];
 }
 @end

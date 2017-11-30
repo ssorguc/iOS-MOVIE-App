@@ -18,14 +18,7 @@
 }
 @end
 @implementation TVShowService
-- (void)getAiringTodayTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
-    apiKey = [APIKeyHandling getAPIKeyValue];
-    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/airing_today?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        onSuccess(mappingResult);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        onError(error);
-    }];
-}
+
 - (void)getPopularTVShowFromAPIWithPageNumber:(NSInteger)page onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     apiKey = [APIKeyHandling getAPIKeyValue];
     [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/popular?api_key=%@&language=en-US&page=%ld",apiKey,page] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
@@ -34,42 +27,29 @@
         onError(error);
     }];
 }
-- (void)getLatestTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+
+-(void)getTopRatedTVShowFromAPIWithPageNumber:(NSInteger)page onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     apiKey = [APIKeyHandling getAPIKeyValue];
-    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/latest?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        onSuccess(mappingResult);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        onError(error);
-    }];
-}
-- (void)getPopularTVShowFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
-    apiKey = [APIKeyHandling getAPIKeyValue];
-    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/popular?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        onSuccess(mappingResult);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        onError(error);
-    }];
-}
-- (void)getTopRatedTVShowsFromAPIonSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
-    apiKey = [APIKeyHandling getAPIKeyValue];
-    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/top_rated?api_key=%@&language=en-US&page=1",apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/top_rated?api_key=%@&language=en-US&page=%ld",apiKey,page] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         onError(error);
     }];
 }
 
+
 - (void)getTVShowDetailsFromAPIWithId:(NSNumber*)tvId onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     
     apiKey = [APIKeyHandling getAPIKeyValue];
     TVShow *tv1 = [TVShow new];
     tv1.tvShowId = tvId;
-    [[RKObjectManager sharedManager] getObject:tv1 path:[NSString stringWithFormat:@"/3/tv/%@?api_key=%@&language=en-US",tvId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [[RKObjectManager sharedManager] getObject:tv1 path:[NSString stringWithFormat:@"/3/tv/%@?api_key=%@&append_to_response=images",tvId,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         onError(error);
     }];
 }
+
 - (void)getTVShowTrailerFromAPIWithId:(NSNumber*)tvId onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
     apiKey = [APIKeyHandling getAPIKeyValue];
     VideosCollection *tempVideoCollection = [VideosCollection new];

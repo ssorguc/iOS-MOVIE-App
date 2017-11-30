@@ -26,6 +26,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 -(void)setUpNewsCellWithNews:(News*)newsSample{
     sourceLink = newsSample.sourceLink;

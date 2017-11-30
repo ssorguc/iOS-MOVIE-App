@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol ActorDetailsTableViewCellDelegate <NSObject>
+
+- (void)readMoreClick:(UIButton*)sender;
+@end
+
+extern NSString* const actorsDetailsReuseIdentifier;
 
 @interface ActorDetailsTableViewCell : UITableViewCell
-extern NSString* const actorsDetailsReuseIdentifier;
--(ActorDetailsTableViewCell*)setUpActorsDetailsCellWithActorsName:(NSString*)name withProfilePath:(NSString*)profilePath withBirthday:(NSDate*)birthday withBirthPlace:(NSString*)place withBiography:(NSString*)biography;
+@property (nonatomic, strong) id<ActorDetailsTableViewCellDelegate> delegate;
+
+
+-(ActorDetailsTableViewCell*)setUpActorsDetailsCellWithActorsName:(NSString*)name withProfilePath:(NSString*)profilePath withBirthday:(NSDate*)birthday withBirthPlace:(NSString*)place withBiography:(NSString*)biography isExpended:(BOOL)isExpended;
+
 @end

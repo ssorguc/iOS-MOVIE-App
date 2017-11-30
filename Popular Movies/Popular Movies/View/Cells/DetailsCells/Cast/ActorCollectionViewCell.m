@@ -20,7 +20,9 @@ NSString* const actorReuseIdentifier = @"actorCell";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
 }
+
 -(void)setUpActorCellWithActor:(Actor *)singleActor{
     self.actorNameLabel.text = singleActor.name;
     self.characterNameLabel.text = singleActor.character;
@@ -31,6 +33,8 @@ NSString* const actorReuseIdentifier = @"actorCell";
 }
 -(ActorCollectionViewCell*)setUpActorCellWithPosterPath:(NSString *)posterPath withFirstTitle:(NSString*)firstTitle withSecondTitle:(NSString*)secondTitle{
     self.actorNameLabel.text = firstTitle;
+    self.actorNameLabel.numberOfLines = 0;
+    [self.actorNameLabel sizeToFit];
     self.characterNameLabel.text = secondTitle;
     if(posterPath){
         NSString* imageLink = [@"http://image.tmdb.org/t/p/w185/" stringByAppendingString: posterPath];

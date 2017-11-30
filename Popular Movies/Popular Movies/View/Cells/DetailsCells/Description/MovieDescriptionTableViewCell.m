@@ -21,14 +21,14 @@
 NSString* const descriptionReuseIdentifier = @"movieDescriptionCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
+
 -(void)setUpDescriptionCellWithCrew:(NSArray*)crew withRate:(NSNumber*)rate withOverview:(NSString*)overview{
     self.overviewLabel.text = overview;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];

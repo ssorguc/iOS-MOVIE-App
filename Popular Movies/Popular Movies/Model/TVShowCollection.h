@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MappableEntity.h"
+#import "ImagesCollection.h"
 @interface TVShowCollection : MappableEntity
 @property (strong, nonatomic) NSNumber* page;
 @property (strong, nonatomic) NSNumber* totalResults;

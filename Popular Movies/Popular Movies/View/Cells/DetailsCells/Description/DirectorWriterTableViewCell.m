@@ -20,12 +20,13 @@
 NSString* const directorWriterReuseIdentifier = @"directorWriterCell";
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 -(void)setUpDirectorsWritersCellWithCrew:(NSArray*)crew{
     [self getWritersDirectorsStringForLabelWithCastCollectionCrew:crew];
@@ -35,19 +36,21 @@ NSString* const directorWriterReuseIdentifier = @"directorWriterCell";
 -(void)getWritersDirectorsStringForLabelWithCastCollectionCrew:(NSArray*)crew{
     allWriters = @"";
     allDirectors = @"";
-    for(CrewMember* crewTemp in crew){
-        if([crewTemp.job isEqualToString:@"Director"]){
-            allDirectors = [allDirectors stringByAppendingString:crewTemp.name];
-            allDirectors = [allDirectors stringByAppendingString:@", "];
+    if(crew.count!=0){
+        for(CrewMember* crewTemp in crew){
+            if([crewTemp.job isEqualToString:@"Director"]){
+                allDirectors = [allDirectors stringByAppendingString:crewTemp.name];
+                allDirectors = [allDirectors stringByAppendingString:@", "];
+            }
+            if([crewTemp.job isEqualToString:@"Writer"]){
+                allWriters = [allWriters stringByAppendingString:crewTemp.name];
+                allWriters = [allWriters stringByAppendingString:@", "];
+            }
+            if([crewTemp isEqual:[crew lastObject]]){
+                if([allDirectors length]!=0 )allDirectors = [allDirectors substringToIndex:[allDirectors length]-2];
+                if([allWriters length]!=0 )allWriters = [allWriters substringToIndex:[allWriters length]-2];
+            }
         }
-        if([crewTemp.job isEqualToString:@"Writer"]){
-            allWriters = [allWriters stringByAppendingString:crewTemp.name];
-            allWriters = [allWriters stringByAppendingString:@", "];
-        }
-        if([crewTemp isEqual:[crew lastObject]]){
-            if([allDirectors length]!=0 )allDirectors = [allDirectors substringToIndex:[allDirectors length]-2];
-            if([allWriters length]!=0 )allWriters = [allWriters substringToIndex:[allWriters length]-2];
-        }
-   }
+    }
 }
 @end

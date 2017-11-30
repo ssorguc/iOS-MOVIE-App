@@ -16,19 +16,23 @@
 @property (weak, nonatomic) IBOutlet ActorCollectionView *castCollectionView;
 
 @end
-@implementation CastTableViewCell
+
 NSString* const castReuseIdentifier = @"castCell";
+
+@implementation CastTableViewCell
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.castCollectionView.userInteractionEnabled = YES;
-    
+    self.selectionStyle = UITableViewCellEditingStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
+#pragma mark - Setting up cell's properties
+
 -(void)setUpCastCollectionViewCellWithDelegate:(id)delegate withDataSource:(id)dataSource{
     self.castCollectionView.delegate = delegate;
     self.castCollectionView.dataSource = delegate;

@@ -11,6 +11,7 @@
 @interface SeasonsTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *seasonNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *seasonsYearsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *seeAllButton;
 
 @end
 @implementation SeasonsTableViewCell
@@ -18,17 +19,18 @@ NSString* const seasonsReuseIdentifier = @"seasonsCell";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
 -(void)setUpSeasonsCellWithSeasons:(NSArray*)seasons  withNumberOfSeasons:(NSNumber*)numberOfSeasons{
     self.seasonNumLabel.text = [self getSeasonNumberStringWithNumberOfSeasons:numberOfSeasons];
     self.seasonsYearsLabel.text = [self getSeasonsYearsNumberWithSeasons:seasons];
+    
+    [self.seeAllButton addTarget:self action:@selector(seeAllButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
 }
 -(NSString*)getSeasonNumberStringWithNumberOfSeasons:(NSNumber*)numberOfSeasons{
@@ -54,5 +56,12 @@ NSString* const seasonsReuseIdentifier = @"seasonsCell";
         }
     }
     return seasonYearsString;
+}
+
+-(void)seeAllButtonClick{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(seeAllSeasonsDetial)])
+    {
+        [self.delegate seeAllSeasonsDetial];
+    }
 }
 @end

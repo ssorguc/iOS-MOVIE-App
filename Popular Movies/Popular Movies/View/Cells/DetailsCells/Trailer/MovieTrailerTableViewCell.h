@@ -8,7 +8,19 @@
 #import "VideosCollection.h"
 #import <UIKit/UIKit.h>
 #import "YTPlayerView.h"
-@interface MovieTrailerTableViewCell : UITableViewCell
+
+@protocol MovieTrailerTableViewCellDelegate <NSObject>
+
+- (void)playVideo;
+
+@end
+
 extern NSString * const movieTrailerCellReuseIdentifier;
--(void)setUpTrailerCellWithTitle:(NSString*)title releaseDateString:(NSDate*)releaseDate genresString: (NSArray*)genres trailers:(VideosCollection*)trailers runtime:(NSNumber*)runtime withIndexPath:(NSIndexPath*)indexPath;
+
+@interface MovieTrailerTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) id<MovieTrailerTableViewCellDelegate> delegate;
+
+-(MovieTrailerTableViewCell*)setUpTrailerCellWithTitle:(NSString*)title releaseDateString:(NSDate*)releaseDate genresString: (NSArray*)genres trailers:(VideosCollection*)trailers runtime:(NSNumber*)runtime withIndexPath:(NSIndexPath*)indexPath withBackdropPath:(NSString*)backdropPath;
+
 @end

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SingleImage.h"
-@interface SingleImageCollectionViewCell : UICollectionViewCell
+
 extern NSString* const singleImageReuseIdentifier;
+
+@interface SingleImageCollectionViewCell : UICollectionViewCell
+
 -(void)setUpSingleImageCellWithSingleImage:(SingleImage*)singleImage;
+
 @end

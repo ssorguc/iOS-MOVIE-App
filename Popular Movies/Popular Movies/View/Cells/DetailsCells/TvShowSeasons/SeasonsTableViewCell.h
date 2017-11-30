@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SingleSeason.h"
-@interface SeasonsTableViewCell : UITableViewCell
+
+@protocol SeasonsTableViewCellDelegate<NSObject>
+-(void)seeAllSeasonsDetial;
+@end
+
 extern NSString* const seasonsReuseIdentifier;
+
+@interface SeasonsTableViewCell : UITableViewCell
+@property (nonatomic,strong) id<SeasonsTableViewCellDelegate> delegate;
 -(void)setUpSeasonsCellWithSeasons:(NSArray*)seasons  withNumberOfSeasons:(NSNumber*)numberOfSeasons;
 @end

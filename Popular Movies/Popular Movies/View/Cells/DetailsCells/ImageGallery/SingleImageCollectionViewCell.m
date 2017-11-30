@@ -11,16 +11,21 @@
 @property (weak, nonatomic) IBOutlet UIImageView *singleImageView;
 
 @end
-@implementation SingleImageCollectionViewCell
+
+
 NSString* const singleImageReuseIdentifier = @"imageCell";
+
+@implementation SingleImageCollectionViewCell
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
+
+
 -(void)setUpSingleImageCellWithSingleImage:(SingleImage*)singleImage{
     if(singleImage.filePath){
         NSString* imageLink = [@"http://image.tmdb.org/t/p/w342/" stringByAppendingString: singleImage.filePath];
         [self.singleImageView sd_setImageWithURL:[NSURL URLWithString: imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     }
+    self.singleImageView.clipsToBounds = YES;
 }
 @end

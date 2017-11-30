@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "ImagesCollection.h"
-@interface ImageGalleryTableViewCell : UITableViewCell
+
+@protocol ImageGalleryTableViewCellDelegate <NSObject>
+
+- (void)seeDetailGallery;
+
+@end
+
 extern NSString* const imageGalleryReuseIdentifier;
+
+@interface ImageGalleryTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) id<ImageGalleryTableViewCellDelegate> delegate;
+
 -(void)setUpImagesGalleryCellWithImagesCollection:(ImagesCollection*)imagesCollection withDelegate:(id)delegate withDataSource:(id)dataSource;
 @end
