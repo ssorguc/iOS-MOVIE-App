@@ -19,23 +19,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="400" height="91.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seasons: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYd-Ki-7Cs">
-                        <rect key="frame" x="16" y="30" width="68" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seasons: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PYd-Ki-7Cs">
+                        <rect key="frame" x="16" y="30" width="82" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.82241434010152281" green="0.82241434010152281" blue="0.82241434010152281" alpha="0.8791202910958904" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Years: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhM-Hc-BoQ">
-                        <rect key="frame" x="16" y="56" width="56" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Years: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lhM-Hc-BoQ">
+                        <rect key="frame" x="16" y="56" width="82" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.82241434010000003" green="0.82241434010000003" blue="0.82241434010000003" alpha="0.87912029110000001" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017 " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-RL-mWh">
-                        <rect key="frame" x="80" y="56" width="290" height="18"/>
+                        <rect key="frame" x="106" y="56" width="220" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="XPk-5s-9iT"/>
-                            <constraint firstAttribute="width" constant="290" id="YDx-Lc-vjk"/>
+                            <constraint firstAttribute="width" constant="220" id="YDx-Lc-vjk"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.63723429570000001" green="0.63723429570000001" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,9 +48,9 @@
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="297" translatesAutoresizingMaskIntoConstraints="NO" id="KsO-hv-72D">
-                        <rect key="frame" x="80" y="30" width="290" height="20"/>
+                        <rect key="frame" x="106" y="30" width="220" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="290" id="NAw-eX-ueo"/>
+                            <constraint firstAttribute="width" constant="220" id="NAw-eX-ueo"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="UxD-p4-IJq"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -61,15 +61,15 @@
                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="lhM-Hc-BoQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3hw-0a-HmD"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GkH-RL-mWh" secondAttribute="trailing" constant="10" id="66L-Ez-c4Q"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GkH-RL-mWh" secondAttribute="trailing" constant="54" id="66L-Ez-c4Q"/>
                     <constraint firstItem="GkH-RL-mWh" firstAttribute="top" secondItem="KsO-hv-72D" secondAttribute="bottom" constant="6" id="B8C-th-Q05"/>
-                    <constraint firstItem="KsO-hv-72D" firstAttribute="leading" secondItem="PYd-Ki-7Cs" secondAttribute="trailing" constant="-4" id="Bku-7o-wm7"/>
+                    <constraint firstItem="KsO-hv-72D" firstAttribute="leading" secondItem="PYd-Ki-7Cs" secondAttribute="trailing" constant="8" id="Bku-7o-wm7"/>
                     <constraint firstItem="RRf-iu-jxD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="LYm-ve-4Yf"/>
                     <constraint firstItem="PYd-Ki-7Cs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="LkL-jp-ULh"/>
-                    <constraint firstItem="KsO-hv-72D" firstAttribute="leading" secondItem="PYd-Ki-7Cs" secondAttribute="trailing" constant="-4" id="TwR-lA-GmE"/>
+                    <constraint firstItem="KsO-hv-72D" firstAttribute="leading" secondItem="PYd-Ki-7Cs" secondAttribute="trailing" constant="8" id="TwR-lA-GmE"/>
                     <constraint firstAttribute="trailing" secondItem="RRf-iu-jxD" secondAttribute="trailing" constant="20" id="WS0-fp-GOC"/>
                     <constraint firstItem="KsO-hv-72D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="c7Y-Go-SPV"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="KsO-hv-72D" secondAttribute="trailing" constant="10" id="g4E-jq-L4n"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="KsO-hv-72D" secondAttribute="trailing" constant="54" id="g4E-jq-L4n"/>
                     <constraint firstAttribute="bottomMargin" secondItem="GkH-RL-mWh" secondAttribute="bottom" constant="7" id="h4u-HY-8zQ"/>
                     <constraint firstItem="PYd-Ki-7Cs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="umG-In-Czm"/>
                     <constraint firstItem="GkH-RL-mWh" firstAttribute="leading" secondItem="lhM-Hc-BoQ" secondAttribute="trailing" constant="8" id="wJy-af-fCi"/>

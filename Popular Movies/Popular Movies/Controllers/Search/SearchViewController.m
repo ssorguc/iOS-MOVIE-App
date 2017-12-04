@@ -5,6 +5,7 @@
 //  Created by Test on 28/11/2017.
 //  Copyright © 2017 Test. All rights reserved.
 //
+#import "MovieDetailTableViewController.h"
 #import <RestKit/RestKit.h>
 #import "MoviesViewController.h"
 #import "SearchViewController.h"
@@ -13,7 +14,7 @@
 #import "SearchResultTableViewCell.h"
 #import "SearchResultsCollection.h"
 #import "SearchResult.h"
-
+#import "TVShowDetailTableViewController.h"
 @interface SearchViewController ()
 {
     UISearchBar *searchBar;
@@ -97,6 +98,35 @@
     return UITableViewAutomaticDimension;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([[[searchResult objectAtIndex:indexPath.row]mediaType]isEqualToString:@"movie"]){
+        [self performSegueWithIdentifier:@"movieDetail" sender:self];
+    }
+    if([[[searchResult objectAtIndex:indexPath.row]mediaType]isEqualToString:@"tv"]){
+        [self performSegueWithIdentifier:@"tvDetail" sender:self];
+    }
+}
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"movieDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        MovieDetailTableViewController* movieDetailTVC = [segue destinationViewController];
+        UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        backButtonItem.tintColor = [UIColor whiteColor];
+        movieDetailTVC.self.navigationItem.backBarButtonItem = backButtonItem;
+        movieDetailTVC.movieId = [[searchResult objectAtIndex:indexPath.row] searchResultId];
+    }
+    if ([segue.identifier isEqualToString:@"tvDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        TVShowDetailTableViewController* tvShowController = [segue destinationViewController];
+        UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+        backButtonItem.tintColor = [UIColor whiteColor];
+        tvShowController.self.navigationItem.backBarButtonItem = backButtonItem;
+        tvShowController.tvshowId = [[searchResult objectAtIndex:indexPath.row] searchResultId];
+    }
+    
+}
 
 #pragma mark - Search bar
 - (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

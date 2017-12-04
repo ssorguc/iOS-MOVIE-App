@@ -19,7 +19,20 @@
 @end
 @implementation TVShowService
 
+
+
+- (void)getSeasonsFromAPIWithSeasonNumber:(NSInteger)seasonNumber withTvShowId:(NSNumber*)tvShowId onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    
+    apiKey = [APIKeyHandling getAPIKeyValue];
+    [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/%@/season/%ld?api_key=%@&language=en-US",tvShowId, seasonNumber,apiKey] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        onSuccess(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        onError(error);
+    }];
+}
+
 - (void)getPopularTVShowFromAPIWithPageNumber:(NSInteger)page onSuccess:(SuccessCallbackWithObject)onSuccess onError:(ErrorCallback)onError{
+    
     apiKey = [APIKeyHandling getAPIKeyValue];
     [[RKObjectManager sharedManager] getObject:nil path:[NSString stringWithFormat:@"/3/tv/popular?api_key=%@&language=en-US&page=%ld",apiKey,page] parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         onSuccess(mappingResult);

@@ -13,7 +13,7 @@
 #import "TVShowCollection.h"
 #import "MovieTvShowCollectionViewCell.h"
 #import "SearchViewController.h"
-@interface TVShowViewController ()
+@interface TVShowViewController ()<UIScrollViewDelegate>
 {
     NSMutableArray *tvShowArray;
     TVShowService *tvShowService;
@@ -66,6 +66,8 @@
     
     //Adding filter menu buttons
     [self addFilterButtons];
+    
+    self.collectionView.scrollEnabled = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -238,6 +240,8 @@
     }
 }
 
+
+
 #pragma mark - SearchBar delegate methods
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
@@ -248,8 +252,6 @@
     searchBar.text = @"";
     navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:navigationController animated:YES completion:nil];
-    
-    //[self performSegueWithIdentifier:@"searchSegue" sender:self];
     return YES;
 }
 @end

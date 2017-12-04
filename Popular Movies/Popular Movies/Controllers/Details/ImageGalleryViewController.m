@@ -41,7 +41,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return CGSizeMake(collectionView.frame.size.width/3.4 + 14 , collectionView.frame.size.height/5.2 );
+    return CGSizeMake(collectionView.frame.size.width/3.5 , collectionView.frame.size.height/5.2 );
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

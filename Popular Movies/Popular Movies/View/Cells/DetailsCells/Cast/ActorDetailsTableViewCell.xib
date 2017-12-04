@@ -63,7 +63,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8p-mz-hFH">
-                        <rect key="frame" x="20" y="555" width="86" height="30"/>
+                        <rect key="frame" x="20" y="555" width="357" height="30"/>
                         <state key="normal" title="Read more">
                             <color key="titleColor" red="0.87843137250000003" green="0.71764705880000002" blue="0.0" alpha="0.78165132705479456" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -87,7 +87,7 @@
                     <constraint firstItem="rZx-Nn-xSF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="bhn-ZM-mJS"/>
                     <constraint firstItem="Lgk-rM-a5H" firstAttribute="top" secondItem="RZf-6R-fOy" secondAttribute="bottom" constant="26" id="fGy-Lx-zOo"/>
                     <constraint firstItem="Uge-Y1-G5q" firstAttribute="leading" secondItem="RZf-6R-fOy" secondAttribute="trailing" constant="8" id="jeV-O2-sg6"/>
-                    <constraint firstAttribute="trailing" secondItem="O8p-mz-hFH" secondAttribute="trailing" constant="291" id="lMI-nd-xVG"/>
+                    <constraint firstAttribute="trailing" secondItem="O8p-mz-hFH" secondAttribute="trailing" constant="20" id="lMI-nd-xVG"/>
                     <constraint firstItem="O8p-mz-hFH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="n54-Hb-huj"/>
                     <constraint firstItem="RZf-6R-fOy" firstAttribute="top" secondItem="Yhm-fA-nd1" secondAttribute="bottom" constant="4" id="nXJ-Bz-vj9"/>
                     <constraint firstItem="kOk-Ic-BxZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oJB-5T-1q2"/>

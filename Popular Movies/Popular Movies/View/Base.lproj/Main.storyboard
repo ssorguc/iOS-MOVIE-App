@@ -400,6 +400,7 @@
                     <connections>
                         <outlet property="seasonsHightConstraint" destination="eY2-w8-7Fp" id="7q6-kc-vKN"/>
                         <outlet property="seasonsView" destination="cV6-bd-UST" id="SIT-2T-wjn"/>
+                        <outlet property="tableView" destination="0dE-NZ-dug" id="unl-Es-9wT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-Og-o65" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,6 +434,8 @@
                     <navigationItem key="navigationItem" id="Rdb-fu-GPw"/>
                     <connections>
                         <outlet property="tableView" destination="gV7-Jz-Eha" id="WpJ-EQ-prA"/>
+                        <segue destination="Qd3-jq-vZY" kind="show" identifier="movieDetail" id="zW4-uh-jJg"/>
+                        <segue destination="aIg-8C-J1q" kind="show" identifier="tvDetail" id="mYL-rb-dYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOz-Nl-bhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -605,8 +608,10 @@
         <image name="tv-show-icon-Spotlight-40" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zW4-uh-jJg"/>
         <segue reference="WWc-0I-IjC"/>
         <segue reference="BaQ-mG-dmL"/>
         <segue reference="7Za-vy-QZ2"/>
+        <segue reference="mYL-rb-dYD"/>
     </inferredMetricsTieBreakers>
 </document>

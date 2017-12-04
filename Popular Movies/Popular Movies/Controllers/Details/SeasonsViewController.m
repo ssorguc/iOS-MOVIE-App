@@ -8,9 +8,12 @@
 
 #import "SeasonsViewController.h"
 
-@interface SeasonsViewController ()
+@interface SeasonsViewController (){
+    UIButton* singleSeasonButton;
+}
 @property (weak, nonatomic) IBOutlet UIView *seasonsView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *seasonsHightConstraint;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -18,22 +21,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.tableView.delegate = self;
+    self.tableView.separatorColor = [UIColor clearColor];
     NSInteger value = [self.numberOfSeasons integerValue];
     NSInteger width = 10;
     for(NSInteger i=0; i<value;i++){
         width = width + 40 *(i+1);
-        if(width>self.view.frame.size.width){
-            UIButton* singleSeasonButton = [[UIButton alloc]initWithFrame:CGRectMake(40 + 40 *(i+1), 40, 40, 40)];
-            singleSeasonButton.tag = 1;
-            [singleSeasonButton setTitle:[NSString stringWithFormat:@"%ld",i+1] forState:UIControlStateNormal];
-            [self.seasonsView addSubview:singleSeasonButton];
-        }
-        else{
-            UIButton* singleSeasonButton = [[UIButton alloc]initWithFrame:CGRectMake(10 + 40 *(i+1), 40, 40, 40)];
-            singleSeasonButton.tag = 1;
-            [singleSeasonButton setTitle:[NSString stringWithFormat:@"%ld",i+1] forState:UIControlStateNormal];
-            [self.seasonsView addSubview:singleSeasonButton];
-        }
+        singleSeasonButton = [[UIButton alloc]initWithFrame:CGRectMake(10 + 40 *(i+1), 40, 40, 40)];
+        singleSeasonButton.tag = i;
+        [singleSeasonButton setTitle:[NSString stringWithFormat:@"%ld",i+1] forState:UIControlStateNormal];
+        [self.seasonsView addSubview:singleSeasonButton];
+        [singleSeasonButton addTarget:self action:@selector(loadSeasonsEpisodes:) forControlEvents:UIControlEventTouchUpInside];
     }
     
 }
@@ -42,5 +40,7 @@
     [super didReceiveMemoryWarning];
 }
 
-
+-(void)loadSeasonsEpisodes:(UIButton*)sender{
+    
+}
 @end
