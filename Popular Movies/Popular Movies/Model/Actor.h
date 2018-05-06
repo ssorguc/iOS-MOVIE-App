@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MappableEntity.h"
-
+#import "MovieCredits.h"
 @interface Actor : MappableEntity
 @property (nonatomic,strong) NSNumber* castId;
 @property (nonatomic,strong) NSString* character;
@@ -18,4 +18,9 @@
 @property (nonatomic,strong) NSString* name;
 @property (nonatomic,strong) NSNumber* order;
 @property (nonatomic,strong) NSString* profilePath;
+@property (nonatomic,strong) NSString* backdropPath;
+@property (nonatomic,strong) NSDate* birthday;
+@property (nonatomic,strong) NSString* biography;
+@property (nonatomic,strong) MovieCredits* movieCredits;
+@property (nonatomic,strong) NSString* placeOfBirth;
 @end

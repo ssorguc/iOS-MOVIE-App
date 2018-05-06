@@ -5,7 +5,11 @@
 //  Created by Test on 23/10/2017.
 //  Copyright © 2017 Test. All rights reserved.
 //
+#import "CastMember.h"
+#import "SingleImage.h"
 #import "CrewMember.h"
+#import "SearchResult.h"
+#import "SearchResultsCollection.h"
 #import "MovieCollection.h"
 #import "CastCollection.h"
 #import "ObjectMappingInitializer.h"
@@ -21,6 +25,8 @@
 #import "SingleReview.h"
 #import "RelationshipObject.h"
 #import "TVShowCollection.h"
+#import "ImagesCollection.h"
+#import "MovieCredits.h"
 @interface ObjectMappingInitializer (Private)
 
 + (NSArray*)mappableClasses;
@@ -72,15 +78,21 @@
              [TVShow class],
              [Trailer class],
              [Actor class],
+             [CastMember class],
              [CrewMember class],
+             [SearchResult class],
              [SingleReview class],
              [SingleSeason class],
              [CreatedBy class],
+             [SingleImage class],
              [MovieCollection class],
              [TVShowCollection class],
              [CastCollection class],
              [VideosCollection class],
-             [CollectionReview class]
+             [CollectionReview class],
+             [ImagesCollection class],
+             [MovieCredits class],
+             [SearchResultsCollection class]
              ];
 }
 @end

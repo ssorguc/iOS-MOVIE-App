@@ -11,5 +11,5 @@
 @interface News : NSObject
 @property (strong, nonatomic) NSString* title;
 @property (strong,nonatomic) NSString* text;
-@property (strong,nonatomic) NSString* source_link;
+@property (strong,nonatomic) NSString* sourceLink;
 @end
